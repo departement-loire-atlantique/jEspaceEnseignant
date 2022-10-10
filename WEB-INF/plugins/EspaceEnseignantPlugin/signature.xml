@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<signature name="EspaceEnseignantPlugin" urid="fde" type="plugin" date="1665410648967">
+  <sign file="WEB-INF/plugins/EspaceEnseignantPlugin/plugin.xml" signature="R+O0wM4BJZftXp0GzIVezg==" />
+  <sign file="WEB-INF/plugins/EspaceEnseignantPlugin/properties/languages/en.prop" signature="1B2M2Y8AsgTpgAmY7PhCfg==" />
+  <sign file="WEB-INF/plugins/EspaceEnseignantPlugin/properties/languages/fr.prop" signature="1B2M2Y8AsgTpgAmY7PhCfg==" />
+  <sign file="WEB-INF/plugins/EspaceEnseignantPlugin/properties/plugin.prop" signature="lT/m+I/VCgML0RgD3gTKPg==" />
+  <sign file="plugins/EspaceEnseignantPlugin/css/plugin.less" signature="zHZWfVTq7l250BIdKe09Xw==" />
+  <sign file="plugins/EspaceEnseignantPlugin/js/jalios-boilerplate.js" signature="g7LruE5W6eAxVG9tPtDxGg==" />
+  <sign file="plugins/EspaceEnseignantPlugin/js/plugin.js" signature="kKxJsru5drNbVbeiJszbtw==" />
+  <sign file="plugins/EspaceEnseignantPlugin/jsp/plugin.jsp" signature="HhHXCuU58jmkb/WkRU9Duw==" />
+</signature>
+
