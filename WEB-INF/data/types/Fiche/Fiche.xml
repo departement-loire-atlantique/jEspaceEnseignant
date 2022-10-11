@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<type name="Fiche" superclass="com.jalios.jcms.Content" debatable="false" unitFieldEdition="true" audienced="false" categoryTab="true" readRightTab="true" updateRightTab="true" templateTab="true" workflowTab="true" advancedTab="true" database="true" hbm="true" revision="true">
+  <label xml:lang="fr">Fiche</label>
+  <title ml="true">
+    <label xml:lang="en">Title</label>
+    <label xml:lang="fr">Titre</label>
+  </title>
+  <fields>
+    <field name="description" editor="wysiwyg" required="false" type="String" searchable="true" wysiwygConfigurationId="default" ml="true" compactDisplay="false" descriptionType="tooltip" html="false" checkHtml="true" inline="true" tab="contenu" abstract="true" truncate="400">
+      <label xml:lang="en">Description</label>
+      <label xml:lang="fr">Description</label>
+    </field>
+    <field name="visuel" editor="link" required="false" compactDisplay="false" type="generated.CarouselElement" parent="false" ml="false" descriptionType="tooltip" searchable="false" html="false" checkHtml="true" tab="contenu">
+      <label xml:lang="fr">Visuel</label>
+    </field>
+    <field name="galerieDeVisuels" editor="link" required="false" compactDisplay="false" type="generated.Carousel" parent="false" ml="false" descriptionType="tooltip" searchable="false" html="false" checkHtml="true" tab="contenu">
+      <label xml:lang="fr">Galerie de visuels</label>
+    </field>
+    <field name="plan" editor="media" required="false" compactDisplay="false" type="String" searchable="true" size="80" ml="true" descriptionType="tooltip" dataimage="true" html="false" mediaTypes="IMAGE" checkHtml="true" tab="contenu">
+      <label xml:lang="fr">Plan</label>
+    </field>
+    <field name="ressourcesAssocies" editor="link" required="false" compactDisplay="false" type="List&lt;generated.Fiche&gt;" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true">
+      <label xml:lang="fr">Ressources associés</label>
+    </field>
+    <field name="motsCles" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="keyword" exclusive="false" root="c_5271" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true" displayRoot="false">
+      <label xml:lang="fr">Mots Clés</label>
+    </field>
+    <field name="exposition" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="tree" exclusive="false" root="c_5008" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true" displayRoot="false">
+      <label xml:lang="fr">Exposition</label>
+    </field>
+    <field name="typologie" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="tree" exclusive="true" root="c_5145" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true" displayRoot="false">
+      <label xml:lang="fr">Typologie</label>
+    </field>
+    <field name="periode" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="tree" exclusive="false" root="c_5182" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true" displayRoot="false">
+      <label xml:lang="fr">Période</label>
+    </field>
+    <field name="site" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="tree" exclusive="false" root="c_5263" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true" displayRoot="false">
+      <label xml:lang="fr">Site</label>
+    </field>
+    <field name="niveau" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="tree" exclusive="true" root="c_5165" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true" displayRoot="false">
+      <label xml:lang="fr">Niveau</label>
+    </field>
+    <field name="scenarioPedagogique" editor="wysiwyg" required="false" compactDisplay="false" type="String" searchable="true" rows="16" cols="100" ml="true" checkHtml="true" inline="true" descriptionType="tooltip" html="false" tab="contenu">
+      <label xml:lang="fr">Scénario pédagogique</label>
+    </field>
+    <field name="dateDeVie" editor="date" required="false" compactDisplay="false" type="java.util.Date" future="true" past="true" dateOnly="true" dateFormat="short" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true">
+      <label xml:lang="fr">Date de vie</label>
+    </field>
+    <field name="dateDeMort" editor="date" required="false" compactDisplay="false" type="java.util.Date" future="true" past="true" dateOnly="true" dateFormat="short" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true">
+      <label xml:lang="fr">Date de mort</label>
+    </field>
+    <field name="titreCartel" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true" descriptionType="tooltip">
+      <label xml:lang="fr">Titre Cartel</label>
+    </field>
+    <field name="nomDeLartiste" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Nom de l'artiste</label>
+    </field>
+    <field name="matiere" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Matière</label>
+    </field>
+    <field name="date" editor="date" required="false" compactDisplay="false" tab="cartel" type="java.util.Date" future="true" past="true" dateOnly="false" dateFormat="short">
+      <label xml:lang="fr">Date</label>
+    </field>
+    <field name="lieu" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Lieu</label>
+    </field>
+    <field name="dimension" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Dimension</label>
+    </field>
+    <field name="legs" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Legs</label>
+    </field>
+    <field name="ninventaire" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">N° inventaire</label>
+    </field>
+    <field name="credits" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Crédits</label>
+    </field>
+    <field name="imageFocus" editor="media" required="false" compactDisplay="false" tab="focus" type="Set&lt;String&gt;" searchable="true" size="80" ml="false" descriptionType="tooltip" tabGroup="Focus" html="false" checkHtml="true" mediaTypes="IMAGE">
+      <label xml:lang="fr">Image focus</label>
+    </field>
+    <field name="texteLibre" editor="wysiwyg" required="false" compactDisplay="false" tab="focus" type="Set&lt;String&gt;" searchable="true" rows="16" cols="100" ml="false" checkHtml="true" inline="true" descriptionType="tooltip" tabGroup="Focus" html="false">
+      <label xml:lang="fr">Texte libre</label>
+    </field>
+  </fields>
+  <tabs>
+    <tab id="cartel">
+      <label xml:lang="fr">Cartel</label>
+    </tab>
+    <tab id="focus">
+      <label xml:lang="fr">Focus</label>
+    </tab>
+    <tab id="contenu">
+      <label xml:lang="fr">Contenu</label>
+    </tab>
+  </tabs>
+</type>
+
