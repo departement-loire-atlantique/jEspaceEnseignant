@@ -16,6 +16,9 @@
 
 # LESS
 # channel.less.plugins/{Name}/css/plugin.css:    plugins/{Name}/css/plugin.less
+channel.less.plugins/EspaceEnseignantPlugin/css/plugin.css:    plugins/EspaceEnseignantPlugin/css/plugin.less
+
+jcmsplugin.espaceEnseignant.espace.cat.root.chooser-category:
 
 # désactive le btn par défaut et ajoute un cat custom
 jcmsplugin.socle.site.header.show.rechercher: false

@@ -111,6 +111,9 @@
 	  </templates>
   </types>
  -->
+  <types>
+    <type name="Fiche" />
+ </types>
   <!-- ============================== Workflows =========================== -->
   <!--                                                                      -->
   <!-- workflows         A list of <dependency>.                            -->
