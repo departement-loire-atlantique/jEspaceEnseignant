@@ -1,0 +1,46 @@
+<% 
+jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
+%>
+
+<div class="ds44-container-large">
+  <div class="grid-12-small-1">
+  <jalios:foreach array="<%= tab %>" name="itFiche" type="Fiche">
+    <div class="col-3 vignette vignette-card">
+    <section class="ds44-card ds44-js-card ds44-card--verticalPicture">
+    
+        <%-- Vignette Image --%>
+        <% CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, itFiche.getVisuel().getId()); %>
+        <picture class="ds44-container-imgRatio">
+            <img src="<%= image.getImage() %>" alt="" class="ds44-imgRatio"/>
+        </picture>
+
+        <%-- Vignette Header --%>
+        <div class="vignette-header ds44-flex-container">
+            <% if (Util.notEmpty(itFiche.getTypologie(loggedMember))) { %>
+                <jalios:foreach collection="<%= itFiche.getTypologie(loggedMember) %>" type="Category" name="itCategory" >
+                  <div class="ds44-colLeft">
+                    <p class="vignette-header-title ds44-colLeft"> 
+                        <%= itCategory.getParent().getName() %> 
+                    </p>
+                    </div>
+                </jalios:foreach>
+            <% } %>
+            <a href=# class="ds44-colRight">
+              <i class="icon icon-star-empty" aria-hidden="true"></i>
+            </a>
+        </div>
+        
+        <%-- Vignette Body --%>
+        <div class="ds44-card__section vignette-body">
+          <div class="ds44-innerBoxContainer">
+              <p role="heading" aria-level="2" class="ds44-cardTitle"><a href="#" class="ds44-card__globalLink"><%= itFiche.getTitle() %></a></p>
+              <hr class="mbs"aria-hidden="true" />
+              <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteContent.jspf' %>
+          </div>
+        </div>
+
+    </section>
+    </div>
+  </jalios:foreach>
+  </div>
+</div>

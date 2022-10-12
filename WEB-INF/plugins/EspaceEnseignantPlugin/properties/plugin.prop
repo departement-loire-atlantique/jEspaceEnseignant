@@ -15,4 +15,6 @@
 # ui.editportlet.usage.skin.{jcmsplugin.plugin.sample}: Usage label for skin
 
 # LESS
-# channel.less.plugins/{Name}/css/plugin.css:    plugins/{Name}/css/plugin.less
+channel.less.plugins/EspaceEnseignantPlugin/css/plugin.css:    plugins/EspaceEnseignantPlugin/css/plugin.less
+
+jcmsplugin.espaceEnseignant.espace.cat.root.chooser-category:

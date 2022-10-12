@@ -5,7 +5,8 @@
 // PLUGINS LESS VARIABLES
 // -------------------------------------------------------------------
 
-
+@main-color: #AAB4BE;
+@purple: #C8D2FA;
 
 // Hook for JCMS
 @import "../../../css/plugin.less";
@@ -22,3 +23,45 @@
 //  You can also use implements PortalPolicyFilter.setupHeaders()      
 //                                                                      
 
+.vignette {
+    margin-right: 20px;
+    margin-bottom: 20px;
+
+    .vignette-header {
+        .vignette-header-title {
+            font-weight: bold;
+            display: inline-flex;
+            background-color: @purple;
+            padding: 5px 10px;
+        }
+
+        .icon {
+            margin-right: 10px;
+        }
+    }
+
+    .vignette-type {
+        display: inline-block;
+        border: solid 1px black;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .ds44-innerBoxContainer {
+        padding: 0;
+    }
+
+    
+}
+
+.vignette-card {
+    .ds44-card {
+        margin-bottom: 0;
+        border-bottom: solid 2px @purple;
+    }
+}
+
+.ds44-colLeft, .ds44-colRight {
+    flex: auto !important;
+    align-self: center !important;
+  }
