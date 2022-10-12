@@ -76,6 +76,10 @@
     <dependency name="OtherPlugin" />
   </dependencies>
 -->
+  <dependencies>
+    <dependency name="SoclePlugin" />
+    <dependency name="SEOPlugin" />
+  </dependencies>
   <!-- ========================== Types and Templates ===================== -->
   <!--                                                                      -->
   <!-- type              Files used for *new* JCMS Types must be declared   -->

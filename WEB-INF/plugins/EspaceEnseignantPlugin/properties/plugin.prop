@@ -16,3 +16,6 @@
 
 # LESS
 # channel.less.plugins/{Name}/css/plugin.css:    plugins/{Name}/css/plugin.less
+
+# désactive le btn par défaut et ajoute un cat custom
+jcmsplugin.socle.site.header.show.rechercher: false
