@@ -1,0 +1,105 @@
+<%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
+<%  
+ArrayList<Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, obj);
+%>
+<div class="ds44-container-large">
+    <section class="ds44-card ds44-js-card ds44-card--verticalPicture vignette-cartel">
+    
+        <%-- Vignette Image --%>
+        <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/carrousel.jspf' %>
+        
+        <%-- Vignette Body --%>
+        <div class="ds44-card__section vignette-cartel-body">
+          <div class="ds44-innerBoxContainer">
+            <div class="ds44-flex-container">
+                <div class="ds44-colLeft">
+
+                  <% if (Util.notEmpty(obj.getTypologie(loggedMember))) { %>
+                    <jalios:foreach collection="<%= obj.getTypologie(loggedMember) %>" type="Category" name="itCategory" >
+                        <p class="ds44-docListElem ds44-mt-std"> 
+                          <i class="icon icon-tag  ds44-docListIco" aria-hidden="true"></i>
+                          <%= itCategory.getParent().getName() %> : <%= itCategory.getName() %> 
+                        </p>
+                    </jalios:foreach>
+                  <% } %>
+
+                  <% if (Util.notEmpty(obj.getPeriode(loggedMember))) { %>
+                    <jalios:foreach collection="<%= listPeriodeCartel %>" type="Category" name="itCategory" >
+                        <p class="ds44-docListElem ds44-mt-std"> 
+                          <i class="icon icon-directory  ds44-docListIco" aria-hidden="true"></i>
+                          <%= itCategory.getName() %> 
+                        </p>
+                    </jalios:foreach>
+                    <jalios:foreach collection="<%= obj.getPeriode(loggedMember) %>" type="Category" name="itCategory" >
+                      <p class="ds44-docListElem"> 
+                        <%= itCategory.getName() %>
+                      </p>
+                    </jalios:foreach>
+                  <% } %>  
+
+                  <% if (Util.notEmpty(obj.getPlan(userLang))) { %>
+                    <a href="<%= Util.encodeUrl(obj.getPlan(userLang)) %>">
+                      <p class="ds44-docListElem ds44-mt-std">
+                        <i class="icon icon-position  ds44-docListIco" aria-hidden="true"></i>
+                        Retrouvez cet objet au musée
+                      </p>
+                    </a>
+                  <% } %>
+
+                </div>
+                <div class="ds44-colRight cartel-column">
+                  <p class="ds44-docListElem ds44-mt-std"> 
+                    <i class="icon icon-info  ds44-docListIco" aria-hidden="true"></i>
+                    <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getTitreCartel(userLang))) { %>
+                        <%= obj.getTitreCartel(userLang) %>
+                      <% } %>
+                    </p>
+                    <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getNomDeLartiste(userLang))) { %>
+                        <%= obj.getNomDeLartiste(userLang) %>
+                      <% } %>
+                    </p>
+                    <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getMatiere(userLang))) { %>
+                        <%= obj.getMatiere(userLang) %>
+                      <% } %>
+                    </p>
+                    <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getLieu(userLang))) { %>
+                        <%= obj.getLieu(userLang) %>
+                      <% } %>
+                    </p>
+                    <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getLegs(userLang))) { %>
+                        <%= obj.getLegs(userLang) %>
+                      <% } %>
+                    </p>
+                    <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getNinventaire(userLang))) { %>
+                        <%= obj.getNinventaire(userLang) %>
+                      <% } %>
+                    </p>
+                    <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getCredits(userLang))) { %>
+                        <%= obj.getCredits(userLang) %>
+                      <% } %>
+                    </p>
+                  </p>
+
+
+                </div>
+            </div>
+            <button class="ds44-btnStd ds44-btn--invert">
+              <span class="ds44-btnInnerText">Télécharger</span>
+              <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button class="ds44-btnStd">
+              <span class="ds44-btnInnerText">Ajouter à ma sélection</span>
+              <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+    </section>
+</div>

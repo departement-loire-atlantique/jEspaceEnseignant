@@ -1,0 +1,28 @@
+<%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
+<%  
+ArrayList<Category> listTypoFil = EspaceEnseignantHandler.getTypologieList(loggedMember, obj);
+%>
+
+<nav role="navigation" aria-label="Votre position" class="ds44-hide-mobile">
+    <ul class="ds44-list ds44-breadcrumb">
+
+        <li class="ds44-breadcrumb_item"> 
+            <a href="#">
+                <i class="icon icon-home icon--medium" aria-hidden="true"></i>
+                <span class="visually-hidden">Accueil</span>
+            </a>
+        </li>
+        <jalios:foreach collection="<%= listTypoFil %>" type="Category" name="itCategory" >
+            <li class="ds44-breadcrumb_item"> 
+                <jalios:link data="<%= itCategory %>">
+                <%= itCategory.getName() %>
+                </jalios:link>
+            </li>
+        </jalios:foreach>
+        
+
+        <li class="ds44-breadcrumb_item" aria-current="location">
+            <span><%= obj.getTitle() %></span>
+        </li>
+    </ul>
+</nav>

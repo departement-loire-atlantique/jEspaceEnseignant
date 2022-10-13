@@ -12,10 +12,12 @@ Fiche obj = (Fiche) data;
 <section class="ds44-card ds44-js-card ds44-card--verticalPicture">
     
         <%-- Vignette Image --%>
-        <% CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, obj.getVisuel().getId()); %>
-        <picture class="ds44-container-imgRatio">
-            <img src="<%= image.getImage() %>" alt="" class="ds44-imgRatio"/>
-        </picture>
+        <% if(Util.notEmpty(itFiche.getVisuel())) {
+          CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, itFiche.getVisuel().getId()); %>
+          <picture class="ds44-container-imgRatio">
+              <img src="<%= image.getImage() %>" alt="" class="ds44-imgRatio"/>
+          </picture>
+          <% } %>
 
         <%-- Vignette Header --%>
         <div class="vignette-header ds44-flex-container">

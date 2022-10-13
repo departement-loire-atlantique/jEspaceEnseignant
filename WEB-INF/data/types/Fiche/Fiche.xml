@@ -58,7 +58,7 @@
     <field name="matiere" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
       <label xml:lang="fr">Matière</label>
     </field>
-    <field name="date" editor="date" required="false" compactDisplay="false" tab="cartel" type="java.util.Date" future="true" past="true" dateOnly="false" dateFormat="short">
+    <field name="date" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
       <label xml:lang="fr">Date</label>
     </field>
     <field name="lieu" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true">
