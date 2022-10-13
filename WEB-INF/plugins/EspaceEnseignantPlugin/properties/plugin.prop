@@ -22,6 +22,7 @@ channel.less.plugins/EspaceEnseignantPlugin/css/recherche.css: plugins/EspaceEns
 channel.css.all.200.fo: plugins/EspaceEnseignantPlugin/css/recherche.css
 
 jcmsplugin.espaceEnseignant.espace.cat.root.chooser-category:
+jcmsplugin.socle.site.header.cat: fde_5290
 
 # désactive le btn par défaut et ajoute un cat custom
 jcmsplugin.socle.site.header.show.rechercher: false
