@@ -25,4 +25,4 @@ jcmsplugin.socle.site.header.show.rechercher: false
 
 # Media Template
 
-media.data-template.vignette.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignette.jsp
+media.data-template.card.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignette.jsp
