@@ -113,6 +113,13 @@
  -->
   <types>
     <type name="Fiche" />
+    
+    
+	 <templates type="PortletQueryForeach">
+	    <template name="vignette" file="doPortletQueryForeachVignette.jsp" usage='box'>
+	      <label xml:lang="fr">Espace Enseignant : gabarit vignette</label>
+	    </template>
+	</templates>
  </types>
   <!-- ============================== Workflows =========================== -->
   <!--                                                                      -->

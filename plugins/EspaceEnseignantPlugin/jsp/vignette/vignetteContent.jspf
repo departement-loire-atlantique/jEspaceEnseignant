@@ -1,52 +1,30 @@
+<%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 <% 
-ArrayList<Category> listPeriode = new ArrayList<Category>();
-if (Util.notEmpty(itFiche.getPeriode(loggedMember))) {  
-    String catId = channel.getProperty("jcmsplugin.espaceEnseignant.espace.cat.root");
-    if(Util.notEmpty(catId)) {
-        // cherche période principale de la fiche
-        Category catPeriode = channel.getCategory(catId); //cat de la catégorie période
-        for(Category itCat : itFiche.getPeriode(loggedMember)) { //liste des catégories de la fiche
-            boolean isParent = false;
-            Category catParent = itCat.getParent();
-            while(!isParent) {
-                if(Util.notEmpty(catParent.getParent()) && catParent.getParent().getId().equals(catPeriode.getId())) {
-                    listPeriode.add(catParent); //ajoute la période à la liste
-                    isParent = true; //fin on trouve le parent
-                } else {
-                    if(Util.notEmpty(catParent.getParent())) {
-                        catParent = catParent.getParent(); //prochain parent
-                    } else {
-                        isParent = true; //sinon fin
-                    }
-                }
-            }
-        }
-    }
-}
+ArrayList<Category> listPeriode = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, obj);
 %>
 
-    <% if (Util.notEmpty(itFiche.getSite(loggedMember))) { %>
-        <jalios:foreach collection="<%= itFiche.getSite(loggedMember) %>" type="Category" name="itCategory" >
+    <% if (Util.notEmpty(obj.getSite(loggedMember))) { %>
+        <jalios:foreach collection="<%= obj.getSite(loggedMember) %>" type="Category" name="itCategory" >
             <p class="ds44-docListElem ds44-mt-std"> 
             <i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>
             <%= itCategory.getName() %> </p>
         </jalios:foreach>
     <% } %>
-    <% if (Util.notEmpty(itFiche.getNiveau(loggedMember))) { %>
-        <jalios:foreach collection="<%= itFiche.getNiveau(loggedMember) %>" type="Category" name="itCategory" >
+    <% if (Util.notEmpty(obj.getNiveau(loggedMember))) { %>
+        <jalios:foreach collection="<%= obj.getNiveau(loggedMember) %>" type="Category" name="itCategory" >
             <p class="ds44-docListElem ds44-mt-std"> 
             <i class="icon icon-user-group ds44-docListIco" aria-hidden="true"></i>
             <%= itCategory.getName() %> </p>
         </jalios:foreach>
     <% } %>
-    <% if (Util.notEmpty(itFiche.getPeriode(loggedMember))) { %>
+    <% if (Util.notEmpty(obj.getPeriode(loggedMember))) { %>
         <jalios:foreach collection="<%= listPeriode %>" type="Category" name="itCategory" >
             <p class="ds44-docListElem ds44-mt-std"> 
             <i class="icon icon-tag  ds44-docListIco" aria-hidden="true"></i>
             <%= itCategory.getName() %> </p>
         </jalios:foreach>
     <% } %>  
-    <% if (Util.notEmpty(itFiche.getDateDeVie()) && Util.notEmpty(itFiche.getDateDeMort())) { %>
+    <% if (Util.notEmpty(obj.getDateDeVie()) && Util.notEmpty(obj.getDateDeMort())) { %>
         <p class="ds44-docListElem ds44-mt-std"> 
             <i class="icon icon-date  ds44-docListIco" aria-hidden="true"></i>
             Du 
@@ -55,8 +33,8 @@ if (Util.notEmpty(itFiche.getPeriode(loggedMember))) {
             <jalios:date date='<%= obj.getDateDeMort() %>' format='<%= "long" %>'/> 
         </p>
     <% } %>
-    <% if (Util.notEmpty(itFiche.getTypologie(loggedMember))) { %>
-        <jalios:foreach collection="<%= itFiche.getTypologie(loggedMember) %>" type="Category" name="itCategory" >
+    <% if (Util.notEmpty(obj.getTypologie(loggedMember))) { %>
+        <jalios:foreach collection="<%= obj.getTypologie(loggedMember) %>" type="Category" name="itCategory" >
             <p class="ds44-docListElem ds44-mt-std vignette-type"> 
                 <%= itCategory.getName() %> 
             </p>

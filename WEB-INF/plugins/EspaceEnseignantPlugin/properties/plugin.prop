@@ -22,3 +22,7 @@ jcmsplugin.espaceEnseignant.espace.cat.root.chooser-category:
 
 # désactive le btn par défaut et ajoute un cat custom
 jcmsplugin.socle.site.header.show.rechercher: false
+
+# Media Template
+
+media.data-template.vignette.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignette.jsp
