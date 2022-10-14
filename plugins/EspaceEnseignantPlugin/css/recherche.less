@@ -1,7 +1,39 @@
-.ds44-select-list_elem.sous-thematique {
-    padding-left: 2em;
+@import 'variables/ui-kit-fonts.less';
+@import 'variables/ui-kit-colors.less';
+
+.pub-action-toggler-fde_5286 {
+    #content {
+        padding-top: 2rem;
+        .ds44-lightBG {
+            display: none;
+        }
+    }
 }
-.ds44-form__container.ds44-checkBox-radio_list {
-    display: flex;
-    justify-content: space-between;
+
+.rechercheGenerale {
+    .ds44-facette .ds44-facette-body {
+        header {
+            text-align: left;
+            
+            .h2-like {
+                font: normal normal bold 34px/43px Muli;
+                background: none;
+                border-bottom: solid 1px @blue-light-color;
+            }
+            
+            .ds44-component-chapo {
+                font: normal normal normal 16px/24px Muli;
+                max-width: 100%;
+            }
+        }
+        .ds44-facetteContainer.ds44-theme .ds44-fieldContainer {
+            width: auto;
+        }
+    }
+    
+    .ds44-results{
+        .h3-like.mbs {
+            font: normal normal bold 28px/30px Muli;
+        }
+    }
 }
