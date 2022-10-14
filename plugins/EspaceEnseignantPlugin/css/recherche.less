@@ -1,7 +1,8 @@
 @import 'variables/ui-kit-fonts.less';
 @import 'variables/ui-kit-colors.less';
 
-.pub-action-toggler-fde_5286 {
+.pub-action-toggler-fde_5286,
+.pub-action-toggler-fde_5328 {
     #content {
         padding-top: 2rem;
         .ds44-lightBG {
@@ -26,8 +27,15 @@
                 max-width: 100%;
             }
         }
+        .ds44-facetteContainer.ds44-theme .ds44-fieldContainer--select .ds44-select-container {
+            width: max-content;
+        }
         .ds44-facetteContainer.ds44-theme .ds44-fieldContainer {
             width: auto;
+            
+            .ds44-champsLies > .ds44-form__container {
+                width: auto;
+            }
         }
     }
     
