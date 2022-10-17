@@ -1,6 +1,7 @@
 <%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 <%  
-ArrayList<Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, obj);
+//ArrayList<Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, obj);
+Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCategory(loggedMember, obj);
 %>
 <div class="ds44-container-large">
     <section class="ds44-card ds44-js-card ds44-card--verticalPicture vignette-cartel">
@@ -19,6 +20,8 @@ ArrayList<Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeParent
         <div class="ds44-card__section vignette-cartel-body">
           <div class="ds44-innerBoxContainer">
             <div class="ds44-flex-container">
+
+                <%-- LEFT --%>
                 <div class="ds44-colLeft">
 
                   <% if (Util.notEmpty(obj.getTypologie(loggedMember))) { %>
@@ -31,17 +34,16 @@ ArrayList<Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeParent
                   <% } %>
 
                   <% if (Util.notEmpty(obj.getPeriode(loggedMember))) { %>
-                    <jalios:foreach collection="<%= listPeriodeCartel %>" type="Category" name="itCategory" >
-                        <p class="ds44-docListElem ds44-mt-std"> 
-                          <i class="icon icon-directory  ds44-docListIco" aria-hidden="true"></i>
-                          <%= itCategory.getName() %> 
-                        </p>
-                    </jalios:foreach>
-                    <jalios:foreach collection="<%= obj.getPeriode(loggedMember) %>" type="Category" name="itCategory" >
-                      <p class="ds44-docListElem"> 
-                        <%= itCategory.getName() %>
+                    <% for (Map.Entry<Category, Category> entry : listPeriodeCartel.entrySet()) { %>
+                      <p class="ds44-docListElem ds44-mt-std"> 
+                        <i class="icon icon-directory  ds44-docListIco" aria-hidden="true"></i>
+                        <%= entry.getKey().getName() %> 
                       </p>
-                    </jalios:foreach>
+                      <p class="ds44-docListElem"> 
+                        <%= entry.getValue().getName() %>
+                      </p>
+                    
+                    <% } %>
                   <% } %>  
 
                   <% if (Util.notEmpty(obj.getPlan(userLang))) { %>
@@ -54,6 +56,8 @@ ArrayList<Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeParent
                   <% } %>
 
                 </div>
+
+                <%-- RIGHT --%>
                 <div class="ds44-colRight cartel-column">
                 <% if(EspaceEnseignantHandler.isCartel(userLang, obj)) { %>
                   <p class="ds44-docListElem ds44-mt-std"> 
@@ -74,8 +78,18 @@ ArrayList<Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeParent
                       <% } %>
                     </p>
                     <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getDateCartel(userLang))) { %>
+                        <%= obj.getDateCartel(userLang) %>
+                      <% } %>
+                    </p>
+                    <p class="ds44-docListElem"> 
                       <% if (Util.notEmpty(obj.getLieu(userLang))) { %>
                         <%= obj.getLieu(userLang) %>
+                      <% } %>
+                    </p>
+                    <p class="ds44-docListElem"> 
+                      <% if (Util.notEmpty(obj.getDimension(userLang))) { %>
+                        <%= obj.getDimension(userLang) %>
                       <% } %>
                     </p>
                     <p class="ds44-docListElem"> 
