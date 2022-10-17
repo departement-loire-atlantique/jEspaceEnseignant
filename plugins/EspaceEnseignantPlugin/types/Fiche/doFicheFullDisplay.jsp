@@ -16,26 +16,31 @@
   jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
   %>
 
-  <div class="fiche-page-header">
-    <div class="fiche-page-header-bg"></div>
+    <%-- FICHE TITLE HEADER --%>
+    <div class="fiche-page-header">
+      <div class="fiche-page-header-bg"></div>
 
-    <div class="fiche-page-header-title">
-      <div class="spacer"></div>
-      <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
-      <h1 class="bold-txt margin-txt">
-        <%= obj.getTitle() %>
-      </h1>
-      <p class="page-subtitle">
-      Mis à jour le 
-        <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
-      </p>
+      <div class="fiche-page-header-title">
+        <div class="spacer"></div>
+        <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
+        <h1 class="bold-txt margin-txt">
+          <%= obj.getTitle() %>
+        </h1>
+        <p class="page-subtitle">
+        Mis à jour le 
+          <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
+        </p>
+      </div>
+
+      
     </div>
 
-    
-  </div>
+    <%-- FICHE CARTEL --%>
+    <div class="fiche-cartel">
+      <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignetteCartel/vignetteCartel.jspf' %>
+    </div>
 
-  <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignetteCartel/vignetteCartel.jspf' %>
-
+    <%-- FICHE BODY --%>
     <div class="fiche-page-body">
       <% if (Util.notEmpty(obj.getDescription(userLang))) { %>
         <jalios:wysiwyg data='<%= obj %>' field='description'><%= obj.getDescription(userLang) %></jalios:wysiwyg>            
@@ -46,59 +51,69 @@
         <jalios:wysiwyg data='<%= obj %>' field='scenarioPedagogique'><%= obj.getScenarioPedagogique(userLang) %></jalios:wysiwyg>            
       <% } %>
 
+      <%-- FICHE FOCUS --%>
+      <% if (Util.notEmpty(obj.getImageFocus()) && Util.notEmpty(obj.getTexteLibre())) { %>
       <div class="fiche-focus">
-      <div class="focus-btn">
-        <button class="ds44-btnStd ds44-btn--invert">
-          <span class="ds44-btnInnerText">Voir les focus</span>
-          <i class="icon icon-plus" aria-hidden="true"></i>
-        </button>
-      </div>
-        <h3 class="h3-ens"> Observez à la loupe </h3>
-          <% 
-          if (Util.notEmpty(obj.getImageFocus()) && Util.notEmpty(obj.getTexteLibre())) { 
-              ArrayList<String> imageFocus = new ArrayList<>(obj.getImageFocus());
-              ArrayList<String> texteLibre = new ArrayList<>(obj.getTexteLibre());
-              for(int i=0; i < imageFocus.size(); i++) {
-                if (Util.notEmpty(texteLibre.get(i))) {
-                  if(i%2==0) { %>
 
-                    <div class="ds44-flex-container">
-                      <div class="ds44-colLeft">
-                        <picture class="ds44-container-imgRatio">
-                            <img src="<%= imageFocus.get(i) %>" alt="" class="ds44-imgRatio"/>
-                        </picture>
-                      </div>
-                      <div class="ds44-colRight">
-                        <jalios:wysiwyg data='<%= obj %>' field='texteLibre'>
-                          <%= texteLibre.get(i) %>
-                        </jalios:wysiwyg>
-                      </div>
-                    </div>
-                    <hr class="mbs"aria-hidden="true" />
+        <section class="ds44-inner-container">
+        
+          <p role="heading" aria-level="1" class="focus-btn ">
+            <button class="ds44-collapser_button ds44-btnStd ds44-btn--invert">
+              <span class="ds44-btnInnerText">Voir les focus</span>
+              <i class="icon icon-plus" aria-hidden="true"></i>
+            </button>
+          </p>
+          <div class="ds44-collapser_content">
+            <div class="ds44-collapser_content--level2">
+              <h3 class="h3-ens"> Observez à la loupe </h3>
+                <% 
+                  ArrayList<String> imageFocus = new ArrayList<>(obj.getImageFocus());
+                  ArrayList<String> texteLibre = new ArrayList<>(obj.getTexteLibre());
+                  for(int i=0; i < imageFocus.size(); i++) {
+                    if (Util.notEmpty(texteLibre.get(i))) {
+                      if(i%2==0) { %>
 
-                  <% } else { %>
+                        <div class="ds44-flex-container">
+                          <div class="ds44-colLeft">
+                            <picture class="ds44-container-imgRatio">
+                                <img src="<%= imageFocus.get(i) %>" alt="" class="ds44-imgRatio"/>
+                            </picture>
+                          </div>
+                          <div class="ds44-colRight">
+                            <jalios:wysiwyg data='<%= obj %>' field='texteLibre'>
+                              <%= texteLibre.get(i) %>
+                            </jalios:wysiwyg>
+                          </div>
+                        </div>
+                        <hr class="mbs"aria-hidden="true" />
 
-                    <div class="ds44-flex-container">
-                      <div class="ds44-colLeft">
-                        <jalios:wysiwyg data='<%= obj %>' field='texteLibre'>
-                          <%= texteLibre.get(i) %>
-                        </jalios:wysiwyg>
-                      </div>
-                      <div class="ds44-colRight">
-                        <picture class="ds44-container-imgRatio">
-                            <img src="<%= imageFocus.get(i) %>" alt="" class="ds44-imgRatio"/>
-                        </picture>
-                      </div>
-                    </div>
-                    <hr class="mbs"aria-hidden="true" />
-                  <%
+                      <% } else { %>
+
+                        <div class="ds44-flex-container">
+                          <div class="ds44-colLeft">
+                            <jalios:wysiwyg data='<%= obj %>' field='texteLibre'>
+                              <%= texteLibre.get(i) %>
+                            </jalios:wysiwyg>
+                          </div>
+                          <div class="ds44-colRight">
+                            <picture class="ds44-container-imgRatio">
+                                <img src="<%= imageFocus.get(i) %>" alt="" class="ds44-imgRatio"/>
+                            </picture>
+                          </div>
+                        </div>
+                        <hr class="mbs"aria-hidden="true" />
+                      <%
+                      }
+                    }
                   }
-                }
-              }
-          }
-          %>
+                %>
+            </div>
+          </div>
+        </section>
       </div>
+      <% } %>
 
+      <%-- MOTS CLES --%>
       <% if (Util.notEmpty(obj.getMotsCles(loggedMember))) { %>
         <h3 class="h3-ens"> Mots clefs </h3>
         <div class="fiche-mot-clef">
@@ -111,6 +126,7 @@
       <% } %>
     </div>
 
+    <%-- RESSOURCES ASSOCIEES --%>
     <div class="fiche-page-footer ds44-wave-white">
         <% if (Util.notEmpty(obj.getRessourcesAssocies())) { %>
         <h3 class="h3-ens underline center-txt"> Ressources Associes </h3>

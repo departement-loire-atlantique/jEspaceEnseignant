@@ -153,8 +153,13 @@ H3.title-overlay {
     .vignette-cartel-body {
         background-color: @main-color;
 
+        .ds44-flex-container {
+            margin-bottom: 3rem;
+        }
+
         .cartel-column {
             text-align: left;
+            align-self: flex-start;
         }
     }
 
@@ -182,7 +187,7 @@ H3.title-overlay {
         position: relative;
         z-index: 1;
         margin-bottom: 2rem;
-        margin-left: 20rem;
+        margin-left: 25rem;
 
         .page-subtitle {
             color: grey;
@@ -190,9 +195,14 @@ H3.title-overlay {
     }
 }
 
-.fiche-page-body {
-    margin: 2rem 15rem;
+.fiche-cartel {
+    margin: 0 10rem;
 }
+
+.fiche-page-body {
+    margin: 5rem 25rem;
+}
+
 
 .fiche-mot-clef {
     display: flex;
@@ -218,6 +228,10 @@ H3.title-overlay {
 .fiche-focus {
     margin: 5rem 0;
 
+    .ds44-collapser_content {
+        background-color: white;
+    }
+
     .ds44-flex-container {
         .ds44-colLeft {
             flex: 1 1 !important;
@@ -236,7 +250,14 @@ H3.title-overlay {
         margin: 20px 0;
     }
 
-    .focus-btn {
-        text-align: center;
+    .ds44-inner-container {
+        .focus-btn {
+            max-width: fit-content;
+            .ds44-collapser_button {
+                i {
+                    position: static;
+                }  
+            }
+        }
     }
 }
