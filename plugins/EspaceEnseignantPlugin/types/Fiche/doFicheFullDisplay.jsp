@@ -53,9 +53,9 @@
 
       <%-- FICHE FOCUS --%>
       <% if (Util.notEmpty(obj.getImageFocus()) && Util.notEmpty(obj.getTexteLibre())) { %>
-      <div class="fiche-focus">
+      <div class="fiche-focus"> 
 
-        <%-- <section class="ds44-inner-container">
+         <section class="ds44-inner-container">
         
           <p role="heading" aria-level="1" class="focus-btn ">
             <button class="ds44-collapser_button ds44-btnStd ds44-btn--invert">
@@ -67,21 +67,21 @@
             <div class="ds44-collapser_content--level2">
               <h3 class="h3-ens"> Observez à la loupe </h3>
                 <% 
-                  ArrayList<String> imageFocus = new ArrayList<String>(obj.getImageFocus());
-                  ArrayList<String> texteLibre = new ArrayList<String>(obj.getTexteLibre());
-                  for(int i=0; i < imageFocus.size(); i++) {
-                    if (Util.notEmpty(texteLibre.get(i))) {
+                  String[] imageFocus = obj.getImageFocus();
+                  String[] texteLibre = obj.getTexteLibre();
+                  for(int i=0; i < imageFocus.length; i++) {
+                    if (Util.notEmpty(texteLibre[i])) {
                       if(i%2==0) { %>
 
                         <div class="ds44-flex-container">
                           <div class="ds44-colLeft">
                             <picture class="ds44-container-imgRatio">
-                                <img src="<%= imageFocus.get(i) %>" alt="" class="ds44-imgRatio"/>
+                                <img src="<%= imageFocus[i] %>" alt="" class="ds44-imgRatio"/>
                             </picture>
                           </div>
                           <div class="ds44-colRight">
                             <jalios:wysiwyg data='<%= obj %>' field='texteLibre'>
-                              <%= texteLibre.get(i) %>
+                              <%= texteLibre[i] %>
                             </jalios:wysiwyg>
                           </div>
                         </div>
@@ -92,12 +92,12 @@
                         <div class="ds44-flex-container">
                           <div class="ds44-colLeft">
                             <jalios:wysiwyg data='<%= obj %>' field='texteLibre'>
-                              <%= texteLibre.get(i) %>
+                              <%= texteLibre[i] %>
                             </jalios:wysiwyg>
                           </div>
                           <div class="ds44-colRight">
                             <picture class="ds44-container-imgRatio">
-                                <img src="<%= imageFocus.get(i) %>" alt="" class="ds44-imgRatio"/>
+                                <img src="<%= imageFocus[i] %>" alt="" class="ds44-imgRatio"/>
                             </picture>
                           </div>
                         </div>
@@ -110,7 +110,7 @@
             </div>
           </div>
         </section>
-      </div> --%>
+      </div>
       <% } %>
 
       <%-- MOTS CLES --%>

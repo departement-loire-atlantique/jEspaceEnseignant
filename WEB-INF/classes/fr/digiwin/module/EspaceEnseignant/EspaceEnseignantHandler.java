@@ -58,4 +58,14 @@ public class EspaceEnseignantHandler {
         }
         return listTypo;
     }
+    
+    public static boolean isCartel(String userLang, Fiche fiche) {
+    	return Util.notEmpty(fiche.getTitreCartel(userLang)) ||
+    			Util.notEmpty(fiche.getNomDeLartiste(userLang)) ||
+    			Util.notEmpty(fiche.getMatiere(userLang)) ||
+    			Util.notEmpty(fiche.getLieu(userLang)) ||
+    			Util.notEmpty(fiche.getLegs(userLang)) ||
+    			Util.notEmpty(fiche.getNinventaire(userLang)) ||
+    			Util.notEmpty(fiche.getCredits(userLang));
+    }
 }
