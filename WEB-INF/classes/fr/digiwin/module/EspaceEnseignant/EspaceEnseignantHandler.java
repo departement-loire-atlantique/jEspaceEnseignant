@@ -1,6 +1,8 @@
 package fr.digiwin.module.EspaceEnseignant;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 import com.jalios.jcms.Category;
 import com.jalios.jcms.Channel;
 import com.jalios.jcms.Member;
@@ -37,5 +39,23 @@ public class EspaceEnseignantHandler {
             }
         }
         return listPeriode;
+    }
+
+    public static ArrayList<Category> getTypologieList(Member loggedMember, Fiche fiche) { 
+        ArrayList<Category> listTypo = new ArrayList<Category>();
+        if (Util.notEmpty(fiche.getTypologie(loggedMember))) {  
+            String catId = channel.getProperty("jcmsplugin.espaceEnseignant.typologie.cat.root");
+            if(Util.notEmpty(catId)) {
+                for(Category itCat : fiche.getTypologie(loggedMember)) {
+                	Category cat = itCat;
+	                while(Util.notEmpty(cat.getParent()) && !cat.getId().equals(catId)) {
+	                	listTypo.add(cat);
+	                    cat = cat.getParent();
+	                }
+                }
+            }
+            Collections.reverse(listTypo);
+        }
+        return listTypo;
     }
 }

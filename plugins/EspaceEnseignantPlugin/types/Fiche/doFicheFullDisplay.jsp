@@ -55,7 +55,7 @@
       <% if (Util.notEmpty(obj.getImageFocus()) && Util.notEmpty(obj.getTexteLibre())) { %>
       <div class="fiche-focus">
 
-        <section class="ds44-inner-container">
+        <%-- <section class="ds44-inner-container">
         
           <p role="heading" aria-level="1" class="focus-btn ">
             <button class="ds44-collapser_button ds44-btnStd ds44-btn--invert">
@@ -67,8 +67,8 @@
             <div class="ds44-collapser_content--level2">
               <h3 class="h3-ens"> Observez à la loupe </h3>
                 <% 
-                  ArrayList<String> imageFocus = new ArrayList<>(obj.getImageFocus());
-                  ArrayList<String> texteLibre = new ArrayList<>(obj.getTexteLibre());
+                  ArrayList<String> imageFocus = new ArrayList<String>(obj.getImageFocus());
+                  ArrayList<String> texteLibre = new ArrayList<String>(obj.getTexteLibre());
                   for(int i=0; i < imageFocus.size(); i++) {
                     if (Util.notEmpty(texteLibre.get(i))) {
                       if(i%2==0) { %>
@@ -110,7 +110,7 @@
             </div>
           </div>
         </section>
-      </div>
+      </div> --%>
       <% } %>
 
       <%-- MOTS CLES --%>
@@ -127,16 +127,16 @@
     </div>
 
     <%-- RESSOURCES ASSOCIEES --%>
-    <div class="fiche-page-footer ds44-wave-white">
-        <% if (Util.notEmpty(obj.getRessourcesAssocies())) { %>
+    <% if (Util.notEmpty(obj.getRessourcesAssocies())) { %>
+      <div class="fiche-page-footer ds44-wave-white">
         <h3 class="h3-ens underline center-txt"> Ressources Associes </h3>
         <% ArrayList<Fiche> tab = new ArrayList<>();%>
-          <jalios:foreach name="itData" type="generated.Fiche" collection="<%= obj.getRessourcesAssocies() %>">
+          <jalios:foreach name="itData" type="generated.Fiche" array="<%= obj.getRessourcesAssocies() %>">
               <% tab.add(itData); %>
           </jalios:foreach>
           <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCarrousel.jspf' %>
-        <% } %>
-    </div>
+      </div>
+    <% } %>
 
 
 </div><%-- **********4A616C696F73204A434D53 *** SIGNATURE BOUNDARY * DO NOT EDIT ANYTHING BELOW THIS LINE *** --%><%
