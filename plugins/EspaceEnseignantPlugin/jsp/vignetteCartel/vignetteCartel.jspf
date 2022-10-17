@@ -112,11 +112,11 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
                 </div>
             </div>
             <button class="ds44-btnStd ds44-btn--invert">
-              <span class="ds44-btnInnerText">Télécharger</span>
+              <span class="ds44-btnInnerText"><%= glp("jcmsplugin.socle.fichepublication.telecharger") %></span>
               <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
             </button>
             <button class="ds44-btnStd">
-              <span class="ds44-btnInnerText">Ajouter à ma sélection</span>
+              <span class="ds44-btnInnerText"><%= glp("jcmsplugin.espaceEnseignant.fiche.AjoutSel") %></span>
               <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
