@@ -1,13 +1,9 @@
-<% 
-jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
-%>
-
 <div class="ds44-container-large">
     <div class="mod--hidden ds44-list swipper-carousel-wrap ds44-posRel" data-nb-visible-slides="4">
         <div class="swiper-container">
             <ul class="swiper-wrapper ds44-list grid-4-small-1 has-gutter-l ds44-carousel-swiper">
             
-                <jalios:foreach array="<%= tab %>" name="itFiche" type="Fiche">
+                <jalios:foreach collection="<%= tab %>" name="itFiche" type="Fiche">
                     <li class="swiper-slide vignette">
                         <section class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext">
 
