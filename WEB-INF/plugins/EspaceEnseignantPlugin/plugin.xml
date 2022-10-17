@@ -156,6 +156,9 @@
     <java package="com.example.jcmsplugin.espaceenseignant" />
   </java-classes>
  -->
+ <java-classes>
+    <java package="fr.digiwin.module.EspaceEnseignant" />
+ </java-classes>
   <!-- ========================== Plugin Components ======================= -->
   <!--                                                                      -->
   <!-- Plugin Components are Java classes implementing the PluginComponent  -->
@@ -450,6 +453,7 @@
     <directory path="css" />
     <directory path="docs" />
     <directory path="jsp" />
+    <directory path="templates" />
     <!--    
     <directory path="images" />
     -->
