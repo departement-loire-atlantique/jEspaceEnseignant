@@ -17,7 +17,7 @@ Fiche obj = (Fiche) data;
 		class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext">
 
 		<%-- Vignette Image --%>
-		<% if(Util.notEmpty(itFiche.getVisuel())) {
+		<% if(Util.notEmpty(obj.getVisuel())) {
 			CarouselElement image = (CarouselElement) channel.getData(CarouselElement.class, obj.getVisuel().getId()); 
 			%>
 			<picture class="ds44-container-imgRatio"> <img
