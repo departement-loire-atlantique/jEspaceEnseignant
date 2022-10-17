@@ -446,7 +446,7 @@
     <directory path="css" />
     <directory path="docs" />
     <directory path="jsp" />
-    <directory path="template" />
+    <directory path="templates" />
     <!--    
     <directory path="images" />
     -->
