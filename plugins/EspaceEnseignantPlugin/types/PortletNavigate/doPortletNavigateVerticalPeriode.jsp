@@ -29,6 +29,7 @@ if(isExtraSmall){
 
 %>
 <div class="verticalMenu periodeMenu">
+    <h2 class="h2-like"><%= box.getDisplayTitle(userLang) %></h2>
   <jalios:menu id="<%= rootCategory.getId()  %>" name='<%= "vertical-" + verticalCounter %>' menuResource="vertical">
     <%
     MenuInfoFilter menuInfoFilter = (MenuInfoFilter) request.getAttribute(MenuInfoFilter.MENU_INFO_FILTER_ATTR);
@@ -40,23 +41,28 @@ if(isExtraSmall){
         %><jalios:include jsp="jcore/menu/doIterateSubMenu.jsp" /><%
         request.setAttribute(MenuInfo.MENU_INFO_ATTR, menuInfo);
       } else {
-            Category itCat = channel.getCategory(child.getId());%>
-   <section class="ds44-card ds44-js-card ds44-card--horizontal">
-        <div class="ds44-flex-container">
-            <jalios:if predicate="<%= Util.notEmpty(itCat.getImage()) %>">
-                <div class="ds44-card__section--horizontal--img<%= styleVignette %> <%= colorTheme ? "ds44-theme" : ""%> <%= paddingVignette %>">
-                    <picture class="ds44-container-imgRatio ds44-container-imgRatio--carre">
-                        <img class="ds44-imgRatio" src="<%= itCat.getImage() %>" alt=''>
-                    </picture>
-                </div>
-            </jalios:if>
-            <div class="ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center">
-                <p role="heading" aria-level="2" class="ds44-card__title"><a href="#" class="ds44-card__globalLink"><%= itCat.getName() %></a></p>
-            </div>
-        </div>
-    </section><%         
+        Category itCat = channel.getCategory(child.getId());
+        String[] paramNames = { "cidsform-element-fde_5280fde_5278[value]", "cidsform-element-fde_5280fde_5278[text]"};
+        String[] paramValues = { itCat.getId(), itCat.getName() }; %>
+		<section class="ds44-card ds44-js-card ds44-card--horizontal">
+		  <div class="ds44-flex-container">
+		      <jalios:if predicate="<%= Util.notEmpty(itCat.getImage()) %>">
+		          <div class="ds44-card__section--horizontal--img<%= styleVignette %> <%= colorTheme ? "ds44-theme" : ""%> <%= paddingVignette %>">
+		              <picture class="ds44-container-imgRatio ds44-container-imgRatio--carre">
+		              <img class="ds44-imgRatio" src="<%= itCat.getImage() %>" alt=''>
+		              </picture>
+		          </div>
+		      </jalios:if>                    
+			  <div class="ds44-card__section--horizontal ds44-flex-valign-center ds44-flex-align-center">
+			      <p role="heading" aria-level="2" class="ds44-card__title">
+			      <jalios:link id="fde_5286" paramNames='<%= paramNames %>' paramValues='<%= paramValues %>' css="ds44-card__globalLink">
+			      <%= itCat.getName() %>
+			      </jalios:link>
+			      </p>
+			  </div> 
+	      </div>
+        </section><%         
       }
-    }
-    %>
+    } %>
   </jalios:menu>
 </div>
