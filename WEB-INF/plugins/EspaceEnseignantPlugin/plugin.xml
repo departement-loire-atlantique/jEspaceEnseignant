@@ -127,6 +127,11 @@
 	      <label xml:lang="fr">Espace Enseignant : gabarit vignette carrousel</label>
 	    </template>
 	</templates>
+    <templates type="PortletNavigate">
+        <template name="navigationPeriode" file="doPortletNavigateVerticalPeriode.jsp" usage='box'>
+          <label xml:lang="fr">Espace Enseignant : gabarit navigation par période</label>
+        </template>      
+    </templates>
  </types>
   <!-- ============================== Workflows =========================== -->
   <!--                                                                      -->

@@ -36,3 +36,5 @@ media.data-template.card.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileV
 
 # Recherche générale
 $jcmsplugin.socle.recherche.facettes.portal: fde_5287
+
+jcmsplugin.socle.portlet.filariane.id: por_5371
