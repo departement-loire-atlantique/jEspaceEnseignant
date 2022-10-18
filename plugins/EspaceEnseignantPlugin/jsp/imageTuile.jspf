@@ -1,0 +1,27 @@
+<% if(Util.notEmpty(obj) && Util.notEmpty(obj.getVisuel())) { 
+    CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, obj.getVisuel().getId()); 
+%>
+    
+<div class="ds44-card ds44-js-card ds44-legendeContainer ds44-container-imgRatio ds44-container-imgRatio--tuileMiseEnAvant">
+	<img src="<%= image.getImage() %>" alt="" class="ds44-w100 ds44-imgRatio">
+	<div class="ds44-theme ds44-innerBoxContainer ds44-blockAbsolute ds44-blockAbsolute--tl">
+    <p role="heading" aria-level="2" class="ds44-card__title"><a href="#" class="ds44-card__globalLink"><%= obj.getTitle() %></a></p>
+    <% if(Util.notEmpty(obj.getDateDeVie()) && Util.notEmpty(obj.getDateDeMort())) {%>
+    <p class="ds44-cardDate">
+        Du 
+        <jalios:date date='<%= obj.getDateDeVie() %>' format='<%= "long" %>'/> 
+        au 
+        <jalios:date date='<%= obj.getDateDeMort() %>' format='<%= "long" %>'/> 
+    </p>
+    <% } %>
+    <% if (Util.notEmpty(obj.getSite(loggedMember))) { %>
+    <jalios:foreach collection="<%= obj.getSite(loggedMember) %>" type="Category" name="itCategory" >
+        <p class="ds44-cardLocalisation">
+            <i class="icon icon-marker" aria-hidden="true"></i>
+            <span class="ds44-iconInnerText"><%= itCategory.getName() %> </span>
+        </p>
+    </jalios:foreach>
+    <% } %>
+	</div>
+</div>
+<% } %>

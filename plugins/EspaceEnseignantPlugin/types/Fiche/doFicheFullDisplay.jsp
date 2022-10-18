@@ -37,7 +37,7 @@
 
     <%-- FICHE CARTEL --%>
     <div class="fiche-cartel">
-      <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignetteCartel/vignetteCartel.jspf' %>
+      <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCartel.jspf' %>
     </div>
 
     <%-- FICHE BODY --%>

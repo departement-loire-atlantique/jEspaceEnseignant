@@ -31,8 +31,9 @@ jcmsplugin.socle.site.header.show.rechercher: false
 
 # Media Template
 
-media.data-template.vignetteCarrousel.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignetteCarrousel.jsp
 media.data-template.card.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignette.jsp
+media.data-template.vignetteCarrousel.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignetteCarrousel.jsp
+media.data-template.carrouselActu.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignetteActu.jsp
 
 # Recherche générale
 $jcmsplugin.socle.recherche.facettes.portal: fde_5287

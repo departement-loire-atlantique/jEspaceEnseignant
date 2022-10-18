@@ -119,12 +119,17 @@
 	      <label xml:lang="fr">Espace Enseignant : Fiche FullDisplay</label>
 	    </template>
 	</templates>
+    <templates type="PortletCarousel">
+        <template name="carouselActu" file="doPortletCarouselSliderThreePanels.jsp" usage='box'>
+          <label xml:lang="fr">Espace Enseignant : gabarit carrousel Actualité</label>
+        </template>      
+        <template name="derniersAjouts" file="doPortletCarouselSliderFourPanels.jsp" usage='box'>
+          <label xml:lang="fr">Espace Enseignant : gabarit carrousel derniers ajouts</label>
+        </template>  
+    </templates>
 	 <templates type="PortletQueryForeach">
 	    <template name="vignette" file="doPortletQueryForeachVignette.jsp" usage='box'>
 	      <label xml:lang="fr">Espace Enseignant : gabarit vignette</label>
-	    </template>
-      <template name="vignetteCarrousel" file="doPortletQueryForeachVignetteCarrousel.jsp" usage='box'>
-	      <label xml:lang="fr">Espace Enseignant : gabarit vignette carrousel</label>
 	    </template>
 	</templates>
     <templates type="PortletNavigate">
