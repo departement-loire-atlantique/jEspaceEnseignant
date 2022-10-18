@@ -1,6 +1,5 @@
 <%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 <%  
-//ArrayList<Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, obj);
 Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCategory(loggedMember, obj);
 %>
 <div class="ds44-container-large">

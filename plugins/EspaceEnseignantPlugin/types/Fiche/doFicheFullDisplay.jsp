@@ -75,8 +75,8 @@
 
                         <div class="ds44-flex-container">
                           <div class="ds44-colLeft">
-                            <picture class="ds44-container-imgRatio">
-                                <img src="<%= imageFocus[i] %>" alt="" class="ds44-imgRatio"/>
+                            <picture class="">
+                                <img src="<%= imageFocus[i] %>" alt="" class=""/>
                             </picture>
                           </div>
                           <div class="ds44-colRight">
@@ -96,8 +96,8 @@
                             </jalios:wysiwyg>
                           </div>
                           <div class="ds44-colRight">
-                            <picture class="ds44-container-imgRatio">
-                                <img src="<%= imageFocus[i] %>" alt="" class="ds44-imgRatio"/>
+                            <picture class="">
+                                <img src="<%= imageFocus[i] %>" alt="" class=""/>
                             </picture>
                           </div>
                         </div>
@@ -129,7 +129,7 @@
     <%-- RESSOURCES ASSOCIEES --%>
     <% if (Util.notEmpty(obj.getRessourcesAssocies())) { %>
       <div class="fiche-page-footer ds44-wave-white">
-        <h3 class="h3-ens underline center-txt"> Ressources Associes </h3>
+        <h3 class="h3-ens underline center-txt"> Ressources Associees </h3>
         <% ArrayList<Fiche> tab = new ArrayList<>();%>
           <jalios:foreach name="itData" type="generated.Fiche" array="<%= obj.getRessourcesAssocies() %>">
               <% tab.add(itData); %>
