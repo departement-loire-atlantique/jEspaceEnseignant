@@ -45,8 +45,7 @@ Fiche obj = (Fiche) data;
 	<div class="ds44-card__section vignette-body">
 
 		<div class="ds44-innerBoxContainer">
-			<p role="heading" aria-level="2" class="ds44-cardTitle ds44-card__title">
-			
+			<p role="heading" aria-level="2" class="ds44-card__title">
 				<jalios:link data="<%= obj %>" css="ds44-card__globalLink">
 					<%=obj.getTitle()%>
 				</jalios:link>
