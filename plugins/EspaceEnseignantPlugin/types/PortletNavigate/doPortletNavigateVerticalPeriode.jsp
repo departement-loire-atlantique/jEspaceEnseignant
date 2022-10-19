@@ -3,9 +3,8 @@
 %><%@page import="com.jalios.jcms.portlet.navigate.CategoryMenuInfo"%><%
 %><%@ include file="/jcore/doInitPage.jspf" %><%
 %><%@ include file="/jcore/portal/doPortletParams.jspf" %><%
-%><%@ include file="/types/PortletNavigate/doInitPortletNavigate.jspf" %><%
-
-jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/recherche.css");
+%><%@ include file="/types/PortletNavigate/doInitPortletNavigate.jspf" %>
+<% jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/recherche.css"); %><%
 
 boolean display = rootCategory != null && rootCategory.isNode(loggedMember);
 if (!display && box.getHideWhenNoResults()) {
@@ -13,6 +12,7 @@ if (!display && box.getHideWhenNoResults()) {
   return;
 }
 %>
+
 <section id="en1clic" class="ds44-mlr35 ds44-mtb2 ds44-mobile-reduced-mar periodeMenu">
     <h2 class="h2-like" id="titreEn1Clic"><%= box.getDisplayTitle(userLang) %></h2>
     <jalios:foreach name="itCat" type="Category" collection="<%= rootCategory.getChildrenSet() %>">
