@@ -16,12 +16,7 @@ Fiche obj = (Fiche) data;
 	class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext vignette">
 
 	<%-- Vignette Image --%>
-	<jalios:if predicate="<%= Util.notEmpty(obj.getVisuel()) %>">
-        <% CarouselElement image = (CarouselElement) channel.getData(CarouselElement.class, obj.getVisuel().getId()); %>
-        <picture class="ds44-container-imgRatio"> <img
-            src="<%=image.getImage()%>" alt="" class="ds44-imgRatio" /> 
-        </picture>
-    </jalios:if>
+    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFiche.jspf' %>
 
 	<%-- Vignette Header --%>
 	<div class="vignette-header ds44-flex-container">
@@ -36,9 +31,9 @@ Fiche obj = (Fiche) data;
 				</div>
 			</jalios:foreach>
 		</jalios:if>
-		<a href=# class="ds44-colRight"> <i class="icon icon-star-empty"
-			aria-hidden="true"></i>
-		</a>
+		<%--<a href=# class="ds44-colRight">--%>
+		<i class="icon icon-star-empty" aria-hidden="true"></i>
+		<%--</a> --%>
 	</div>
 
 	<%-- Vignette Body --%>

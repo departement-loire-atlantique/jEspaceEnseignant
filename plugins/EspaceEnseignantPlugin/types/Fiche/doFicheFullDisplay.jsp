@@ -15,30 +15,8 @@
   <% 
   jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
   %>
-
-    <%-- FICHE TITLE HEADER --%>
-    <div class="fiche-page-header">
-      <div class="fiche-page-header-bg"></div>
-
-      <div class="fiche-page-header-title">
-        <div class="spacer"></div>
-        <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
-        <h1 class="bold-txt margin-txt">
-          <%= obj.getTitle() %>
-        </h1>
-        <p class="page-subtitle">
-        Mis à jour le 
-          <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
-        </p>
-      </div>
-
-      
-    </div>
-
-    <%-- FICHE CARTEL --%>
-    <div class="fiche-cartel">
-      <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCartel.jspf' %>
-    </div>
+    
+    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/ficheHeader.jspf' %>
 
     <%-- FICHE BODY --%>
     <div class="fiche-page-body">

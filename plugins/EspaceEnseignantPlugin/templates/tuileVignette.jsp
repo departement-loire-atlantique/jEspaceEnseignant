@@ -12,16 +12,11 @@ Fiche obj = (Fiche) data;
 <section class="ds44-card ds44-js-card ds44-card--verticalPicture">
     
         <%-- Vignette Image --%>
-        <% if(Util.notEmpty(obj.getVisuel())) {
-          CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, obj.getVisuel().getId()); %>
-          <picture class="ds44-container-imgRatio">
-              <img src="<%= image.getImage() %>" alt="" class="ds44-imgRatio"/>
-          </picture>
-          <% } %>
+        <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFiche.jspf' %>
 
         <%-- Vignette Header --%>
         <div class="vignette-header ds44-flex-container">
-            <% if (Util.notEmpty(obj.getTypologie(loggedMember))) { %>
+          <jalios:if predicate="<%= Util.notEmpty(obj.getTypologie(loggedMember)) %>">
                 <jalios:foreach collection="<%= obj.getTypologie(loggedMember) %>" type="Category" name="itCategory" >
                   <div class="ds44-colLeft">
                     <p class="vignette-header-title ds44-colLeft"> 
@@ -29,7 +24,7 @@ Fiche obj = (Fiche) data;
                     </p>
                     </div>
                 </jalios:foreach>
-            <% } %>
+          </jalios:if>
             <a href=# class="ds44-colRight">
               <i class="icon icon-star-empty" aria-hidden="true"></i>
             </a>
@@ -38,7 +33,11 @@ Fiche obj = (Fiche) data;
         <%-- Vignette Body --%>
         <div class="ds44-card__section vignette-body">
           <div class="ds44-innerBoxContainer">
-              <p role="heading" aria-level="2" class="ds44-cardTitle"><a href="#" class="ds44-card__globalLink"><%= obj.getTitle() %></a></p>
+            <p role="heading" aria-level="2" class="ds44-card__title">
+                <jalios:link data="<%= obj %>" css="ds44-card__globalLink">
+                    <%=obj.getTitle()%>
+                </jalios:link>
+            </p>
               <hr class="mbs"aria-hidden="true" />
               <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteContent.jspf' %>
           </div>

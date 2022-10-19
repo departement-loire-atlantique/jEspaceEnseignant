@@ -125,6 +125,11 @@
         </template>
     </templates>
     
+  <templates type="Faq">
+	    <template name="default" file="doFaqFullDisplay.jsp" usage='full'>
+	      <label xml:lang="fr">Espace Enseignant : Faq FullDisplay</label>
+	    </template>
+	</templates>
     <templates type="PortletCarousel">
         <template name="carouselActu" file="doPortletCarouselSliderThreePanels.jsp" usage='box'>
           <label xml:lang="fr">Espace Enseignant : gabarit carrousel Actualité</label>

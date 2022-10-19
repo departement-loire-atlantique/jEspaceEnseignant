@@ -1,4 +1,6 @@
-jcmsplugin.espaceEnseignant.espace.cat.root: Catégorie des Périodes
+jcmsplugin.espaceEnseignant.periode.cat.root: Catégorie des Périodes
 jcmsplugin.espaceEnseignant.typologie.cat.root: Catégorie des Types
+jcmsplugin.espaceEnseignant.contact.cat.root: Page de contact
 
 jcmsplugin.espaceEnseignant.fiche.AjoutSel: Ajouter à ma sélection
+jcmsplugin.espaceEnseignant.footer.btn-contact: Poser une question

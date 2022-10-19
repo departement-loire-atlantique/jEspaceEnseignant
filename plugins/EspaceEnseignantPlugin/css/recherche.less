@@ -6,20 +6,45 @@
     #content {
         padding-top: 2rem;
         .ds44-lightBG {
-            display: none;
+            background-color: @white;
+            
+            .ds44-inner-container .ds44-grid12-offset-2{
+                padding-left: 3.8em;
+                
+                h1 {
+                    font: normal normal bold 34px/43px Muli;
+                    padding-left: 20px;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        border-bottom: 1px solid @main-color;
+                        width: 6em;
+                        margin-left: -0.5em;
+                    }
+                }
+                
+                .PortletNavigate {
+                    font: normal normal normal 14px/21px Muli;
+                }
+            }
+        }
+        .ds44-mtb3 {
+            margin-top: 0;
+            padding-top: 0;
         }
     }
 }
 
 .rechercheGenerale {
     .ds44-facette .ds44-facette-body {
-        header {
+         header {
             text-align: left;
+            padding-left: 3.8em;
+            padding-right: 3.8em;
             
             .h2-like {
-                font: normal normal bold 34px/43px Muli;
-                background: none;
-                border-bottom: solid 1px @blue-light-color;
+                display: none;
             }
             
             .ds44-component-chapo {
@@ -61,12 +86,7 @@
     .h2-like {
         font: normal normal bold 34px/43px Muli;
         background: none;
-        border-bottom: 1px solid @blue-light-color;
-        margin: 0 auto;
-        width: 100%;
-        display: inline-block;
-        text-align: center;
-        padding-top: 27.5px;
+        border-bottom: 1px solid @main-color;
     }
     
     .list-group.panel {
