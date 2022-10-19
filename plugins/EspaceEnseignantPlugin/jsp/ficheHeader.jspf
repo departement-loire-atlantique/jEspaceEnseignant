@@ -59,17 +59,13 @@
     <%-- 3. HEADER SIMPLE  --%>
     <jalios:default> 
         <%-- FICHE TITLE HEADER --%>
-        <div class="fiche-page-header">
+        <div class="fiche-page-header fiche-bg">
             <div class="fiche-page-header-title">
                 <div class="spacer"></div>
                 <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
                 <h1 class="bold-txt margin-txt">
                 <%= obj.getTitle() %>
                 </h1>
-                <p class="page-subtitle">
-                Mis à jour le 
-                <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
-                </p>
             </div>
         </div>
     </jalios:default>

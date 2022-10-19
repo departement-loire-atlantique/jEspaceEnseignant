@@ -79,7 +79,7 @@ public class EspaceEnseignantHandler {
             if(Util.notEmpty(catId)) {
                 for(Category itCat : fiche.getTypologie(loggedMember)) {
                 	Category cat = itCat;
-	                while(Util.notEmpty(cat.getParent()) && !cat.getId().equals(catId)) {
+	                while(Util.notEmpty(cat.getParent()) && !cat.getId().equals(catId)  && !catParent.isRoot()) {
 	                	listTypo.add(cat);
 	                    cat = cat.getParent();
 	                }
