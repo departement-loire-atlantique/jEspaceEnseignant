@@ -22,15 +22,18 @@ channel.less.plugins/EspaceEnseignantPlugin/css/recherche.css: plugins/EspaceEns
 channel.css.all.200.fo: plugins/EspaceEnseignantPlugin/css/plugin.css
 channel.css.all.201.fo: plugins/EspaceEnseignantPlugin/css/recherche.css
 
-jcmsplugin.espaceEnseignant.espace.cat.root.chooser-category:
+jcmsplugin.espaceEnseignant.site.src.logo-gpla: https://design.loire-atlantique.fr/assets/images/logos/logo-grand-patrimoine-noir.svg
+
+# Catégorie
+jcmsplugin.espaceEnseignant.periode.cat.root.chooser-category:
 jcmsplugin.espaceEnseignant.typologie.cat.root.chooser-category:
+jcmsplugin.espaceEnseignant.contact.cat.root.chooser-category:
 jcmsplugin.socle.site.header.cat: fde_5290
 
 # désactive le btn par défaut et ajoute un cat custom
 jcmsplugin.socle.site.header.show.rechercher: false
 
 # Media Template
-
 media.data-template.card.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignette.jsp
 media.data-template.vignetteCarrousel.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignetteCarrousel.jsp
 media.data-template.carrouselActu.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignetteActu.jsp

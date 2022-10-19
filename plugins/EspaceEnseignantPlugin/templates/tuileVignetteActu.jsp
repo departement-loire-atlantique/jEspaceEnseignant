@@ -15,7 +15,7 @@ Fiche obj = (Fiche) data;
 
 <section class="ds44-card ds44-js-card ds44-card--verticalPicture">
     
-    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageFiche.jspf' %>
+    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFiche.jspf' %>
 
     <div class="ds44-card__section">
         <p role="heading" aria-level="2" class="ds44-card__title">

@@ -1,0 +1,77 @@
+<%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
+<% boolean isCartel = EspaceEnseignantHandler.isCartel(loggedMember, userLang, obj); %>
+
+<jalios:select>
+    <%-- 1. HEADER AVEC CARTEL  --%>
+    <jalios:if predicate="<%= isCartel %>">
+        <%-- FICHE TITLE HEADER --%>
+        <div class="fiche-page-header">
+            <div class="fiche-page-header-bg"></div>
+            <div class="fiche-page-header-title">
+                <div class="spacer"></div>
+                <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
+                <h1 class="bold-txt margin-txt">
+                <%= obj.getTitle() %>
+                </h1>
+                <p class="page-subtitle">
+                Mis à jour le 
+                <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
+                </p>
+            </div>
+        </div>
+
+        <%-- FICHE CARTEL --%>
+        <div class="fiche-cartel">
+            <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCartel.jspf' %>
+        </div>
+    </jalios:if>
+
+    <%-- 2. HEADER AVEC IMAGE  --%>
+    <jalios:if predicate="<%= Util.notEmpty(obj.getGalerieDeVisuels()) || Util.notEmpty(obj.getVisuel()) %>">
+        <%-- FICHE TITLE HEADER --%>
+        <div class="fiche-page-header">
+            <div class="fiche-page-header-bg"></div>
+            <div class="fiche-page-header-title">
+                <div class="spacer"></div>
+                <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
+                <h1 class="bold-txt margin-txt">
+                <%= obj.getTitle() %>
+                </h1>
+                <p class="page-subtitle">
+                Mis à jour le 
+                <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
+                </p>
+            </div>
+        </div>
+
+        <%-- FICHE IMAGE --%>
+        <div class="fiche-cartel">
+            <div class="ds44-container-large">
+                <% if(Util.notEmpty(obj.getGalerieDeVisuels())) { %>
+                    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageCarrousel.jspf' %>
+                <% } else if(Util.notEmpty(obj.getVisuel())) { %>
+                    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFicheCredits.jspf' %>
+                <% } %>
+            </div>
+        </div>
+    </jalios:if>
+
+    <%-- 3. HEADER SIMPLE  --%>
+    <jalios:default> 
+        <%-- FICHE TITLE HEADER --%>
+        <div class="fiche-page-header">
+            <div class="fiche-page-header-title">
+                <div class="spacer"></div>
+                <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
+                <h1 class="bold-txt margin-txt">
+                <%= obj.getTitle() %>
+                </h1>
+                <p class="page-subtitle">
+                Mis à jour le 
+                <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
+                </p>
+            </div>
+        </div>
+    </jalios:default>
+
+</jalios:select>

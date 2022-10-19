@@ -1,16 +1,21 @@
  <jalios:if predicate='<%= Util.notEmpty(tab) %>'>
     <div class="ds44-container-large">
     <%--  tab.size() < 4 ? tab.size() : --%>
-        <div class="mod--hidden ds44-list swipper-carousel-wrap ds44-posRel" data-nb-visible-slides="<%= 4 %>"> 
+        <div class="mod--hidden ds44-list swipper-carousel-wrap ds44-posRel" data-nb-visible-slides="<%= tab.size() < 4 ? tab.size() : 4 %>"> 
             <div class="swiper-container">
                 <ul class="swiper-wrapper ds44-list grid-4-small-1 has-gutter-l ds44-carousel-swiper">
                     
-                    <jalios:foreach collection="<%= tab %>" name="itFiche" type="Fiche" max="6">
+                    <jalios:foreach collection="<%= tab %>" name="itFiche" type="Fiche">
                         <li class="swiper-slide vignette">
                             <section class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext">
 
                                 <%-- Vignette Image --%>
-                                <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageFiche.jspf' %>
+                                <jalios:if predicate="<%= Util.notEmpty(itFiche.getVisuel()) %>">
+                                <% CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, itFiche.getVisuel().getId()); %>
+                                    <picture class="ds44-container-imgRatio">
+                                        <img src="<%= image.getImage() %>" alt="<%= image.getImageLegend() %>" class="ds44-imgRatio"/>
+                                    </picture>
+                                </jalios:if>
                                 
                                 <%-- Vignette Header --%>
                                 <div class="vignette-header ds44-flex-container">

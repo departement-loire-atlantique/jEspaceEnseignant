@@ -12,7 +12,7 @@ Fiche obj = (Fiche) data;
 <section class="ds44-card ds44-js-card ds44-card--verticalPicture">
     
         <%-- Vignette Image --%>
-        <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageFiche.jspf' %>
+        <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFiche.jspf' %>
 
         <%-- Vignette Header --%>
         <div class="vignette-header ds44-flex-container">

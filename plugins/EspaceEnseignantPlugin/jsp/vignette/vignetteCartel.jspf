@@ -7,9 +7,9 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
     
         <%-- Vignette Image --%>
         <% if(Util.notEmpty(obj.getGalerieDeVisuels())) { %>
-          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageCarrousel.jspf' %>
+          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageCarrousel.jspf' %>
         <% } else if(Util.notEmpty(obj.getVisuel())) { %>
-          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageFicheCredits.jspf' %>
+          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFicheCredits.jspf' %>
         <% } %>
         
         <%-- Vignette Body --%>
@@ -55,7 +55,7 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
 
                 <%-- RIGHT --%>
                 <div class="ds44-colRight cartel-column">
-                  <jalios:if predicate="<%= EspaceEnseignantHandler.isCartel(userLang, obj) %>">
+                  <jalios:if predicate="<%= EspaceEnseignantHandler.isCartelInfo(userLang, obj) %>">
                     <p class="ds44-docListElem ds44-mt-std"> 
                       <i class="icon icon-info  ds44-docListIco" aria-hidden="true"></i>
                       <jalios:if predicate="<%= Util.notEmpty(obj.getTitreCartel(userLang)) %>">

@@ -1,11 +1,11 @@
 <div class="grid-12-small-1">
   <div class="col col-6">
     <% Fiche obj = (Fiche) contenusEnAvant[0]; %>
-    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageTuile.jspf' %>
+    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageTuile.jspf' %>
       
   </div>
   <div class="col col-6">
     <% obj = (Fiche) contenusEnAvant[1]; %>
-    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageTuile.jspf' %>
+    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageTuile.jspf' %>
   </div>
 </div>
