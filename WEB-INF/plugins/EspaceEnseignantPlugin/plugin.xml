@@ -119,6 +119,12 @@
 	      <label xml:lang="fr">Espace Enseignant : Fiche FullDisplay</label>
 	    </template>
 	</templates>
+    <templates type="ListeDeContenus">
+        <template name="defaultEspaceEnseignant" file="doListeDeContenusFullDisplay.jsp" usage="full"> 
+            <label xml:lang="fr">Espace Enseignant - Gabarit full </label>
+        </template>
+    </templates>
+    
     <templates type="PortletCarousel">
         <template name="carouselActu" file="doPortletCarouselSliderThreePanels.jsp" usage='box'>
           <label xml:lang="fr">Espace Enseignant : gabarit carrousel Actualité</label>
