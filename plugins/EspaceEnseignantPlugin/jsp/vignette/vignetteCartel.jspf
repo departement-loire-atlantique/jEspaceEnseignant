@@ -8,11 +8,8 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
         <%-- Vignette Image --%>
         <% if(Util.notEmpty(obj.getGalerieDeVisuels())) { %>
           <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageCarrousel.jspf' %>
-        <% } else if(Util.notEmpty(obj.getVisuel())) {
-          CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, obj.getVisuel().getId()); %>
-          <picture class="ds44-container-imgRatio">
-              <img src="<%= image.getImage() %>" alt="" class="ds44-imgRatio"/>
-          </picture>
+        <% } else if(Util.notEmpty(obj.getVisuel())) { %>
+          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageFicheCredits.jspf' %>
         <% } %>
         
         <%-- Vignette Body --%>
@@ -23,16 +20,16 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
                 <%-- LEFT --%>
                 <div class="ds44-colLeft">
 
-                  <% if (Util.notEmpty(obj.getTypologie(loggedMember))) { %>
+                  <jalios:if predicate="<%= Util.notEmpty(obj.getTypologie(loggedMember)) %>">
                     <jalios:foreach collection="<%= obj.getTypologie(loggedMember) %>" type="Category" name="itCategory" >
                         <p class="ds44-docListElem ds44-mt-std"> 
                           <i class="icon icon-tag  ds44-docListIco" aria-hidden="true"></i>
                           <%= itCategory.getParent().getName() %> : <%= itCategory.getName() %> 
                         </p>
                     </jalios:foreach>
-                  <% } %>
+                  </jalios:if>
 
-                  <% if (Util.notEmpty(obj.getPeriode(loggedMember))) { %>
+                  <jalios:if predicate="<%= Util.notEmpty(obj.getPeriode(loggedMember)) %>">
                     <% for (Map.Entry<Category, Category> entry : listPeriodeCartel.entrySet()) { %>
                       <p class="ds44-docListElem ds44-mt-std"> 
                         <i class="icon icon-directory  ds44-docListIco" aria-hidden="true"></i>
@@ -43,71 +40,71 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
                       </p>
                     
                     <% } %>
-                  <% } %>  
+                  </jalios:if>
 
-                  <% if (Util.notEmpty(obj.getPlan(userLang))) { %>
+                  <jalios:if predicate="<%= Util.notEmpty(obj.getPlan(userLang)) %>">
                     <a href="<%= Util.encodeUrl(obj.getPlan(userLang)) %>">
                       <p class="ds44-docListElem ds44-mt-std">
                         <i class="icon icon-position  ds44-docListIco" aria-hidden="true"></i>
                         Retrouvez cet objet au musée
                       </p>
                     </a>
-                  <% } %>
+                  </jalios:if>
 
                 </div>
 
                 <%-- RIGHT --%>
                 <div class="ds44-colRight cartel-column">
-                <% if(EspaceEnseignantHandler.isCartel(userLang, obj)) { %>
-                  <p class="ds44-docListElem ds44-mt-std"> 
-                    <i class="icon icon-info  ds44-docListIco" aria-hidden="true"></i>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getTitreCartel(userLang))) { %>
-                        <%= obj.getTitreCartel(userLang) %>
-                      <% } %>
+                  <jalios:if predicate="<%= EspaceEnseignantHandler.isCartel(userLang, obj) %>">
+                    <p class="ds44-docListElem ds44-mt-std"> 
+                      <i class="icon icon-info  ds44-docListIco" aria-hidden="true"></i>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getTitreCartel(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getTitreCartel(userLang) %>
+                        </p>
+                      </jalios:if>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getNomDeLartiste(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getNomDeLartiste(userLang) %>
+                        </p>
+                      </jalios:if>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getMatiere(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getMatiere(userLang) %>
+                        </p>
+                      </jalios:if>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getDateCartel(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getDateCartel(userLang) %>
+                        </p>
+                      </jalios:if>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getLieu(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getLieu(userLang) %>
+                        </p>
+                      </jalios:if>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getDimension(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getDimension(userLang) %>
+                        </p>
+                      </jalios:if>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getLegs(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getLegs(userLang) %>
+                        </p>
+                      </jalios:if>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getNinventaire(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getNinventaire(userLang) %>
+                        </p>
+                      </jalios:if>
+                      <jalios:if predicate="<%= Util.notEmpty(obj.getCredits(userLang)) %>">
+                        <p class="ds44-docListElem"> 
+                            <%= obj.getCredits(userLang) %>
+                        </p>
+                      </jalios:if>
                     </p>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getNomDeLartiste(userLang))) { %>
-                        <%= obj.getNomDeLartiste(userLang) %>
-                      <% } %>
-                    </p>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getMatiere(userLang))) { %>
-                        <%= obj.getMatiere(userLang) %>
-                      <% } %>
-                    </p>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getDateCartel(userLang))) { %>
-                        <%= obj.getDateCartel(userLang) %>
-                      <% } %>
-                    </p>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getLieu(userLang))) { %>
-                        <%= obj.getLieu(userLang) %>
-                      <% } %>
-                    </p>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getDimension(userLang))) { %>
-                        <%= obj.getDimension(userLang) %>
-                      <% } %>
-                    </p>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getLegs(userLang))) { %>
-                        <%= obj.getLegs(userLang) %>
-                      <% } %>
-                    </p>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getNinventaire(userLang))) { %>
-                        <%= obj.getNinventaire(userLang) %>
-                      <% } %>
-                    </p>
-                    <p class="ds44-docListElem"> 
-                      <% if (Util.notEmpty(obj.getCredits(userLang))) { %>
-                        <%= obj.getCredits(userLang) %>
-                      <% } %>
-                    </p>
-                  </p>
-                <% } %>
+                  </jalios:if>
                 </div>
             </div>
             <button class="ds44-btnStd ds44-btn--invert">
@@ -115,8 +112,8 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
               <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
             </button>
             <button class="ds44-btnStd">
+              <i class="icon icon-star-empty" aria-hidden="true"></i>
               <span class="ds44-btnInnerText"><%= glp("jcmsplugin.espaceEnseignant.fiche.AjoutSel") %></span>
-              <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
         </div>

@@ -14,12 +14,8 @@ Fiche obj = (Fiche) data;
 %>
 
 <section class="ds44-card ds44-js-card ds44-card--verticalPicture">
-    <jalios:if predicate="<%= Util.notEmpty(obj.getVisuel()) %>">
-        <% CarouselElement image = (CarouselElement) channel.getData(CarouselElement.class, obj.getVisuel().getId()); %>
-        <picture class="ds44-container-imgRatio"> <img
-            src="<%=image.getImage()%>" alt="" class="ds44-imgRatio" /> 
-        </picture>
-    </jalios:if>
+    
+    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/imageFiche.jspf' %>
 
     <div class="ds44-card__section">
         <p role="heading" aria-level="2" class="ds44-card__title">

@@ -14,9 +14,12 @@ if(Util.notEmpty(obj.getGalerieDeVisuels())) {
             <jalios:foreach array="<%= listeElem %>" type="CarouselElement" name="itElem" >
                 <li class="swiper-slide">
                     <div class="ds44-titleContainer ds44-titleContainer--home">
-                        <figure class="ds44-pageHeaderContainer__pictureContainer" role="figure" aria-label="Légende associée 1 © Copyright">
-                            <img src="<%= itElem.getImage() %>" alt="<%= itElem.getImageCopyright() %> : description de la photo" class="ds44-headerImg"/>
-                            <figcaption class="ds44-imgCaption"><%= itElem.getImageCopyright() %></figcaption>
+                        <figure class="ds44-pageHeaderContainer__pictureContainer" role="figure" aria-label="<%= itElem.getImageCopyright() %>">
+                            <img src="<%= itElem.getImage() %>" alt="<%= itElem.getImageLegend() %>" class="ds44-headerImg"/>
+                            
+                            <jalios:if predicate="<%= Util.notEmpty(itElem.getImageCopyright()) %>">
+                                <figcaption class="ds44-imgCaption"><%= itElem.getImageCopyright() %></figcaption>
+                            </jalios:if>
                         </figure>
                     </div>
                 </li>
