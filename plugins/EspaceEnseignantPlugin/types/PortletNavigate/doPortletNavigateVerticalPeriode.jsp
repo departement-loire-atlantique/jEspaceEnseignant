@@ -29,7 +29,9 @@ if(isExtraSmall){
 
 %>
 <div class="verticalMenu periodeMenu">
-    <h2 class="h2-like"><%= box.getDisplayTitle(userLang) %></h2>
+    <div class="titre">
+        <h2 class="h2-like"><%= box.getDisplayTitle(userLang) %></h2>
+    </div>
   <jalios:menu id="<%= rootCategory.getId()  %>" name='<%= "vertical-" + verticalCounter %>' menuResource="vertical">
     <%
     MenuInfoFilter menuInfoFilter = (MenuInfoFilter) request.getAttribute(MenuInfoFilter.MENU_INFO_FILTER_ATTR);
