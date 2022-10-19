@@ -9,4 +9,4 @@ String sliderAmounts = "3";
 String template = "carrouselActu";
 %>
 
-<%@ include file="doPortletCarouselBoxDisplay.jspf"%>
+<%@ include file="/plugins/EspaceEnseignantPlugin/jsp/types/PortletCarousel/doPortletCarouselBoxDisplay.jspf"%>
