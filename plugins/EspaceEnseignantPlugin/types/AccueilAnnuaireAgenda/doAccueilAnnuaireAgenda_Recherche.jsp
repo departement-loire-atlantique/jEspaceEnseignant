@@ -8,13 +8,13 @@
     <jalios:include target="SOCLE_ALERTE"/>
 
     <section class="ds44-container-large">
-    <div class="ds44-lightBG>
+    <div class="ds44--xl-padding-l">
 	    <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-mobile-reduced-pt">
 	        <div class="ds44-grid12">
 	            <jalios:if predicate='<%=Util.notEmpty(Channel.getChannel().getProperty("jcmsplugin.socle.portlet.filariane.id")) %>'>
 	                <jalios:include id='<%=Channel.getChannel().getProperty("jcmsplugin.socle.portlet.filariane.id") %>'/>
 	            </jalios:if>
-	            <h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt" id="titreActualite"><%=obj.getTitle(userLang)%></h1>
+	            <h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt ds44--xl-padding-l" id="titreActualite"><%=obj.getTitle(userLang)%></h1>
 	        </div>
 	    </div>    
     </div>

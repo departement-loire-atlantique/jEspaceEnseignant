@@ -59,10 +59,9 @@
 	
 	    <jalios:if predicate='<%= obj.getAfficherResultatDansLannuaire() || (!isInRechercheFacette && Util.notEmpty(obj.getTitre(userLang))) %>'>
 			<div class="ds44-inner-container ds44--mobile--m-padding-b">
-				<header class="txtcenter ds44--l-padding-b">
-					<h2 class="h2-like center"><%= obj.getTitre(userLang) %></h2>
+				<header class="ds44--l-padding-b ds44--xl-padding-l">
 					<jalios:if predicate='<%= Util.notEmpty(obj.getSoustitre(userLang)) %>'>
-						<p class="ds44-component-chapo ds44-centeredBlock"><%= obj.getSoustitre(userLang) %></p>
+						<p class="ds44-centeredBlock"><%= obj.getSoustitre(userLang) %></p>
 					</jalios:if>
 				</header>
 			</div>
