@@ -153,9 +153,13 @@
             <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
         </template>
         <template name="annuaire" file="doAccueilAnnuaireAgenda_Recherche.jsp" usage="recherche">
-            <label xml:lang="fr">>Espace Enseignant : gabarit recherche</label>
+            <label xml:lang="fr">Espace Enseignant : gabarit recherche</label>
         </template>
-        
+    </templates>
+    <templates type="PortletRechercheFacettes">
+        <template name="Facetterecherche" file="doPortletRechercheFacettesBoxRechercheDisplay.jsp" usage='box'>
+          <label xml:lang="fr">Espace Enseignant : gabarit générique simple</label>
+        </template>        
     </templates>    
  </types>
   <!-- ============================== Workflows =========================== -->
