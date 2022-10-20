@@ -48,6 +48,9 @@
     <field name="dateDeMort" editor="date" required="false" compactDisplay="false" type="java.util.Date" future="true" past="true" dateOnly="true" dateFormat="short" ml="false" descriptionType="tooltip" tab="contenu" searchable="false" html="false" checkHtml="true">
       <label xml:lang="fr">Date de mort</label>
     </field>
+    <field name="libelleIconeSite" editor="textfield" required="false" compactDisplay="false" tab="contenu" type="String[]" searchable="false" size="80" ml="true" html="false" checkHtml="true" descriptionType="tooltip" tabGroup="iconeSite">
+      <label xml:lang="fr">Libellé icone site</label>
+    </field>
     <field name="titreCartel" editor="textfield" required="false" compactDisplay="false" tab="cartel" type="String" searchable="true" size="80" ml="true" html="false" checkHtml="true" descriptionType="tooltip">
       <label xml:lang="fr">Titre Cartel</label>
     </field>
@@ -80,6 +83,9 @@
     </field>
     <field name="texteLibre" editor="wysiwyg" required="false" compactDisplay="false" tab="focus" type="String[]" searchable="true" rows="16" cols="100" ml="true" checkHtml="true" inline="true" descriptionType="tooltip" tabGroup="Focus" html="false">
       <label xml:lang="fr">Texte libre</label>
+    </field>
+    <field name="iconeSite" editor="image" required="false" compactDisplay="false" type="String[]" searchable="false" size="80" ml="true" descriptionType="tooltip" tabGroup="iconeSite" html="false" checkHtml="true" resize="false" resizeWidth="100" resizeHeight="75" tab="contenu">
+      <label xml:lang="fr">Icone site</label>
     </field>
   </fields>
   <tabs>
