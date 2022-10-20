@@ -14,14 +14,14 @@
 	            <jalios:if predicate='<%=Util.notEmpty(Channel.getChannel().getProperty("jcmsplugin.socle.portlet.filariane.id")) %>'>
 	                <jalios:include id='<%=Channel.getChannel().getProperty("jcmsplugin.socle.portlet.filariane.id") %>'/>
 	            </jalios:if>
-	            <h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt ds44--xl-padding-l" id="titreActualite"><%=obj.getTitle(userLang)%></h1>
+	            <h1 class="h2-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt ds44--xl-padding-l" id="titreActualite"><%=obj.getTitle(userLang)%></h1>
 	        </div>
 	    </div>    
     </div>
     </section>
     
     <section class="ds44-container-large">
-        <div class='<%= Util.notEmpty(obj.getPortletsBas()) ? "ds44-mt3" : "ds44-mtb3" %> ds44--xl-padding-tb'>
+        <div>
             <jalios:if predicate="<%= Util.notEmpty(obj.getPortletRecherche()) %>">
                 <div class="ds44-loader-text visually-hidden" tabindex="-1" aria-live="polite"></div>
                 <div class="ds44-loader hidden">
