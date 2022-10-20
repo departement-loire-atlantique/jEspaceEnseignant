@@ -148,6 +148,15 @@
           <label xml:lang="fr">Espace Enseignant : gabarit navigation par période</label>
         </template>      
     </templates>
+    <templates type="AccueilAnnuaireAgenda">
+        <template name="accueilAnnuaireAgendaRecherche" file="doAccueilAnnuaireAgendaRechercheFullDisplay.jsp" usage="full">
+            <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
+        </template>
+        <template name="annuaire" file="doAccueilAnnuaireAgenda_Recherche.jsp" usage="recherche">
+            <label xml:lang="fr">>Espace Enseignant : gabarit recherche</label>
+        </template>
+        
+    </templates>    
  </types>
   <!-- ============================== Workflows =========================== -->
   <!--                                                                      -->
