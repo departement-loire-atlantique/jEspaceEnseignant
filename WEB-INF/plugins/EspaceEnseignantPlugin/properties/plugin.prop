@@ -17,12 +17,12 @@
 # LESS
 # channel.less.plugins/{Name}/css/plugin.css:    plugins/{Name}/css/plugin.less
 channel.less.plugins/EspaceEnseignantPlugin/css/plugin.css:    plugins/EspaceEnseignantPlugin/css/plugin.less
-channel.less.plugins/EspaceEnseignantPlugin/css/recherche.css: plugins/EspaceEnseignantPlugin/css/recherche.less
 
 channel.css.all.200.fo: plugins/EspaceEnseignantPlugin/css/plugin.css
-channel.css.all.201.fo: plugins/EspaceEnseignantPlugin/css/recherche.css
 
 jcmsplugin.espaceEnseignant.site.src.logo-gpla: https://design.loire-atlantique.fr/assets/images/logos/logo-grand-patrimoine-noir.svg
+
+jcmsplugin.socle.css-urls: https://design.loire-atlantique.fr/css/cd44.css https://design.loire-atlantique.fr/css/icons.css plugins/EspaceEnseignantPlugin/css/plugin.css
 
 # Catégorie
 jcmsplugin.espaceEnseignant.periode.cat.root.chooser-category:

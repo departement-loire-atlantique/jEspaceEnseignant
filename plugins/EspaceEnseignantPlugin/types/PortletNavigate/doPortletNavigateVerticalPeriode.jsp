@@ -3,9 +3,7 @@
 %><%@page import="com.jalios.jcms.portlet.navigate.CategoryMenuInfo"%><%
 %><%@ include file="/jcore/doInitPage.jspf" %><%
 %><%@ include file="/jcore/portal/doPortletParams.jspf" %><%
-%><%@ include file="/types/PortletNavigate/doInitPortletNavigate.jspf" %>
-<% jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/recherche.css"); %><%
-
+%><%@ include file="/types/PortletNavigate/doInitPortletNavigate.jspf" %><%
 boolean display = rootCategory != null && rootCategory.isNode(loggedMember);
 if (!display && box.getHideWhenNoResults()) {
   request.setAttribute("ShowPortalElement", Boolean.FALSE);
