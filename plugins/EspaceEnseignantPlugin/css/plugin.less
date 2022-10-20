@@ -307,10 +307,25 @@ BODY .ds44-theme {
 // ------------------------------------------------------------------- 
 //  RECHERCHE                                             
 // -------------------------------------------------------------------
+
 .pub-action-toggler-fde_5286,
 .pub-action-toggler-fde_5328 {
     #content {
         padding-top: 2rem;
+    }
+                    h1 {
+                    font: normal normal bold 34px/43px Muli;
+                    padding-left: 20px;
+
+                    &:after {
+                        content: '';
+                        display: block;
+                        border-bottom: 1px solid @main-color;
+                        width: 6em;
+                        margin-left: -0.5em;
+                    }
+                }
+}/*
         .ds44-lightBG {
             background-color: @white;
             
@@ -341,7 +356,7 @@ BODY .ds44-theme {
         }
     }
 }
-
+*/
 .rechercheGenerale {
     .ds44-facette .ds44-facette-body {
          header {
