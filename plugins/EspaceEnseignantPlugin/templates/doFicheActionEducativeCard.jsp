@@ -41,10 +41,17 @@ for(Category itCat : categorySet) {
   }
 }
 %>
+<%
+PortalElement portlet = (PortalElement)request.getAttribute(PortalManager.PORTAL_PORTALELEMENT);
+boolean isThemeClair = false;
+if (portlet instanceof PortletCarousel) {
+  isThemeClair = ((PortletCarousel)portlet).getSelectionDuTheme().equals("tuileVerticaleLight");
+}
+%>
 
 
 <div class="col-3 vignette vignette-card">
-<section class="ds44-card ds44-js-card ds44-card--verticalPicture">
+<section class="ds44-card ds44-js-card ds44-card--verticalPicture <%= isThemeClair ? "ds44-darkContext" : "" %>">
     
         <%-- Vignette Image --%>
 		<jalios:if predicate="<%= Util.notEmpty(image) %>">
