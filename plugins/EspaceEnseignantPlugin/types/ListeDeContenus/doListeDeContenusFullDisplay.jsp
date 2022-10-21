@@ -15,37 +15,37 @@ if (Util.isEmpty(title)) {
     <jalios:foreach name="itContent" type="Content"
         array="<%=obj.getContenus()%>">
         <%
-        if (!(itContent instanceof Fiche)) {
+        if (!(itContent instanceof FicheActionEducative)) {
             continue;
         }
-        Fiche fiche = (Fiche) itContent;
-        CarouselElement img = fiche.getVisuel();
+        FicheActionEducative fiche = (FicheActionEducative) itContent;
+
         %>
         <jalios:select>
 	    <jalios:if predicate="<%= itCounter % 2 == 0 %>">
              <section class="ds44--xxl-padding-tb">
 	            <div class="grid-12-small-1">
 	                <div class="col-7-small-1">
-	                    <h2 class="h2-like" id="idTitre2"><%=fiche.getTitle(userLang)%></h2>
-                        <jalios:if predicate="<%= Util.notEmpty(fiche.getIconeSite()) %>"><%
+	                    <h2 class="h2-like underline" id="idTitre2"><%=fiche.getTitle(userLang)%></h2>
+<%--                        <jalios:if predicate="<%= Util.notEmpty(fiche.getIconeSite()) %>"><%
                         for(int i = 0; i < fiche.getIconeSite().length; i++) { %>
                         <p class="ds44-docListElem">
                            <i class="ds44-docListIco icon <%= fiche.getIconeSite()[i] %>" aria-hidden="true"></i>
                            <span class="mtm"><%= fiche.getLibelleIconeSite()[i] %></span>
                         </p><%
                         } %>
-                        </jalios:if>
+                        </jalios:if>  --%>
 	                    <jalios:wysiwyg truncateLength="500" truncateSuffix="...">
 	                        <%=fiche.getDescription(userLang)%>
 	                    </jalios:wysiwyg>
 	                </div>
 	                <div class="col-5-small-1 ds44--xl-padding-l">
-	                    <jalios:if predicate="<%=Util.notEmpty(img)%>">
+	                    <jalios:if predicate="<%=Util.notEmpty(fiche.getImagePrincipale())%>">
 	                        <ds:figurePicture format="principale"
-	                            pub="<%=fiche%>" image="<%=img.getImage()%>"
-	                            imageMobile="<%=img.getImageMobile()%>"
-	                            legend="<%=img.getImageLegend(userLang)%>"
-	                            copyright="<%=img.getImageCopyright(userLang)%>"
+	                            pub="<%=fiche%>" image="<%=fiche.getImagePrincipale()%>"
+	                            imageMobile="<%=fiche.getImageMobile()%>"
+	                            legend="<%=fiche.getLegende(userLang)%>"
+	                            copyright="<%=fiche.getCopyright(userLang)%>"
 	                            figureCss="ds44-mb-std" />
 	                    </jalios:if>
 	                    <a href="<%=fiche.getDisplayUrl(userLocale)%>"
@@ -63,14 +63,14 @@ if (Util.isEmpty(title)) {
              <section class="ds44--xxl-padding-tb">
 	            <div class="grid-12-small-1">
 	                <div class="col-5-small-1">
-	                    <jalios:if predicate="<%=Util.notEmpty(img)%>">
-	                        <ds:figurePicture format="principale"
-	                            pub="<%=fiche%>" image="<%=img.getImage()%>"
-	                            imageMobile="<%=img.getImageMobile()%>"
-	                            legend="<%=img.getImageLegend(userLang)%>"
-	                            copyright="<%=img.getImageCopyright(userLang)%>"
-	                            figureCss="ds44-mb-std" />
-	                    </jalios:if>
+                        <jalios:if predicate="<%=Util.notEmpty(fiche.getImagePrincipale())%>">
+                            <ds:figurePicture format="principale"
+                                pub="<%=fiche%>" image="<%=fiche.getImagePrincipale()%>"
+                                imageMobile="<%=fiche.getImageMobile()%>"
+                                legend="<%=fiche.getLegende(userLang)%>"
+                                copyright="<%=fiche.getCopyright(userLang)%>"
+                                figureCss="ds44-mb-std" />
+                        </jalios:if>
 	                    <a href="<%=fiche.getDisplayUrl(userLocale)%>"
 	                        class="ds44-fullWBtn ds44-btnStd ds44-btn--invert">
 	                        <span class="ds44-btnInnerText">
@@ -80,15 +80,15 @@ if (Util.isEmpty(title)) {
 	                    </a>
 	                </div>
 	                <div class="col-7-small-1 ds44--xl-padding-l">
-	                    <h2 class="h2-like" id="idTitre2"><%=fiche.getTitle(userLang)%></h2>
-                        <jalios:if predicate="<%= Util.notEmpty(fiche.getIconeSite()) %>"><%
+	                    <h2 class="h2-like underline" id="idTitre2"><%=fiche.getTitle(userLang)%></h2>
+ <%--                       <jalios:if predicate="<%= Util.notEmpty(fiche.getIconeSite()) %>"><%
                         for(int i = 0; i < fiche.getIconeSite().length; i++) { %>
                         <p class="ds44-docListElem">
                            <i class="ds44-docListIco icon <%= fiche.getIconeSite()[i] %>" aria-hidden="true"></i>
                            <span class="mtm"><%= fiche.getLibelleIconeSite()[i] %></span>
                         </p><%
                         } %>
-                        </jalios:if>
+                        </jalios:if> --%>
 	                    <jalios:wysiwyg truncateLength="500" truncateSuffix="...">
 	                        <%=fiche.getDescription(userLang)%>
 	                    </jalios:wysiwyg>

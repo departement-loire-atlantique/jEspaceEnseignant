@@ -14,7 +14,7 @@
 	            <jalios:if predicate='<%=Util.notEmpty(Channel.getChannel().getProperty("jcmsplugin.socle.portlet.filariane.id")) %>'>
 	                <jalios:include id='<%=Channel.getChannel().getProperty("jcmsplugin.socle.portlet.filariane.id") %>'/>
 	            </jalios:if>
-	            <h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt ds44--xl-padding-l" id="titreActualite"><%=obj.getTitle(userLang)%></h1>
+	            <h1 class="h1-like mbs mts ds44-mobile-reduced-mb ds44-mobile-reduced-mt ds44--xl-padding-l underline" id="titreActualite"><%=obj.getTitle(userLang)%></h1>
 	        </div>
 	    </div>    
     </div>

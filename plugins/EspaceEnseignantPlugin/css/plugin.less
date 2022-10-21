@@ -113,6 +113,17 @@ BODY .ds44-theme {
     margin-top: 20px;
 }
 
+.ds44-btn--contextual,
+.ds44-btnStd.ds44-theme {
+    background-color: @main-color !important;
+    border-color: @main-color;
+    
+    &:hover{
+        background-color: @light-grey !important;
+        border-color: @light-grey;        
+    }
+}
+
 // ------------------------------------------------------------------- 
 //  VIGNETTE                                             
 // -------------------------------------------------------------------
@@ -312,51 +323,13 @@ BODY .ds44-theme {
 .pub-action-toggler-fde_5328 {
     #content {
         padding-top: 2rem;
-    }
-                    h1 {
-                    font: normal normal bold 34px/43px Muli;
-                    padding-left: 20px;
-
-                    &:after {
-                        content: '';
-                        display: block;
-                        border-bottom: 1px solid @main-color;
-                        width: 6em;
-                        margin-left: -0.5em;
-                    }
-                }
-}/*
-        .ds44-lightBG {
-            background-color: @white;
-            
-            .ds44-inner-container .ds44-grid12-offset-2{
-                padding-left: 3.8em;
-                
-                h1 {
-                    font: normal normal bold 34px/43px Muli;
-                    padding-left: 20px;
-
-                    &:after {
-                        content: '';
-                        display: block;
-                        border-bottom: 1px solid @main-color;
-                        width: 6em;
-                        margin-left: -0.5em;
-                    }
-                }
-                
-                .PortletNavigate {
-                    font: normal normal normal 14px/21px Muli;
-                }
-            }
-        }
-        .ds44-mtb3 {
-            margin-top: 0;
-            padding-top: 0;
+        h1 {
+            font: normal normal bold 34px/43px Muli;
+            padding-left: 20px;
         }
     }
 }
-*/
+
 .rechercheGenerale {
     .ds44-facette .ds44-facette-body {
          header {
@@ -432,4 +405,11 @@ BODY .ds44-theme {
             min-width: 8.5rem;
         }
     }
+}
+
+// ------------------------------------------------------------------- 
+//  Liste de contenus SITE                                             
+// -------------------------------------------------------------------
+#idTitre2 { 
+    background: none;
 }
