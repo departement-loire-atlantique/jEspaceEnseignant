@@ -133,7 +133,6 @@
            qh.setSort("mdate");
            pubRelatedCollection.addAll(QueryManager.getInstance().getRelatedPublicationSet(obj, qh));
          }
-         System.out.println(pubRelatedCollection);
          %>
       <jalios:if predicate="<%= Util.notEmpty(pubRelatedCollection) %>">
             <div class="fiche-page-footer ds44-wave-white">
