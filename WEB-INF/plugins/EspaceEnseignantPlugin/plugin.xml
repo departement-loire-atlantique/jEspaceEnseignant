@@ -166,6 +166,12 @@
           <label xml:lang="fr">Espace Enseignant : gabarit générique simple</label>
         </template>
     </templates>  
+    <templates type="FicheActionEducative">
+        <template name="ficheActionEducative" file="doFicheActionEducativeFullDisplay.jsp" usage="full">
+            <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
+        </template>
+    </templates> 
+    
  </types>
   <!-- ============================== Workflows =========================== -->
   <!--                                                                      -->

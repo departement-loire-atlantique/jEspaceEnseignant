@@ -34,6 +34,7 @@ jcmsplugin.socle.site.header.cat: fde_5290
 jcmsplugin.socle.site.header.show.rechercher: false
 
 # Media Template
+media.data-template.card.FicheActionEducative: /plugins/EspaceEnseignantPlugin/templates/doFicheActionEducativeCard.jsp
 media.data-template.card.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignette.jsp
 media.data-template.vignetteCarrousel.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignetteCarrousel.jsp
 media.data-template.carrouselActu.Fiche: /plugins/EspaceEnseignantPlugin/templates/tuileVignetteActu.jsp
