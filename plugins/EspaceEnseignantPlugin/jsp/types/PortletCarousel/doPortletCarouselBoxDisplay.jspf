@@ -1,4 +1,5 @@
- <%@page import="fr.cg44.plugin.socle.SocleUtils"%>
+ <%@page import="generated.FicheActionEducative"%>
+<%@page import="fr.cg44.plugin.socle.SocleUtils"%>
 <%
     PortletCarousel box = (PortletCarousel) portlet;
     String themeClair = "tuileVerticaleLight";
@@ -38,6 +39,7 @@
     <jalios:buffer name="tuilesResult">
         <%@ include file="/types/PortletQueryForeach/doForeachHeader.jspf"%>
             <li class="swiper-slide">
+                <% template = itPub instanceof FicheActionEducative ? "card" : template; %>
                 <jalios:media data="<%=itPub %>" template="<%= template %>"/>
             </li>
         <%@ include file="/types/PortletQueryForeach/doForeachFooter.jspf"%>
