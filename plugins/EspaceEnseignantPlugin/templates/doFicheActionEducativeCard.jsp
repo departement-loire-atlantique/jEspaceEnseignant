@@ -12,10 +12,10 @@ FicheActionEducative obj = (FicheActionEducative) data;
 
 List<Category> categorySet = Arrays.asList(obj.getCategories(loggedMember));
 
-Category typologie = channel.getCategory("c_5145");
-Category niveaux = channel.getCategory("c_5165");
-Category periode = channel.getCategory("c_5182");
-Category sites = channel.getCategory("c_5263");
+Category typologie = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.typologie.cat.root"));
+Category niveaux = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.niveaux.cat.root"));
+Category periode = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.periode.cat.root"));
+Category sites = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.sites.cat.root"));
 
 List<Category> typologieSet = new ArrayList<>();
 List<Category> niveauxSet = new ArrayList<>();
@@ -100,16 +100,6 @@ for(Category itCat : categorySet) {
 			            <%= itCategory.getName() %> </p>
 			        </jalios:foreach>
 			    </jalios:if>  
-<%--			    <jalios:if predicate="<%= Util.notEmpty(obj.getDateDeVie()) && Util.notEmpty(obj.getDateDeMort()) %>">
-			        <p class="ds44-docListElem small-txt"> 
-			            <i class="icon icon-date  ds44-docListIco" aria-hidden="true"></i>
-			            Du 
-			            <jalios:date date='<%= obj.getDateDeVie() %>' format='<%= "long" %>'/> 
-			            au 
-			            <jalios:date date='<%= obj.getDateDeMort() %>' format='<%= "long" %>'/> 
-			        </p>
-			    </jalios:if>
---%>
 			</div>
 			<jalios:if predicate="<%= Util.notEmpty(typologieSet) %>">
 			    <jalios:foreach collection="<%= typologieSet %>" type="Category" name="itCategory" >

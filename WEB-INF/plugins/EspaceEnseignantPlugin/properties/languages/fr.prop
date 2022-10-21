@@ -1,5 +1,7 @@
 jcmsplugin.espaceEnseignant.periode.cat.root: Catégorie des Périodes
 jcmsplugin.espaceEnseignant.typologie.cat.root: Catégorie des Types
+jcmsplugin.espaceEnseignant.niveaux.cat.root: Catégorie des niveaux
+jcmsplugin.espaceEnseignant.sites.cat.root: Catégorie des sites patrimoniaux
 jcmsplugin.espaceEnseignant.contact.cat.root: Page de contact
 
 jcmsplugin.espaceEnseignant.fiche.AjoutSel: Ajouter à ma sélection

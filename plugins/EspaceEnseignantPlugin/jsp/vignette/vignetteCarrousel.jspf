@@ -28,17 +28,17 @@
                                             </div>
                                         </jalios:foreach>
                                     <% } %>
-                                    <a href=# class="ds44-colRight">
-                                    <i class="icon icon-star-empty" aria-hidden="true"></i>
-                                    </a>
-                                </div>
+<%--                                     <a href=# class="ds44-colRight">
+ --%>                                    <i class="icon icon-star-empty" aria-hidden="true"></i>
+ <%--                                   </a>
+ --%>                                </div>
 
                                 <%-- Vignette Body --%>
                                 <div class="ds44-card__section vignette-body">
                                 
                                     <div class="ds44-innerBoxContainer">
                                         <p role="heading" aria-level="2" class="ds44-card__title">
-                                            <jalios:link data="<%= obj %>" css="ds44-card__globalLink">
+                                            <jalios:link data="<%= itFiche %>" css="ds44-card__globalLink">
                                                 <%=itFiche.getTitle()%>
                                             </jalios:link>
                                         </p>
