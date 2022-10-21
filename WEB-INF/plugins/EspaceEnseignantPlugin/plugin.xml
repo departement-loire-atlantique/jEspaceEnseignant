@@ -160,12 +160,7 @@
         <template name="Facetterecherche" file="doPortletRechercheFacettesBoxRechercheDisplay.jsp" usage='box'>
           <label xml:lang="fr">Espace Enseignant : gabarit générique simple</label>
         </template>        
-    </templates>  
-    <templates type="PortletFacetteCategoriesLiees">
-        <template name="categorieLieeRecherche" file="doPortletFacetteCategoriesLieesBoxRechercheDisplay.jsp" usage='box'>
-          <label xml:lang="fr">Espace Enseignant : gabarit générique simple</label>
-        </template>
-    </templates>  
+    </templates>   
     <templates type="FicheActionEducative">
         <template name="ficheActionEducative" file="doFicheActionEducativeFullDisplay.jsp" usage="full">
             <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
