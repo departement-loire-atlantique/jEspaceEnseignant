@@ -10,7 +10,7 @@
 %><%@ include file='/jcore/doInitPage.jspf' %><%
 %><% Fiche obj = (Fiche)request.getAttribute(PortalManager.PORTAL_PUBLICATION); %><%
 %><%@ include file='/front/doFullDisplay.jspf' %>
-<div class="fullDisplay Fiche <%= obj.canBeEditedFieldByField(loggedMember) ? "unitFieldEdition" : "" %>" itemscope="itemscope">
+<div class="fullDisplay ds44-container-large Fiche <%= obj.canBeEditedFieldByField(loggedMember) ? "unitFieldEdition" : "" %>" itemscope="itemscope">
 
   <% 
   jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");

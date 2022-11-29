@@ -163,7 +163,10 @@
     </templates>   
     <templates type="FicheActionEducative">
         <template name="ficheActionEducative" file="doFicheActionEducativeFullDisplay.jsp" usage="full">
-            <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
+            <label xml:lang="fr">Espace Enseignant : gabarit fiche expo / site</label>
+        </template>
+        <template name="ficheActivite" file="doFicheActiviteFullDisplay.jsp" usage="full">
+            <label xml:lang="fr">Espace Enseignant : gabarit fiche activité</label>
         </template>
     </templates> 
     

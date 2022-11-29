@@ -1,78 +1,98 @@
-<%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
-<% boolean isCartel = EspaceEnseignantHandler.isCartel(loggedMember, userLang, obj); %>
+<%@ page
+	import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
+<%
+boolean isCartel = EspaceEnseignantHandler.isCartel(loggedMember, userLang, obj);
+%>
 
 <jalios:select>
-    <%-- 1. HEADER AVEC CARTEL  --%>
-    <jalios:if predicate="<%= isCartel %>">
-        <%-- FICHE TITLE HEADER --%>
-        <div class="fiche-page-header ds44-lightBG ds44-posRel">
-            <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
-                <div class="ds44-grid12-offset">
-                    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
-                    <h1 class="h1-like mbs mts bold-txt">
-                    <%= obj.getTitle() %>
-                    </h1>
-                    <p class="page-subtitle">
-                    Mis à jour le 
-                    <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
-                    </p>
-                </div>
-            </div>
-        </div>
+	<%-- 1. HEADER AVEC CARTEL  --%>
+	<jalios:if predicate="<%=isCartel%>">
+		<%-- FICHE TITLE HEADER --%>
+		<div class="ds44-lightBG ds44-posRel">
+			<div
+				class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					<%@ include
+						file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf'%>
+					<h1 class="h1-like mbs mts bold-txt">
+						<%=obj.getTitle()%>
+					</h1>
+					<p class="ds44-textLegend">
+						Mis à jour le
+						<jalios:date date='<%=obj.getUdate()%>' format='<%="short"%>' />
+					</p>
+				</div>
+			</div>
+		</div>
+        
+        <div class="ds44-img50">
+			<div class="ds44-inner-container">
+				<div class="ds44-grid12-offset-1">
+					<%@ include
+					file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCartel.jspf'%>
+				</div>
+			</div>
+		</div>
+		
+	</jalios:if>
 
-        <div class=" ds44-img50 ds44--l-padding-tb">
-            <%-- FICHE CARTEL --%>
-            <div class="fiche-cartel">
-                <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCartel.jspf' %>
-            </div>
-        </div>
-    </jalios:if>
+	<%-- 2. HEADER AVEC IMAGE  --%>
+	<jalios:if
+		predicate="<%=Util.notEmpty(obj.getGalerieDeVisuels()) || Util.notEmpty(obj.getVisuel())%>">
+		<%-- FICHE TITLE HEADER --%>
+		<div class="ds44-lightBG ds44-posRel">
+			<div
+				class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					<%@ include
+						file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf'%>
+					<h1 class="h1-like mbs mts bold-txt">
+						<%=obj.getTitle()%>
+					</h1>
+					<p class="ds44-textLegend">
+						Mis à jour le
+						<jalios:date date='<%=obj.getUdate()%>' format='<%="short"%>' />
+					</p>
+				</div>
+			</div>
+		</div>
 
-    <%-- 2. HEADER AVEC IMAGE  --%>
-    <jalios:if predicate="<%= Util.notEmpty(obj.getGalerieDeVisuels()) || Util.notEmpty(obj.getVisuel()) %>">
-        <%-- FICHE TITLE HEADER --%>
-        <div class="fiche-page-header ds44-lightBG ds44-posRel">
-            <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
-                <div class="ds44-grid12-offset">
-                    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
-                    <h1 class="h1-like mbs mts bold-txt">
-                    <%= obj.getTitle() %>
-                    </h1>
-                    <p class="page-subtitle">
-                    Mis à jour le 
-                    <jalios:date date='<%= obj.getUdate() %>' format='<%= "short" %>'/>
-                    </p>
-                </div>
-            </div>
-        </div>
+        <div class="ds44-img50">
+			<div class="ds44-inner-container">
+				<div class="ds44-grid12-offset-1">
+					<%
+					if (Util.notEmpty(obj.getGalerieDeVisuels())) {
+					%>
+					<%@ include
+						file='/plugins/EspaceEnseignantPlugin/jsp/image/imageCarrousel.jspf'%>
+					<%
+					} else if (Util.notEmpty(obj.getVisuel())) {
+					%>
+					<%@ include
+						file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFicheCredits.jspf'%>
+					<%
+					}
+					%>
+				</div>
+			</div>
+		</div>
+	</jalios:if>
 
-        <div class=" ds44-img50 ds44--l-padding-tb">
-            <%-- FICHE CARTEL --%>
-            <div class="fiche-cartel">
-                <div class="ds44-container-large">
-                <% if(Util.notEmpty(obj.getGalerieDeVisuels())) { %>
-                    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageCarrousel.jspf' %>
-                <% } else if(Util.notEmpty(obj.getVisuel())) { %>
-                    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFicheCredits.jspf' %>
-                <% } %>
-                </div>
-            </div>
-        </div>
-    </jalios:if>
-
-    <%-- 3. HEADER SIMPLE  --%>
-    <jalios:default> 
-        <%-- FICHE TITLE HEADER --%>
-        <div class="fiche-page-header ds44-lightBG ds44-posRel ds44--m-padding-b">
-            <div class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
-                <div class="ds44-grid12-offset">
-                    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf' %>
-                    <h1 class="h1-like mbs mts bold-txt">
-                    <%= obj.getTitle() %>
-                    </h1>
-                </div>
-            </div>
-        </div>
-    </jalios:default>
+	<%-- 3. HEADER SIMPLE  --%>
+	<jalios:default>
+		<%-- FICHE TITLE HEADER --%>
+		<div class="ds44-lightBG ds44-posRel ds44--m-padding-b">
+			<div
+				class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					<%@ include
+						file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf'%>
+					<h1 class="h1-like mbs mts bold-txt">
+						<%=obj.getTitle()%>
+					</h1>
+				</div>
+			</div>
+		</div>
+	</jalios:default>
 
 </jalios:select>

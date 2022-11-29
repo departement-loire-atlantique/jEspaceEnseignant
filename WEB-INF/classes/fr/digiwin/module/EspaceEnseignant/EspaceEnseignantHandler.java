@@ -10,6 +10,7 @@ import com.jalios.jcms.Channel;
 import com.jalios.jcms.Member;
 import com.jalios.util.Util;
 import generated.Fiche;
+import generated.FicheActionEducative;
 
 public class EspaceEnseignantHandler {
     
@@ -115,5 +116,34 @@ public class EspaceEnseignantHandler {
     			Util.notEmpty(fiche.getNomDeLartiste(userLang)) ||
     			Util.notEmpty(fiche.getTypologie(loggedMember)) ||
     			Util.notEmpty(fiche.getPeriode(loggedMember));
+    }
+
+
+    public static Map<Category, Category> getThemeCategory(Member loggedMember, FicheActionEducative fiche) {
+        Map<Category, Category> periodes = new HashMap<>();
+        if (Util.notEmpty(fiche.getTheme(loggedMember))) {  
+            String catId = channel.getProperty("jcmsplugin.espaceEnseignant.periode.cat.root");
+            if(Util.notEmpty(catId)) {
+                // cherche période principale de la fiche
+                Category catPeriode = channel.getCategory(catId); //cat de la catégorie période
+                for(Category itCat : fiche.getTheme(loggedMember)) { //liste des catégories de la fiche
+                    boolean isParent = false;
+                    Category catParent = itCat.getParent();
+                    while(!isParent) {
+                        if(Util.notEmpty(catParent.getParent()) && catParent.getParent().getId().equals(catPeriode.getId())) {
+                            periodes.put(catParent, itCat);
+                            isParent = true; //fin on trouve le parent
+                        } else {
+                            if(Util.notEmpty(catParent.getParent())) {
+                                catParent = catParent.getParent(); //prochain parent
+                            } else {
+                                isParent = true; //sinon fin
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return periodes;
     }
 }
