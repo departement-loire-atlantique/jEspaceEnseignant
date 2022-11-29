@@ -113,6 +113,7 @@
  -->
   <types>
     <type name="Fiche" />
+    <type name="FicheSiteExpo" />
 
     <templates type="Fiche">
 	    <template name="default" file="doFicheFullDisplay.jsp" usage='full'>
@@ -162,11 +163,13 @@
         </template>        
     </templates>   
     <templates type="FicheActionEducative">
-        <template name="ficheActionEducative" file="doFicheActionEducativeFullDisplay.jsp" usage="full">
-            <label xml:lang="fr">Espace Enseignant : gabarit fiche expo / site</label>
-        </template>
-        <template name="ficheActivite" file="doFicheActiviteFullDisplay.jsp" usage="full">
+        <template name="default" file="doFicheActiviteFullDisplay.jsp" usage="full">
             <label xml:lang="fr">Espace Enseignant : gabarit fiche activité</label>
+        </template>
+    </templates> 
+    <templates type="FicheSiteExpo">
+        <template name="default" file="doFicheSiteExpoFullDisplay.jsp" usage="full">
+            <label xml:lang="fr">Espace Enseignant : gabarit fiche expo / site</label>
         </template>
     </templates> 
     

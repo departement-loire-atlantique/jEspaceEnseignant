@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<type name="FicheSiteExpo" superclass="com.jalios.jcms.Content" debatable="false" unitFieldEdition="true" audienced="false" categoryTab="true" readRightTab="true" updateRightTab="true" templateTab="false" workflowTab="true" advancedTab="true" hbm="true" revision="true" categories="">
+  <title ml="true">
+    <label xml:lang="en">Title</label>
+    <label xml:lang="fr">Titre</label>
+  </title>
+  <fields>
+    <field name="description" editor="wysiwyg" required="true" type="String" searchable="true" abstract="true" wysiwygConfigurationId="default" ml="true">
+      <label xml:lang="en">Description</label>
+      <label xml:lang="fr">Description</label>
+    </field>
+    <field name="imagePrincipale" editor="image" required="false" compactDisplay="false" type="String" searchable="false" size="80" ml="false" descriptionType="tooltip" html="false" checkHtml="true" resize="false" resizeWidth="100" resizeHeight="75">
+      <label xml:lang="fr">Image principale</label>
+    </field>
+    <field name="imageMobile" editor="image" required="false" compactDisplay="false" type="String" searchable="false" size="80" ml="false">
+      <label xml:lang="fr">Image mobile</label>
+    </field>
+    <field name="legende" editor="textfield" required="false" compactDisplay="false" type="String" searchable="false" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Légende</label>
+    </field>
+    <field name="copyright" editor="textfield" required="false" compactDisplay="false" type="String" searchable="false" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Copyright</label>
+    </field>
+    <field name="motsCles" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="keyword" exclusive="false" root="c_5271">
+      <label xml:lang="fr">Mots clés</label>
+    </field>
+    <field name="ressourcesAssocies" editor="link" required="false" compactDisplay="false" type="generated.FicheSiteExpo[]">
+      <label xml:lang="fr">Ressources associés</label>
+    </field>
+    <field name="ndeVoie" editor="textfield" required="false" compactDisplay="false" tab="infos_pratiques" type="String" searchable="false" size="80" ml="false" html="false" checkHtml="true">
+      <label xml:lang="fr">N° de voie</label>
+    </field>
+    <field name="libelleDeVoie" editor="textfield" required="false" compactDisplay="false" tab="infos_pratiques" type="String" searchable="false" size="80" ml="false" html="false" checkHtml="true">
+      <label xml:lang="fr">Libellé de voie</label>
+    </field>
+    <field name="cs" editor="textfield" required="false" compactDisplay="false" tab="infos_pratiques" type="String" searchable="false" size="80" ml="false" html="false" checkHtml="true">
+      <label xml:lang="fr">CS</label>
+    </field>
+    <field name="codePostal" editor="textfield" required="false" compactDisplay="false" tab="infos_pratiques" type="String" searchable="false" size="80" ml="false" html="false" checkHtml="true">
+      <label xml:lang="fr">Code postal</label>
+    </field>
+    <field name="commune" editor="link" required="false" compactDisplay="false" tab="infos_pratiques" type="generated.City" parent="false">
+      <label xml:lang="fr">Commune</label>
+    </field>
+    <field name="cedex" editor="textfield" required="false" compactDisplay="false" tab="infos_pratiques" type="String" searchable="false" size="80" ml="false" html="false" checkHtml="true">
+      <label xml:lang="fr">Cedex</label>
+    </field>
+    <field name="complementTransport" editor="wysiwyg" required="false" compactDisplay="false" tab="infos_pratiques" type="String" searchable="false" rows="16" cols="100" ml="true" wysiwygConfigurationId="" checkHtml="true" inline="true">
+      <label xml:lang="fr">Complément transport</label>
+    </field>
+    <field name="telephone" editor="textfield" required="false" compactDisplay="false" tab="infos_pratiques" type="String[]" searchable="false" size="80" ml="false" html="false" checkHtml="true">
+      <label xml:lang="fr">Téléphone</label>
+    </field>
+    <field name="mail" editor="textfield" required="false" compactDisplay="false" tab="infos_pratiques" type="String[]" searchable="false" size="80" ml="false" html="false" checkHtml="true">
+      <label xml:lang="fr">Mail</label>
+    </field>
+    <field name="siteInternet" editor="url" required="false" compactDisplay="false" tab="infos_pratiques" type="String[]" searchable="false" size="80" ml="true" openWindow="false">
+      <label xml:lang="fr">Site internet</label>
+    </field>
+  </fields>
+  <tabs>
+    <tab id="infos_pratiques">
+      <label xml:lang="fr">Infos pratiques</label>
+    </tab>
+  </tabs>
+  <label xml:lang="fr">Fiche Site / Expo</label>
+</type>
+

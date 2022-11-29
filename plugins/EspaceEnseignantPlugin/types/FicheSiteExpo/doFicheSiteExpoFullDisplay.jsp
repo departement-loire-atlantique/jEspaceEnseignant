@@ -1,7 +1,7 @@
 <%@page import="com.jalios.jcms.handler.QueryHandler"%>
 <%@ page contentType="text/html; charset=UTF-8" %><%
 %><%@ include file='/jcore/doInitPage.jspf' %><%
-%><% FicheActionEducative obj = (FicheActionEducative)request.getAttribute(PortalManager.PORTAL_PUBLICATION); %><%
+%><% FicheSiteExpo obj = (FicheSiteExpo)request.getAttribute(PortalManager.PORTAL_PUBLICATION); %><%
 %><%@ include file='/front/doFullDisplay.jspf' %>
 <%@ taglib prefix="ds" tagdir="/WEB-INF/tags"%>
 <div class="fullDisplay Fiche <%= obj.canBeEditedFieldByField(loggedMember) ? "unitFieldEdition" : "" %>" itemscope="itemscope">
@@ -34,7 +34,17 @@
 
 <main role="main" id="content">
     <article class="ds44-container-large">
-        <ds:titleSimple pub="<%= obj %>" title="<%= obj.getTitle(userLang) %>" breadcrumb="true"></ds:titleSimple>
+        <div class="ds44-lightBG ds44-posRel ds44--m-padding-b">
+			<div
+				class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf'%>
+					<h1 class="h1-like mbs mts bold-txt">
+						<%=obj.getTitle()%>
+					</h1>
+				</div>
+			</div>
+		</div>
 
         <section class="">
         <div class="ds44-inner-container ds44-xl-margin-tb">
@@ -77,10 +87,10 @@
                                     </jalios:foreach>
                                     </p>
                                 </jalios:if>
-                                <jalios:if predicate="<%= Util.notEmpty(obj.getAdresseSiteInternet()) %>">
-                                    <jalios:foreach name="itWeb" type="String" collection="<%= Arrays.asList(obj.getAdresseSiteInternet()) %>">
+                                <jalios:if predicate="<%= Util.notEmpty(obj.getSiteInternet()) %>">
+                                    <jalios:foreach name="itWeb" type="String" collection="<%= Arrays.asList(obj.getSiteInternet()) %>">
 	                                    <p class="ds44-docListElem mtm"><i class="icon icon-link ds44-docListIco" aria-hidden="true"></i>
-	                                    <a href="<%= itWeb %>"><%= Util.notEmpty(obj.getNomDuSite()[itCounter-1]) ? obj.getNomDuSite()[itCounter-1] : itWeb %></a>
+	                                    <a href="<%= itWeb %>"><%= itWeb %></a>
 	                                    </p>
                                     </jalios:foreach>
                                     </p>
@@ -101,19 +111,21 @@
                     </div>
         </div>
         <div class="ds44-inner-container">
-        <section class="ds44-partage ds44-flex-container ds44-flex-align-center pal">
-      <%-- MOTS CLES --%>
-      <% if (false) { %>
-<%--    TODO    
-        <h3 class="h3-ens">Mots clefs</h3>
-        <div class="fiche-mot-clef">
-          <jalios:foreach collection="<%= obj.getMotsCles(loggedMember) %>" type="Category" name="itCategory" >
-            <jalios:link data="<%= itCategory %>">
-              <p class="mot-clef"> <%= itCategory.getName() %> </p>
-            </jalios:link>
-          </jalios:foreach>
-        </div>
- --%>      <% } %>
+        
+        <%-- MOTS CLES --%>
+        <% if (Util.notEmpty(obj.getMotsCles(loggedMember))) { %>
+            <h3 class="h3-ens"> Mots clefs </h3>
+            <div class="fiche-mot-clef">
+            <jalios:foreach collection="<%= obj.getMotsCles(loggedMember) %>" type="Category" name="itCategory" >
+                <jalios:link data="<%= itCategory %>">
+                <p class="mot-clef"> <%= itCategory.getName() %> </p>
+                </jalios:link>
+            </jalios:foreach>
+            </div>
+        <% } %>
+        
+            <section class="ds44-partage ds44-flex-container ds44-flex-align-center pal">
+        
       
           <%-- RESSOURCES ASSOCIEES --%>
       <%
@@ -129,7 +141,7 @@
          pubRelatedCollection =  Util.getArrayList(relatedContents).stream().filter(c -> c.canBeReadBy(loggedMember) && c.isInVisibleState()).collect(java.util.stream.Collectors.toList());
          if (pubRelatedCollection.size() < pubRelatedMax) {
            QueryHandler qh = new QueryHandler();  
-           qh.setTypes(new String[] {"generated.FicheActionEducative"});  
+           qh.setTypes(new String[] {"generated.FicheSiteExpo"});  
            qh.setSort("mdate");
            pubRelatedCollection.addAll(QueryManager.getInstance().getRelatedPublicationSet(obj, qh));
          }
@@ -137,7 +149,7 @@
       <jalios:if predicate="<%= Util.notEmpty(pubRelatedCollection) %>">
             <div class="fiche-page-footer ds44-wave-white">
         <h3 class="h3-ens underline center-txt">Ressources Associees</h3>
-      <% ArrayList<FicheActionEducative> tab = new ArrayList<>(pubRelatedCollection);%>
+      <% ArrayList<FicheSiteExpo> tab = new ArrayList<>(pubRelatedCollection);%>
             <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCarrouselFicheActionEducative.jspf' %>
             </div>
       </jalios:if>     

@@ -1,6 +1,6 @@
 <%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 <%  
-ArrayList<Category> listTypoFil = EspaceEnseignantHandler.getTypologieList(loggedMember, obj);
+ArrayList<Category> listFilAriane = EspaceEnseignantHandler.getFilAriane(loggedMember, obj);
 %>
 
 <nav role="navigation" aria-label="Votre position" class="ds44-hide-mobile">
@@ -12,7 +12,7 @@ ArrayList<Category> listTypoFil = EspaceEnseignantHandler.getTypologieList(logge
                 <span class="visually-hidden">Accueil</span>
             </a>
         </li>
-        <jalios:foreach collection="<%= listTypoFil %>" type="Category" name="itCategory" >
+        <jalios:foreach collection="<%= listFilAriane %>" type="Category" name="itCategory" >
             <li class="ds44-breadcrumb_item"> 
                 <jalios:link data="<%= itCategory %>">
                 <%= itCategory.getName() %>
