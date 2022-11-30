@@ -42,7 +42,8 @@ jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
 		<div
 			class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
 			<div class="ds44-grid12-offset-2">
-				<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf'%>
+				<%@ include
+					file='/plugins/EspaceEnseignantPlugin/jsp/filAriane.jspf'%>
 				<h1 class="h1-like mbs mts bold-txt">
 					<%=obj.getTitle()%>
 				</h1>
@@ -61,28 +62,33 @@ jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
 							<%-- PRATIQUE --%>
 							<div class="col">
 								<div class="ds44-box-heading" role="heading" aria-level="3"><%=glp("jcmsplugin.socle.actuedu.infopratiques.label")%></div>
-								<jalios:if predicate="<%=Util.notEmpty(obj.getTheme(loggedMember))%>">
-										<jalios:if
-											predicate="<%=Util.notEmpty(obj.getTheme(loggedMember))%>">
-											<%
-											for (Map.Entry<Category, Category> entry : listThemeCartel.entrySet()) {
-											%>
-											<p class="ds44-docListElem ds44-mt-std">
-												<i class="icon icon-directory  ds44-docListIco" aria-hidden="true"></i>
-												<strong role="heading" aria-level="4"> <%=entry.getKey().getName()%>
-												</strong>
-											</p>
-											<p class="ds44-docListElem">
-												<%=entry.getValue().getName()%>
-											</p>
-											<%
-											}
-											%>
-										</jalios:if>
-										
-										<jalios:if predicate="<%=Util.notEmpty(obj.getParcoursEducationNationale(loggedMember))%>">
-												<p> <%=SocleUtils.formatCategories(obj.getParcoursEducationNationale(loggedMember))%> </p>
-										</jalios:if>
+								<jalios:if
+									predicate="<%=Util.notEmpty(obj.getTheme(loggedMember))%>">
+									<jalios:if
+										predicate="<%=Util.notEmpty(obj.getTheme(loggedMember))%>">
+										<%
+										for (Map.Entry<Category, Category> entry : listThemeCartel.entrySet()) {
+										%>
+										<p class="ds44-docListElem ds44-mt-std">
+											<i class="icon icon-directory  ds44-docListIco"
+												aria-hidden="true"></i> <strong role="heading"
+												aria-level="4"> <%=entry.getKey().getName()%>
+											</strong>
+										</p>
+										<p class="ds44-docListElem">
+											<%=entry.getValue().getName()%>
+										</p>
+										<%
+										}
+										%>
+									</jalios:if>
+
+									<jalios:if
+										predicate="<%=Util.notEmpty(obj.getParcoursEducationNationale(loggedMember))%>">
+										<p>
+											<%=SocleUtils.formatCategories(obj.getParcoursEducationNationale(loggedMember))%>
+										</p>
+									</jalios:if>
 								</jalios:if>
 								<jalios:if
 									predicate="<%=Util.notEmpty(obj.getTypeDePratique(loggedMember))%>">
@@ -115,8 +121,7 @@ jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
 										<jalios:wysiwyg><%=obj.getCapaciteDaccueil(userLang)%></jalios:wysiwyg>
 									</div>
 								</jalios:if>
-								<jalios:if
-									predicate="<%=Util.notEmpty(obj.getCout(userLang))%>">
+								<jalios:if predicate="<%=Util.notEmpty(obj.getCout(userLang))%>">
 									<div class="ds44-docListElem mts">
 										<i class="icon icon-cost ds44-docListIco" aria-hidden="true"></i>
 										<strong><%=glp("jcmsplugin.socle.actuedu.cout.label")%>
@@ -179,8 +184,7 @@ jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
 									<i class="icon icon-phone ds44-docListIco" aria-hidden="true"></i>
 									<jalios:foreach name="itPhone" type="String"
 										array="<%=obj.getTelephone()%>">
-										<ds:phone number="<%=itPhone%>"
-											pubTitle="<%=obj.getTitle()%>"></ds:phone>
+										<ds:phone number="<%=itPhone%>" pubTitle="<%=obj.getTitle()%>"></ds:phone>
 									</jalios:foreach>
 								</p>
 								<p class="ds44-docListElem mts">

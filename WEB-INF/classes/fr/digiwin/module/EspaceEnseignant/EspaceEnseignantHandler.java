@@ -83,7 +83,8 @@ public class EspaceEnseignantHandler {
             catId = channel.getProperty("jcmsplugin.espaceEnseignant.typologie.cat.root");
             treesetCat = ((Fiche) fiche).getTypologie(loggedMember);
         } else if(fiche instanceof FicheSiteExpo) {
-            // TO DO
+            catId = channel.getProperty("jcmsplugin.espaceEnseignant.navigation.cat.root");
+            treesetCat = ((FicheSiteExpo) fiche).getNavigation(loggedMember);
         } else if(fiche instanceof Fiche) { 
             catId = channel.getProperty("jcmsplugin.espaceEnseignant.navigation.cat.root");
             treesetCat = ((FicheActionEducative) fiche).getCategorieDeNavigation(loggedMember);
