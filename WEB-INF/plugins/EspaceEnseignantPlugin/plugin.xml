@@ -498,6 +498,7 @@
     <directory path="js" />
     <directory path="css" />
     <directory path="docs" />
+    <directory path="images" />
     <directory path="jsp" />
     <directory path="templates" />
     <!--    
