@@ -26,7 +26,7 @@ if (canEdit && isActionForThisFAQ && formHandler.validate()) {
 }
 
 %>
-<div id="faq-fulldisplay-<%= obj.getId() %>" class="fullDisplay Faq" itemscope="itemscope">
+<div id="faq-fulldisplay-<%= obj.getId() %>" class="fullDisplay ds44-container-large Faq" itemscope="itemscope">
   <%-- *** QUESTION LIST ************************************* --%>
   <div class="list">
     <%
@@ -42,29 +42,29 @@ if (canEdit && isActionForThisFAQ && formHandler.validate()) {
   </div>
 
   <%-- *** QUESTION / ANSWSER LIST ************************************* --%>
-  <div class="fiche-page-header fiche-bg">
-    <div class="fiche-page-header-title">
-      <div class="spacer"></div>
-
-      <nav role="navigation" aria-label="Votre position" class="ds44-hide-mobile">
-          <ul class="ds44-list ds44-breadcrumb">
-              <li class="ds44-breadcrumb_item"> 
-                  <a href="#">
-                      <i class="icon icon-home icon--medium" aria-hidden="true"></i>
-                      <span class="visually-hidden">Accueil</span>
-                  </a>
-              </li>
-              <li class="ds44-breadcrumb_item" aria-current="location">
-              <span> <%= obj.getTitle() %> </span>
-              </li>
-          </ul>
-      </nav>
-
-      <h1 class="bold-txt margin-txt">
-      <%= obj.getTitle() %>
-      </h1>
-    </div>
-  </div>
+  <div class="ds44-lightBG ds44-posRel ds44--m-padding-b">
+			<div
+				class="ds44-inner-container ds44--xl-padding-t ds44--m-padding-b ds44-tablette-reduced-pt">
+				<div class="ds44-grid12-offset-2">
+					<nav role="navigation" aria-label="Votre position" class="ds44-hide-mobile">
+            <ul class="ds44-list ds44-breadcrumb">
+                <li class="ds44-breadcrumb_item"> 
+                    <a href="#">
+                        <i class="icon icon-home icon--medium" aria-hidden="true"></i>
+                        <span class="visually-hidden">Accueil</span>
+                    </a>
+                </li>
+                <li class="ds44-breadcrumb_item" aria-current="location">
+                <span> <%= obj.getTitle() %> </span>
+                </li>
+            </ul>
+          </nav>
+					<h1 class="h1-like mbs mts bold-txt">
+						<%=obj.getTitle()%>
+					</h1>
+				</div>
+			</div>
+		</div>
 
   <div class="faq-content">
 
