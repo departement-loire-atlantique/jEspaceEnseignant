@@ -136,11 +136,6 @@ FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PU
 					</div>
 				</div>
 
-
-
-
-
-
 				<%-- MOTS CLES --%>
 				<div class="ds44-inner-container">
 					<%

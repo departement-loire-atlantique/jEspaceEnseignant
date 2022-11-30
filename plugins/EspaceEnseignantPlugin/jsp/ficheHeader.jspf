@@ -18,7 +18,7 @@ boolean isCartel = EspaceEnseignantHandler.isCartel(loggedMember, userLang, obj)
 						<%=obj.getTitle()%>
 					</h1>
 					<p class="ds44-textLegend">
-						Mis à jour le
+						<%=glp("jcmsplugin.espaceEnseignant.fiche.header.maj")%>
 						<jalios:date date='<%=obj.getUdate()%>' format='<%="short"%>' />
 					</p>
 				</div>
@@ -50,7 +50,7 @@ boolean isCartel = EspaceEnseignantHandler.isCartel(loggedMember, userLang, obj)
 						<%=obj.getTitle()%>
 					</h1>
 					<p class="ds44-textLegend">
-						Mis à jour le
+						<%=glp("jcmsplugin.espaceEnseignant.fiche.header.maj")%>
 						<jalios:date date='<%=obj.getUdate()%>' format='<%="short"%>' />
 					</p>
 				</div>
