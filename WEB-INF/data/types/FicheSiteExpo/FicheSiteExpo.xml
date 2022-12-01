@@ -21,6 +21,9 @@
     <field name="copyright" editor="textfield" required="false" compactDisplay="false" type="String" searchable="false" size="80" ml="true" html="false" checkHtml="true">
       <label xml:lang="fr">Copyright</label>
     </field>
+    <field name="navigation" editor="category" required="true" compactDisplay="false" type="java.util.TreeSet" chooser="tree" exclusive="true" root="j_5">
+      <label xml:lang="fr">Navigation</label>
+    </field>
     <field name="motsCles" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="keyword" exclusive="false" root="c_5271">
       <label xml:lang="fr">Mots clés</label>
     </field>
@@ -63,7 +66,7 @@
     <field name="siteInternet" editor="url" required="false" compactDisplay="false" tab="infos_pratiques" type="String[]" searchable="false" size="80" ml="true" openWindow="false">
       <label xml:lang="fr">Site internet</label>
     </field>
-    <field name="documentTelechargeable" editor="link" required="false" compactDisplay="false" type="com.jalios.jcms.FileDocument" ml="true" parent="false">
+    <field name="documentTelechargeable" editor="url" required="false" compactDisplay="false" type="String" searchable="true" size="80" ml="true" openWindow="false">
       <label xml:lang="fr">Document téléchargeable</label>
     </field>
   </fields>

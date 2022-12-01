@@ -135,10 +135,10 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
 		</div>
         <div class="ds44-grid12-offset-1">
 			<jalios:if predicate="<%= Util.notEmpty(obj.getDocumentTelechargeable()) %>" >
-		        <jalios:link data="<%= obj.getDocumentTelechargeable() %>" css="ds44-btnStd ds44-btn--invert margin-txt" htmlAttributes='target="_blank"'>
-			        <span class="ds44-btnInnerText"><%= glp("jcmsplugin.socle.fichepublication.telecharger") %></span>
-			        <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
-		        </jalios:link>
+			 <a href="<%= obj.getDocumentTelechargeable() %>" class="ds44-btnStd ds44-btn--invert margin-txt" target="_blank">
+                <span class="ds44-btnInnerText"><%= glp("jcmsplugin.socle.fichepublication.telecharger") %></span>
+		         <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+		     </a>
 	        </jalios:if> 
 			<button class="ds44-btnStd">
 				<i class="icon icon-star-empty" aria-hidden="true"></i> <span

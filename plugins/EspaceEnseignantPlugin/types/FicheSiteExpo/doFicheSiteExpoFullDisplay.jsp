@@ -109,10 +109,10 @@
                                 <div class="ds44-innerBoxContainer">
 
                                 <jalios:if predicate="<%= Util.notEmpty(obj.getDocumentTelechargeable()) %>" >
-                                <jalios:link data="<%= obj.getDocumentTelechargeable() %>" css="ds44-btnStd ds44-btn--invert margin-txt" htmlAttributes='target="_blank"'>
+                                 <a href="<%= obj.getDocumentTelechargeable() %>" class="ds44-btnStd ds44-btn--invert margin-txt" target="_blank">
                                 <span class="ds44-btnInnerText"><%= glp("jcmsplugin.socle.fichepublication.telecharger") %></span>
                                 <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
-                                </jalios:link>
+                                </a>
                                 </jalios:if> 
                                     </div>
 <%--                                     <button class="ds44-btnStd">
