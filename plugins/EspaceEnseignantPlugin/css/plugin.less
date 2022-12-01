@@ -126,7 +126,8 @@ BODY .ds44-theme {
     background-color: @main-color !important;
     border-color: @main-color;
     
-    &:hover{
+    &:hover,
+    &:focus{
         background-color: @light-grey !important;
         border-color: @light-grey;        
     }
@@ -138,6 +139,7 @@ BODY .ds44-theme {
 .vignette {
     margin-right: 20px;
     margin-bottom: 20px;
+    height: 100%;
 
     .vignette-header {
         .vignette-header-title {
@@ -363,10 +365,19 @@ BODY .ds44-theme {
 .periodeMenu {
     background-color: @light-grey;
     
-    .h2-like {
+    .ds44-box-heading {
         font: normal normal bold 34px/43px Muli;
         background: none;
         border-bottom: 1px solid @main-color;
+        padding: 0;
+        margin-bottom: 1em;
+    }
+    
+    @media(max-width: 992px) {
+        .ds44-card__section--horizontal {
+            padding-left: 1rem;
+            padding-right: 0;
+        }
     }
     
     .list-group.panel {
@@ -398,4 +409,18 @@ BODY .ds44-theme {
 // -------------------------------------------------------------------
 #idTitre2 { 
     background: none;
+}
+
+// ------------------------------------------------------------------- 
+//  Surcharge DS System                                   
+// -------------------------------------------------------------------
+.ds44-homepage-container > div{
+    height: inherit;   
+}
+.ds44-card .ds44-cardArrow {
+    color:@medium-grey;
+}
+
+.PortletCarousel section.ds44-card--verticalPicture{
+    border-bottom: solid 2px @purple;
 }
