@@ -10,7 +10,7 @@ if (Util.isEmpty(title)) {
 }
 %>
 
-<article class="ds44-container-large">
+<article class="ds44-container-large listedecontenus">
     <ds:titleSimple pub="<%=obj%>" title="<%=title%>" breadcrumb="true"></ds:titleSimple>
     <jalios:foreach name="itContent" type="Content" array="<%=obj.getContenus()%>">
         <%
