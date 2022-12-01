@@ -6,17 +6,10 @@ jcmsplugin.espaceEnseignant.sites.cat.root: Catégorie des sites patrimoniaux
 jcmsplugin.espaceEnseignant.contact.cat.root: Page de contact
 
 jcmsplugin.espaceEnseignant.fiche.AjoutSel: Ajouter à ma sélection
-jcmsplugin.espaceEnseignant.fiche.header.maj: Mis à jour le
 jcmsplugin.espaceEnseignant.footer.btn-contact: Poser une question
 
 jcmsplugin.espaceEnseignant.site.decouvrez: Découvrez le site
 
-jcmsplugin.espaceEnseignant.carrousel.ressources-associees: Ressources associées
-
-jcmsplugin.espaceEnseignant.partage-rs.title: Partagez cette page
-jcmsplugin.espaceEnseignant.partage-rs.facebook: Partager cette page sur Facebook
-jcmsplugin.espaceEnseignant.partage-rs.twitter: Partagez cette page sur Twitter
-jcmsplugin.espaceEnseignant.partage-rs.linkedin: Partagez cette page sur Linkedin
-jcmsplugin.espaceEnseignant.partage-rs.mail: Partagez cette page par email
-
-jcmsplugin.espaceEnseignant.page-utile.title: Cette page vous a-t-elle été utile ?
+jcmsplugin.espaceEnseignant.site.infosPratiques: Infos pratiques
+jcmsplugin.espaceEnseignant.site.ressourcesAssociees: Ressources Associées
+jcmsplugin.espaceEnseignant.site.motsClefs: Mots clefs

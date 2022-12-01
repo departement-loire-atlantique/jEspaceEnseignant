@@ -28,6 +28,8 @@ jcmsplugin.socle.css-urls: https://design.loire-atlantique.fr/css/cd44.css https
 descriptive-urls.enabled: false
 fr.jcmsplugin.seo.meta-title: Ressources éducatives
 
+jcmsplugin.socle.site.submenu.cat.root: fde_5694
+
 # Catégorie
 jcmsplugin.espaceEnseignant.navigation.cat.root.chooser-category: j_5
 jcmsplugin.espaceEnseignant.periode.cat.root.chooser-category: c_5182

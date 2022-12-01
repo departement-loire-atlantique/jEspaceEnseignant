@@ -10,13 +10,12 @@
 %><%@ include file='/jcore/doInitPage.jspf' %><%
 %><% Fiche obj = (Fiche)request.getAttribute(PortalManager.PORTAL_PUBLICATION); %><%
 %><%@ include file='/front/doFullDisplay.jspf' %>
-<div class="fullDisplay  Fiche <%= obj.canBeEditedFieldByField(loggedMember) ? "unitFieldEdition" : "" %>" itemscope="itemscope">
+<div class="fullDisplay ds44-container-large Fiche <%= obj.canBeEditedFieldByField(loggedMember) ? "unitFieldEdition" : "" %>" itemscope="itemscope">
 
   <% 
   jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
   %>
     
-  <section class="ds44-container-large">
     <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/ficheHeader.jspf' %>
 
     <%-- FICHE BODY --%>
@@ -94,29 +93,32 @@
 
       <%-- MOTS CLES --%>
       <% if (Util.notEmpty(obj.getMotsCles(loggedMember))) { %>
-        <h3 class="h3-ens"> Mots clefs </h3>
+        <h3 class="h3-ens"><%= glp("jcmsplugin.espaceEnseignant.site.motsClefs") %></h3>
         <div class="fiche-mot-clef">
           <jalios:foreach collection="<%= obj.getMotsCles(loggedMember) %>" type="Category" name="itCategory" >
-            <jalios:link data="<%= itCategory %>">
-              <p class="mot-clef"> <%= itCategory.getName() %> </p>
-            </jalios:link>
+            <% String[] paramNames = { "textform-element-fde_5280fde_5275[value]", "textform-element-fde_5280fde_5275[text]"};
+            String[] paramValues = { itCategory.getName(), itCategory.getName() };
+            %>
+                <jalios:link id="fde_5286" paramNames='<%= paramNames %>' paramValues='<%= paramValues %>' css="ds44-card__globalLink">
+                <p class="mot-clef"> <%= itCategory.getName() %> </p>
+                </jalios:link>
           </jalios:foreach>
         </div>
       <% } %>
     </div>
 
-  </section>
-   
     <%-- RESSOURCES ASSOCIEES --%>
     <% if (Util.notEmpty(obj.getRessourcesAssocies())) { %>
+      <div class="fiche-page-footer ds44-wave-white">
+        <h3 class="h3-ens underline center-txt"><%= glp("jcmsplugin.espaceEnseignant.site.ressourcesAssociees") %></h3>
         <% ArrayList<Fiche> tab = new ArrayList<>();%>
           <jalios:foreach name="itData" type="generated.Fiche" array="<%= obj.getRessourcesAssocies() %>">
               <% tab.add(itData); %>
           </jalios:foreach>
-          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
+          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCarrousel.jspf' %>
+      </div>
     <% } %>
 
-</div>
 
-<%-- **********4A616C696F73204A434D53 *** SIGNATURE BOUNDARY * DO NOT EDIT ANYTHING BELOW THIS LINE *** --%><%
+</div><%-- **********4A616C696F73204A434D53 *** SIGNATURE BOUNDARY * DO NOT EDIT ANYTHING BELOW THIS LINE *** --%><%
 %><%-- Xy9ijrhavm3q7LnYC8oAJQ== --%>

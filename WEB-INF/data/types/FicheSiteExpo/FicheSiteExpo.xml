@@ -21,14 +21,17 @@
     <field name="copyright" editor="textfield" required="false" compactDisplay="false" type="String" searchable="false" size="80" ml="true" html="false" checkHtml="true">
       <label xml:lang="fr">Copyright</label>
     </field>
-    <field name="navigation" editor="category" required="true" compactDisplay="false" type="java.util.TreeSet" chooser="tree" exclusive="true" root="j_5">
-      <label xml:lang="fr">Navigation</label>
-    </field>
     <field name="motsCles" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="keyword" exclusive="false" root="c_5271">
       <label xml:lang="fr">Mots clés</label>
     </field>
-    <field name="ressourcesAssocies" editor="link" required="false" compactDisplay="false" type="generated.Fiche[]">
+    <field name="ressourcesAssocies" editor="link" required="false" compactDisplay="false" type="generated.FicheSiteExpo[]">
       <label xml:lang="fr">Ressources associés</label>
+    </field>
+    <field name="dateDeDebut" editor="date" required="false" compactDisplay="false" tab="infos_pratiques" type="java.util.Date" future="true" past="true" dateOnly="false" dateFormat="short">
+      <label xml:lang="fr">Date de début</label>
+    </field>
+    <field name="dateDeFin" editor="date" required="false" compactDisplay="false" tab="infos_pratiques" type="java.util.Date" future="true" past="true" dateOnly="false" dateFormat="short">
+      <label xml:lang="fr">Date de fin</label>
     </field>
     <field name="ndeVoie" editor="textfield" required="false" compactDisplay="false" tab="infos_pratiques" type="String" searchable="false" size="80" ml="false" html="false" checkHtml="true">
       <label xml:lang="fr">N° de voie</label>
@@ -59,6 +62,9 @@
     </field>
     <field name="siteInternet" editor="url" required="false" compactDisplay="false" tab="infos_pratiques" type="String[]" searchable="false" size="80" ml="true" openWindow="false">
       <label xml:lang="fr">Site internet</label>
+    </field>
+    <field name="documentTelechargeable" editor="link" required="false" compactDisplay="false" type="com.jalios.jcms.FileDocument" ml="true" parent="false">
+      <label xml:lang="fr">Document téléchargeable</label>
     </field>
   </fields>
   <tabs>

@@ -87,6 +87,9 @@
     <field name="iconeSite" editor="image" required="false" compactDisplay="false" type="String[]" searchable="false" size="80" ml="true" descriptionType="tooltip" tabGroup="iconeSite" html="false" checkHtml="true" resize="false" resizeWidth="100" resizeHeight="75" tab="contenu">
       <label xml:lang="fr">Icone site</label>
     </field>
+    <field name="documentTelechargeable" editor="link" required="false" compactDisplay="false" type="com.jalios.jcms.FileDocument" ml="true" parent="false">
+      <label xml:lang="fr">Document téléchargeable</label>
+    </field>
   </fields>
   <tabs>
     <tab id="cartel">

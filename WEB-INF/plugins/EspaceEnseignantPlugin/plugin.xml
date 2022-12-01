@@ -121,8 +121,8 @@
 	    </template>
 	</templates>
     <templates type="ListeDeContenus">
-        <template name="defaultEspaceEnseignant" file="doListeDeContenusFullDisplay.jsp" usage="full"> 
-            <label xml:lang="fr">Espace Enseignant - Gabarit full </label>
+        <template name="listeSites" file="doListeDeContenusFullDisplay.jsp" usage="full"> 
+            <label xml:lang="fr">Espace Enseignant - Sites </label>
         </template>
     </templates>
     
