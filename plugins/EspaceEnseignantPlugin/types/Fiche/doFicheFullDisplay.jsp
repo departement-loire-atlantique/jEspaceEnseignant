@@ -10,12 +10,13 @@
 %><%@ include file='/jcore/doInitPage.jspf' %><%
 %><% Fiche obj = (Fiche)request.getAttribute(PortalManager.PORTAL_PUBLICATION); %><%
 %><%@ include file='/front/doFullDisplay.jspf' %>
-<div class="fullDisplay ds44-container-large Fiche <%= obj.canBeEditedFieldByField(loggedMember) ? "unitFieldEdition" : "" %>" itemscope="itemscope">
+<div class="fullDisplay  Fiche <%= obj.canBeEditedFieldByField(loggedMember) ? "unitFieldEdition" : "" %>" itemscope="itemscope">
 
   <% 
   jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
   %>
     
+  <section class="ds44-container-large">
     <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/ficheHeader.jspf' %>
 
     <%-- FICHE BODY --%>
@@ -104,18 +105,18 @@
       <% } %>
     </div>
 
+  </section>
+   
     <%-- RESSOURCES ASSOCIEES --%>
     <% if (Util.notEmpty(obj.getRessourcesAssocies())) { %>
-      <div class="fiche-page-footer ds44-wave-white">
-        <h3 class="h3-ens underline center-txt"> Ressources Associees </h3>
         <% ArrayList<Fiche> tab = new ArrayList<>();%>
           <jalios:foreach name="itData" type="generated.Fiche" array="<%= obj.getRessourcesAssocies() %>">
               <% tab.add(itData); %>
           </jalios:foreach>
-          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteCarrousel.jspf' %>
-      </div>
+          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
     <% } %>
 
+</div>
 
-</div><%-- **********4A616C696F73204A434D53 *** SIGNATURE BOUNDARY * DO NOT EDIT ANYTHING BELOW THIS LINE *** --%><%
+<%-- **********4A616C696F73204A434D53 *** SIGNATURE BOUNDARY * DO NOT EDIT ANYTHING BELOW THIS LINE *** --%><%
 %><%-- Xy9ijrhavm3q7LnYC8oAJQ== --%>
