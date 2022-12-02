@@ -38,7 +38,6 @@ Fiche obj = (Fiche) data;
                     <%=obj.getTitle()%>
                 </jalios:link>
             </p>
-              <hr class="mbs"aria-hidden="true" />
               <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteContent.jspf' %>
           </div>
         </div>
