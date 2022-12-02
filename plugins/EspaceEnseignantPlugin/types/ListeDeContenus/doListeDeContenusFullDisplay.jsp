@@ -4,6 +4,9 @@
 <%
 ListeDeContenus obj = (ListeDeContenus) request.getAttribute(PortalManager.PORTAL_PUBLICATION);
 
+Category sites = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.sites.cat.root"));
+Category expositions = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.expositions.cat.root"));
+
 String title = obj.getLibelleTitre(userLang);
 if (Util.isEmpty(title)) {
     title = obj.getTitle(userLang);
@@ -33,7 +36,14 @@ if (Util.isEmpty(title)) {
 		       <a href="<%=fiche.getDisplayUrl(userLocale)%>"
 		          class="ds44-btnStd ds44-btn--invert mtm ds44-w100 ds44-bntALeft">
 		       <span class="ds44-btnInnerText">
-		       <%= glp("jcmsplugin.espaceEnseignant.site.decouvrez") %></span>
+		       <jalios:select>
+			       <jalios:if predicate='<%= fiche.getCategorySet().contains(expositions) %>'>
+			         <%= glp("jcmsplugin.espaceEnseignant.site.decouvrezexposition") %></span>
+			       </jalios:if>
+			       <jalios:default>
+                     <%= glp("jcmsplugin.espaceEnseignant.site.decouvrezsite") %></span>			       
+			       </jalios:default>
+		       </jalios:select>
 		       <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
 		       </a>
 
@@ -49,7 +59,7 @@ if (Util.isEmpty(title)) {
                         </p><%
                         } %>
                         </jalios:if>  --%>
-                        <jalios:if predicate='<%= fiche.getCategorySet().contains(channel.getCategory("c_5008")) && (Util.notEmpty(fiche.getDateDeDebut()) || Util.notEmpty(fiche.getDateDeFin())) %>'>
+                        <jalios:if predicate='<%= fiche.getCategorySet().contains(expositions) && (Util.notEmpty(fiche.getDateDeDebut()) || Util.notEmpty(fiche.getDateDeFin())) %>'>
                             <div class="ds44-docListElem mtm"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>
                             <jalios:if predicate="<%= Util.notEmpty(fiche.getDateDeDebut())%>">
                             Du&nbsp;<jalios:date date="<%= fiche.getDateDeDebut() %>" format="long"/>
@@ -59,7 +69,7 @@ if (Util.isEmpty(title)) {
                             </jalios:if>
                             </div>
                         </jalios:if>
-                        <jalios:if predicate='<%= fiche.getCategorySet().contains(channel.getCategory("c_5007")) && Util.notEmpty(fiche.getComplementTransport()) %>'>
+                        <jalios:if predicate='<%= fiche.getCategorySet().contains(sites) && Util.notEmpty(fiche.getComplementTransport()) %>'>
                             <div class="ds44-docListElem mtm"><i class="icon icon-map ds44-docListIco" aria-hidden="true"></i>
                             <jalios:wysiwyg><%= fiche.getComplementTransport(userLang)%></jalios:wysiwyg>
                             </div>
@@ -71,32 +81,32 @@ if (Util.isEmpty(title)) {
 
         <jalios:select>
 	       <jalios:if predicate="<%= itCounter % 2 == 0 %>">
-            <section class="ds44-contenuArticle">
-            <div class="ds44-inner-container ">
-	           <div class="ds44-grid12-offset-1 grid-10-small-1 grid-10-medium-1">
-                <div class="col-6 mrl">
-                    <%= texte %>
-                 </div>
-                 <div class="col-4 mll ds44--xl-padding-l">                    
-	                   <%= image %>
-	             </div>
-	           </div>
-	           </div>
-	        </section>       
-	       </jalios:if>
-            <jalios:default>
-                <section class="ds44-contenuArticle ds44-mtb5">
-            <div class="ds44-inner-container ">
-	               <div class="ds44-grid12-offset-1 grid-10-small-1 grid-10-medium-1">
-                    <div class="col-4 mll">
+           <section class="ds44-contenuArticle ds44-mtb5">
+                <div class="ds44-inner-container ">
+                   <div class="ds44-grid12-offset-1 grid-10-small-1 grid-10-medium-1">
+                    <div class="col-4">
                         <%= image %>
                     </div>
-                    <div class="col-6 mrl ds44--xl-padding-l">                    
+                    <div class="col-6 ds44--xl-padding-l">                    
                         <%= texte %>
                     </div>               
-	               </div>
-	               </div>
-	         </section>         
+                   </div>
+                </div>
+             </section>     
+	       </jalios:if>
+            <jalios:default>
+            <section class="ds44-contenuArticle">
+            <div class="ds44-inner-container ">
+               <div class="ds44-grid12-offset-1 grid-10-small-1 grid-10-medium-1">
+                <div class="col-6">
+                    <%= texte %>
+                 </div>
+                 <div class="col-4 ds44--xl-padding-l">                    
+                       <%= image %>
+                 </div>
+               </div>
+               </div>
+            </section>           
      </jalios:default>
      </jalios:select>
     </jalios:foreach>

@@ -4,12 +4,15 @@ jcmsplugin.espaceEnseignant.typologie.cat.root: Catégorie des Types
 jcmsplugin.espaceEnseignant.niveaux.cat.root: Catégorie des niveaux
 jcmsplugin.espaceEnseignant.sites.cat.root: Catégorie des sites patrimoniaux
 jcmsplugin.espaceEnseignant.contact.cat.root: Page de contact
+jcmsplugin.espaceEnseignant.contenu.sites.cat.root: Catégorie des contenus des sites
+jcmsplugin.espaceEnseignant.contenu.expositions.cat.root: Catégorie des contenus des expositions
 
 jcmsplugin.espaceEnseignant.fiche.AjoutSel: Ajouter à ma sélection
 jcmsplugin.espaceEnseignant.fiche.header.maj: Mis à jour le
 jcmsplugin.espaceEnseignant.footer.btn-contact: Poser une question
 
-jcmsplugin.espaceEnseignant.site.decouvrez: Découvrez le site
+jcmsplugin.espaceEnseignant.site.decouvrezsite: Découvrez le site
+jcmsplugin.espaceEnseignant.site.decouvrezexposition: Découvrez l'exposition
 
 jcmsplugin.espaceEnseignant.carrousel.ressources-associees: Ressources associées
 
