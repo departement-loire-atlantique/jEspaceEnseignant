@@ -12,7 +12,7 @@ if (!display && box.getHideWhenNoResults()) {
 %>
 
 <section class="ds44-mlr35 ds44-mtb2 ds44-mobile-reduced-mar periodeMenu">
-    <p role="heading" aria-level="2" class="ds44-box-heading"><%= box.getDisplayTitle(userLang) %></p>
+    <p role="heading" aria-level="2" class="h2-like"><%= box.getDisplayTitle(userLang) %></p>
     <jalios:foreach name="itCat" type="Category" collection="<%= rootCategory.getChildrenSet() %>">
 	<%
 	String[] paramNames = { "cidsform-element-fde_5280fde_5278[value]", "cidsform-element-fde_5280fde_5278[text]"};

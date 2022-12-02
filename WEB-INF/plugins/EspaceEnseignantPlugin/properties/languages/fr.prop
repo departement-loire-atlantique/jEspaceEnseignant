@@ -25,3 +25,5 @@ jcmsplugin.espaceEnseignant.partage-rs.mail: Partagez cette page par email
 jcmsplugin.espaceEnseignant.site.infosPratiques: Infos pratiques
 jcmsplugin.espaceEnseignant.site.ressourcesAssociees: Ressources Associées
 jcmsplugin.espaceEnseignant.site.motsClefs: Mots clefs
+
+$jcmsplugin.socle.form.contactform.sujet.root: Contact - catégorie des sujets
