@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<type name="PortletImageHome" superclass="generated.AbstractPortletSkinable" debatable="false" unitFieldEdition="true" audienced="false" categoryTab="true" readRightTab="true" updateRightTab="true" templateTab="true" workflowTab="true" advancedTab="true">
+  <title ml="true">
+    <label xml:lang="fr">Titre</label>
+    <label xml:lang="en">Title</label>
+  </title>
+  <fields>
+    <field name="titreAffiche" editor="textfield" required="false" compactDisplay="false" type="String" searchable="false" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Titre affiché</label>
+    </field>
+    <field name="soustitre" editor="textarea" required="false" compactDisplay="false" type="String" searchable="false" rows="16" cols="100" ml="true" checkHtml="true" inline="true" descriptionType="tooltip" html="false">
+      <label xml:lang="fr">Sous-titre</label>
+    </field>
+    <field name="elementDeDiaporama" editor="link" required="true" compactDisplay="false" type="generated.CarouselElement" parent="false">
+      <label xml:lang="fr">Elément de diaporama</label>
+    </field>
+    <field type="super" />
+  </fields>
+  <label xml:lang="fr">Portlet image home</label>
+</type>
+

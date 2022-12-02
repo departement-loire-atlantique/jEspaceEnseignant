@@ -114,6 +114,7 @@
   <types>
     <type name="Fiche" />
     <type name="FicheSiteExpo" />
+    <type name="PortletImageHome" />
 
     <templates type="Fiche">
 	    <template name="default" file="doFicheFullDisplay.jsp" usage='full'>
@@ -148,6 +149,11 @@
         <template name="navigationPeriode" file="doPortletNavigateVerticalPeriode.jsp" usage='box'>
           <label xml:lang="fr">Espace Enseignant : gabarit navigation par période</label>
         </template>      
+    </templates>
+    <templates type="PortletImageHome">
+        <template name="default" file="doPortletImageHomeBoxDisplay.jsp" usage="box">
+            <label xml:lang="fr">Espace enseignant : gabarit par défaut</label>
+        </template>
     </templates>
     <templates type="AccueilAnnuaireAgenda">
         <template name="accueilAnnuaireAgendaRecherche" file="doAccueilAnnuaireAgendaRechercheFullDisplay.jsp" usage="full">
