@@ -28,7 +28,7 @@
 	request.setAttribute("query", query);
 	
 	Boolean hasFonctionsAdditionnelles = obj.getAfficherSelection() || obj.getAfficherPDF() ||  obj.getAfficherCSV();
-	Boolean showFiltres = isInRechercheFacette && Util.notEmpty(obj.getFacettesSecondaires()) || hasFonctionsAdditionnelles;
+	Boolean showFiltres = Util.notEmpty(obj.getFacettesSecondaires()) || hasFonctionsAdditionnelles;
 	request.setAttribute("showFiltres", showFiltres);
 	
 	request.setAttribute("rechercheId", obj.getId());
@@ -60,7 +60,7 @@
 	    <jalios:if predicate='<%= obj.getAfficherResultatDansLannuaire() || (!isInRechercheFacette && Util.notEmpty(obj.getTitre(userLang))) %>'>
 			<div class="ds44-inner-container ds44--mobile--m-padding-b">
 				<header class="ds44--l-padding-b ds44--xl-padding-l">
-					<jalios:if predicate='<%= Util.notEmpty(obj.getSoustitre(userLang)) %>'>
+					<jalios:if predicate='<%= isInRechercheFacette && Util.notEmpty(obj.getSoustitre(userLang)) %>'>
 						<p class="ds44-centeredBlock"><%= obj.getSoustitre(userLang) %></p>
 					</jalios:if>
 				</header>

@@ -6,9 +6,15 @@
 		<header class="txtcenter ds44--xl-padding-tb">
 			<h2 class="h2-ens underline" id="idTitre5"><%=glp("jcmsplugin.espaceEnseignant.carrousel.ressources-associees")%></h2>
 		</header>
-			
+	
     <div class="ds44-container-large">
     <%--  tab.size() < 4 ? tab.size() : --%>
+
+        <%-- Barre de recherche --%>
+        <jalios:if predicate='<%= Util.notEmpty(portlet) %>'>
+            <jalios:include pub="<%= portlet %>"/>
+        </jalios:if>
+
         <div class="mod--hidden ds44-list swipper-carousel-wrap ds44-posRel" data-nb-visible-slides="<%= tab.size() < 4 ? tab.size() : 4 %>"> 
             <div class="swiper-container">
                 <ul class="swiper-wrapper ds44-list grid-4-small-1 has-gutter-l ds44-carousel-swiper">
