@@ -71,3 +71,5 @@ media.data-template.carrouselActu.Fiche: /plugins/EspaceEnseignantPlugin/templat
 $jcmsplugin.socle.recherche.facettes.portal: fde_5287
 
 jcmsplugin.socle.portlet.filariane.id: por_5371
+
+$id.plugin.socle.page-principale.cat: por_5871
