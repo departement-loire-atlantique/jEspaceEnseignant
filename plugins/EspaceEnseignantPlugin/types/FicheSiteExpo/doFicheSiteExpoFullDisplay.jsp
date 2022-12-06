@@ -137,54 +137,28 @@ FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PU
 				</div>
 
 				<%-- MOTS CLES --%>
-				<div class="ds44-inner-container">
-					<%
-					if (Util.notEmpty(obj.getMotsCles(loggedMember))) {
-					%>
-					<h3 class="h3-ens">Mots clefs</h3>
-					<div class="fiche-mot-clef">
-						<jalios:foreach collection="<%=obj.getMotsCles(loggedMember)%>"
-							type="Category" name="itCategory">
-							<jalios:link data="<%=itCategory%>">
-								<p class="mot-clef">
-									<%=itCategory.getName()%>
-								</p>
-							</jalios:link>
-						</jalios:foreach>
-					</div>
-					<%
-					}
-					%>
-				</div>
+      <% if (Util.notEmpty(obj.getMotsCles(loggedMember))) { %>
+        <h3 class="h3-ens"><%= glp("jcmsplugin.espaceEnseignant.site.motsClefs") %></h3>
+        <div class="fiche-mot-clef">
+          <jalios:foreach collection="<%= obj.getMotsCles(loggedMember) %>" type="Category" name="itCategory" >
+            <% String[] paramNames = { "textform-element-fde_5280fde_5275[value]", "textform-element-fde_5280fde_5275[text]"};
+            String[] paramValues = { itCategory.getName(), itCategory.getName() };
+            %>
+                <jalios:link id="fde_5286" paramNames='<%= paramNames %>' paramValues='<%= paramValues %>' css="ds44-card__globalLink">
+                <p class="mot-clef"> <%= itCategory.getName() %> </p>
+                </jalios:link>
+          </jalios:foreach>
+        </div>
+      <% } %>	
+    </div>
 			</section>
 		</article>
 
 		<%-- RESSOURCES ASSOCIEES --%>
-		<%
-		Object[] publicationsLiees = obj.getRessourcesAssocies();
-		Content[] relatedContents = new Content[(publicationsLiees != null ? publicationsLiees.length : 0)];
-		Collection pubRelatedCollection = null;
-		int pubRelatedMax = 4;
-
-		for (int i = 0; i < relatedContents.length; i++) {
-			relatedContents[i] = (Content) publicationsLiees[i];
-		}
-
-		pubRelatedCollection = Util.getArrayList(relatedContents).stream()
-				.filter(c -> c.canBeReadBy(loggedMember) && c.isInVisibleState()).collect(java.util.stream.Collectors.toList());
-		if (pubRelatedCollection.size() < pubRelatedMax) {
-			QueryHandler qh = new QueryHandler();
-			qh.setTypes(new String[] { "generated.Fiche" });
-			qh.setSort("mdate");
-			pubRelatedCollection.addAll(QueryManager.getInstance().getRelatedPublicationSet(obj, qh));
-		}
-		%>
-		<jalios:if predicate="<%=Util.notEmpty(pubRelatedCollection)%>">
-			<%
-			ArrayList<Fiche> tab = new ArrayList<>(pubRelatedCollection);
-            Publication portlet = channel.getPublication(channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id"));
-			%>
-			<%@ include
-				file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf'%>
+		<jalios:if predicate="<%=Util.notEmpty(obj.getRessourcesAssocies())%>">
+		
+			<% ArrayList<Fiche> tab = new ArrayList<>(Arrays.asList(obj.getRessourcesAssocies()));%>
+        	<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id"); %>
+          	<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
 		</jalios:if>
 	</section>

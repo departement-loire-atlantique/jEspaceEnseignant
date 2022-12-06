@@ -34,14 +34,13 @@
       <% if (Util.notEmpty(obj.getImageFocus()) && Util.notEmpty(obj.getTexteLibre())) { %>
       <div class="fiche-focus"> 
 
-         <section class="ds44-inner-container">
-        
-          <p role="heading" aria-level="1" class="focus-btn ">
-            <button class="ds44-collapser_button ds44-btnStd ds44-btn--invert">
-              <span class="ds44-btnInnerText">Voir les focus</span>
-              <i class="icon icon-plus" aria-hidden="true"></i>
-            </button>
-          </p>
+        <section class="ds44-inner-container">
+            <p role="heading" aria-level="1" class="focus-btn ">
+              <button class="ds44-collapser_button ds44-btnStd ds44-btn--invert">
+                <span class="ds44-btnInnerText">Voir les focus</span>
+                <i class="icon icon-plus" aria-hidden="true"></i>
+              </button>
+            </p>
           <div class="ds44-collapser_content">
             <div class="ds44-collapser_content--level2">
               <h3 class="h3-ens"> Observez à la loupe </h3>
@@ -94,27 +93,28 @@
 
       <%-- MOTS CLES --%>
       <% if (Util.notEmpty(obj.getMotsCles(loggedMember))) { %>
-        <h3 class="h3-ens"> Mots clefs </h3>
+        <h3 class="h3-ens"><%= glp("jcmsplugin.espaceEnseignant.site.motsClefs") %></h3>
         <div class="fiche-mot-clef">
           <jalios:foreach collection="<%= obj.getMotsCles(loggedMember) %>" type="Category" name="itCategory" >
-            <jalios:link data="<%= itCategory %>">
-              <p class="mot-clef"> <%= itCategory.getName() %> </p>
-            </jalios:link>
+            <% String[] paramNames = { "textform-element-fde_5280fde_5275[value]", "textform-element-fde_5280fde_5275[text]"};
+            String[] paramValues = { itCategory.getName(), itCategory.getName() };
+            %>
+                <jalios:link id="fde_5286" paramNames='<%= paramNames %>' paramValues='<%= paramValues %>' css="ds44-card__globalLink">
+                <p class="mot-clef"> <%= itCategory.getName() %> </p>
+                </jalios:link>
           </jalios:foreach>
         </div>
-      <% } %>
+      <% } %>	
     </div>
+  </div>
 
   </section>
    
     <%-- RESSOURCES ASSOCIEES --%>
     <% if (Util.notEmpty(obj.getRessourcesAssocies())) { %>
-        <% ArrayList<Fiche> tab = new ArrayList<>();%>
-          <jalios:foreach name="itData" type="generated.Fiche" array="<%= obj.getRessourcesAssocies() %>">
-              <% tab.add(itData); %>
-          </jalios:foreach>
-          <% Publication portlet = null; %>
-          <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
+			<% ArrayList<Fiche> tab = new ArrayList<>(Arrays.asList(obj.getRessourcesAssocies()));%>
+      <% String portletId = null; %>
+      <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
     <% } %>
 
 </div>
