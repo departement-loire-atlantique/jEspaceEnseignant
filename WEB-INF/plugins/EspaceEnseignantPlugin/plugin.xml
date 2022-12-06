@@ -115,6 +115,7 @@
     <type name="Fiche" />
     <type name="FicheSiteExpo" />
     <type name="PortletImageHome" />
+    <type name="RedirectionRecherche" />
 
     <templates type="Fiche">
 	    <template name="default" file="doFicheFullDisplay.jsp" usage='full'>
@@ -178,6 +179,12 @@
             <label xml:lang="fr">Espace Enseignant : gabarit fiche expo / site</label>
         </template>
     </templates> 
+    
+    <templates type="RedirectionRecherche">
+        <template name="default" file="doRedirectionRechercheFullDisplay.jsp" usage='full'>
+          <label xml:lang="fr">Espace Enseignant : RedirectionRecherche FullDisplay</label>
+        </template>
+    </templates>
     
  </types>
   <!-- ============================== Workflows =========================== -->

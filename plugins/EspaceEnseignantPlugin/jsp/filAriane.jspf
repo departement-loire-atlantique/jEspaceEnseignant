@@ -1,3 +1,8 @@
+<%@page import="generated.RedirectionRecherche"%>
+<%@page import="generated.PortletPortalRedirect"%>
+<%@page import="com.jalios.jcms.Publication"%>
+<%@page import="com.jalios.util.Util"%>
+<%@page import="fr.cg44.plugin.socle.SocleUtils"%>
 <%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 <%  
 ArrayList<Category> listFilAriane = EspaceEnseignantHandler.getFilAriane(loggedMember, obj);
@@ -7,16 +12,37 @@ ArrayList<Category> listFilAriane = EspaceEnseignantHandler.getFilAriane(loggedM
     <ul class="ds44-list ds44-breadcrumb">
 
         <li class="ds44-breadcrumb_item"> 
-            <a href="#">
+            <a href="index.jsp">
                 <i class="icon icon-home icon--medium" aria-hidden="true"></i>
                 <span class="visually-hidden">Accueil</span>
             </a>
         </li>
-        <jalios:foreach collection="<%= listFilAriane %>" type="Category" name="itCategory" >
+        <jalios:foreach collection="<%= listFilAriane %>" type="Category" name="itCategory" counter="itCounter" >
+            <%
+            Publication pubPrincipal = SocleUtils.getPortalRedirect(itCategory);
+            if(Util.isEmpty(pubPrincipal)){
+                pubPrincipal = SocleUtils.getContenuPrincipal(itCategory);
+            }
+            String url = "";
+            if(Util.notEmpty(pubPrincipal)){
+                url = pubPrincipal.getDisplayUrl(userLocale);
+                if(pubPrincipal instanceof RedirectionRecherche){
+                    url += "?cid=" + itCategory.getId() + "&lvl=" + itCounter;
+                }
+            }
+            %>
             <li class="ds44-breadcrumb_item"> 
-                <jalios:link data="<%= itCategory %>">
-                <%= itCategory.getName() %>
-                </jalios:link>
+                <jalios:select>
+                    <jalios:if predicate='<%= Util.notEmpty(url) %>'>
+                        <a href='<%= url %>'>
+                            <%= itCategory.getName() %>
+                        </a>
+                    </jalios:if>
+                    
+                    <jalios:default>
+                        <span><%= itCategory.getName() %></span>
+                    </jalios:default>
+                </jalios:select>
             </li>
         </jalios:foreach>
         
