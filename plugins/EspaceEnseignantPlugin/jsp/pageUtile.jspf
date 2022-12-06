@@ -9,7 +9,7 @@
 			<button
 				class="ds44-btnStd js-tablist__link ds44-tabs__linkSelected ds44-bgDark"
 				type="button" aria-pressed="true"
-				aria-label="Oui, cette page m'a Ã©tÃ© utile"
+				aria-label="Oui, cette page m'a été utile"
 				data-href="#ds44-choiceY"
 				data-statistic="{&quot;name&quot;: &quot;declenche-evenement&quot;,&quot;category&quot;: &quot;Avis page&quot;,&quot;action&quot;: &quot;Oui&quot;}"
 				aria-current="true">
@@ -64,14 +64,14 @@
 		<div id="ds44-choiceN" class="hidden"
 			style="opacity: 0; display: none;" aria-hidden="true">
 			<form data-is-ajax="true" action="/"
-				data-statistic="{&quot;name&quot;: &quot;declenche-evenement&quot;,&quot;category&quot;: &quot;Formulaire&quot;,&quot;action&quot;: &quot;Avis page nÃ©gatif&quot;,&quot;label&quot;: &quot;$bloc-utile-informations-questions|text&quot;}"
+				data-statistic="{&quot;name&quot;: &quot;declenche-evenement&quot;,&quot;category&quot;: &quot;Formulaire&quot;,&quot;action&quot;: &quot;Avis page négatif&quot;,&quot;label&quot;: &quot;$bloc-utile-informations-questions|text&quot;}"
 				novalidate="true" data-is-initialized="true">
 				<div class="grid-2-small-1 ds44-box">
 
 					<div class="col">
 						<p id="bloc-utile-informations" class="h4-like" aria-level="3"
 							role="heading" tabindex="-1">Pourquoi cette page ne vous a
-							pas Ã©tÃ© utile ?</p>
+							pas été utile ?</p>
 
 						<div id="form-element-50168"
 							data-name="bloc-utile-informations-questions"
@@ -80,7 +80,7 @@
 
 							<p id="mandatory-message-form-element-50168"
 								class="ds44-mandatory_message">Au moins une de ces cases
-								doit Ãªtre cochÃ©e :</p>
+								doit être cochée :</p>
 
 
 							<div class="ds44-form__container ds44-checkBox-radio_list ">
@@ -106,8 +106,8 @@
 									data-bkp-aria-describedby="mandatory-message-form-element-50168 bloc-utile-informations"
 									data-bkp-tabindex="-1" tabindex="-1"><label
 									for="name-check-form-element-50168-2" class="ds44-boxLabel"
-									id="name-check-label-form-element-50168-2">Lâ€™information
-									est trop compliquÃ©e</label>
+									id="name-check-label-form-element-50168-2">L'€™information
+									est trop compliquée</label>
 							</div>
 
 							<div class="ds44-form__container ds44-checkBox-radio_list ">
@@ -126,10 +126,10 @@
 
 					</div>
 					<div class="col ds44--xl-padding-l">
-						<p id="form-bloc-utils-N">Aidez-nous Ã  amÃ©liorer cette page
+						<p id="form-bloc-utils-N">Aidez-nous Ã  améliorer cette page
 							en nous laissant un commentaire :</p>
 						<p class="ds44-textLegend ds44-textLegend--mentions">Les
-							champs marquÃ©s dâ€™un astÃ©risque * sont obligatoires</p>
+							champs marqués d'€™un astérisque * sont obligatoires</p>
 
 
 						<div class="ds44-form__container">
@@ -209,7 +209,7 @@
 				<p>
 					<a
 						href="44/donnees-personnelles/politique-generale-de-protection-des-donnees-personnelles/c_1307338"
-						title="En savoir plus sur ce traitement : Politique gÃ©nÃ©rale de protection des donnÃ©es personnelles"
+						title="En savoir plus sur ce traitement : Politique générale de protection des données personnelles"
 						class="ID_c_1307338" data-bkp-tabindex="-1" tabindex="-1"><i
 						class="icon icon-tag" aria-hidden="true"> </i>En savoir plus sur
 						ce traitement</a>

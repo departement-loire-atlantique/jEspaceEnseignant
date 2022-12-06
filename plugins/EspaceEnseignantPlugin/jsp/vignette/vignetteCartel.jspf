@@ -64,7 +64,7 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
 					<a href="<%=Util.encodeUrl(obj.getPlan(userLang))%>">
 						<p class="ds44-docListElem ds44-mt-std">
 							<i class="icon icon-position  ds44-docListIco" aria-hidden="true"></i>
-							Retrouvez cet objet au musée
+							<%= glp("jcmsplugin.espaceEnseignant.site.retrouvezMusee") %>
 						</p>
 					</a>
 				</jalios:if>
@@ -134,12 +134,12 @@ Map<Category, Category> listPeriodeCartel = EspaceEnseignantHandler.getPeriodeCa
 
 		</div>
         <div class="ds44-grid12-offset-1">
-			<jalios:if predicate="<%= Util.notEmpty(obj.getDocumentTelechargeable()) %>" >
-			 <a href="<%= obj.getDocumentTelechargeable() %>" class="ds44-btnStd ds44-btn--invert margin-txt" target="_blank">
-                <span class="ds44-btnInnerText"><%= glp("jcmsplugin.socle.fichepublication.telecharger") %></span>
-		         <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
-		     </a>
-	        </jalios:if> 
+            <jalios:if predicate="<%= Util.notEmpty(obj.getDocumentTelechargeable()) && obj.getDocumentTelechargeable() %>">
+                <a href="<%= obj.getDocumentTelechargeable() %>" class="ds44-btnStd ds44-btn--invert margin-txt" target="_blank">  
+                    <span class="ds44-btnInnerText"><%=glp("jcmsplugin.socle.fichepublication.telecharger")%></span>
+                    <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+                </a>
+            </jalios:if>
 			<button class="ds44-btnStd">
 				<i class="icon icon-star-empty" aria-hidden="true"></i> <span
 					class="ds44-btnInnerText"><%=glp("jcmsplugin.espaceEnseignant.fiche.AjoutSel")%></span>

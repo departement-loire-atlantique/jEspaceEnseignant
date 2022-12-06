@@ -84,7 +84,6 @@ if (portlet instanceof PortletCarousel) {
                     <%=obj.getTitle()%>
                 </jalios:link>
             </p>
-            <hr class="mbs"aria-hidden="true" />
 			<div class="vignette-content">
 			    <jalios:if predicate="<%= Util.notEmpty(sitesSet) %>">
 			        <jalios:foreach collection="<%= sitesSet %>" type="Category" name="itCategory" >
