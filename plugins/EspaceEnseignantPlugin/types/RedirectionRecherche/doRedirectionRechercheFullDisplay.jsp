@@ -32,8 +32,6 @@ if(Util.notEmpty(cat)){
     
 }
 
-logger.info(url);
-
 if (Util.notEmpty(url)) {
     String redirectUrl = box.getRedirectURL(loggedMember);
     request.setAttribute("redirect", redirectUrl);
