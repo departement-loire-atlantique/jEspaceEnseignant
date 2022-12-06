@@ -182,7 +182,6 @@ FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PU
 		<jalios:if predicate="<%=Util.notEmpty(pubRelatedCollection)%>">
 			<%
 			ArrayList<Fiche> tab = new ArrayList<>(pubRelatedCollection);
-			
             Publication portlet = channel.getPublication(channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id"));
 			%>
 			<%@ include

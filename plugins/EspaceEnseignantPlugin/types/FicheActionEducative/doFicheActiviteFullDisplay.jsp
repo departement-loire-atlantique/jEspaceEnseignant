@@ -26,9 +26,6 @@ boolean hasDocRessources = Util.notEmpty(obj.getDocumentsJointsBlocN1(userLang))
 <%@ page
 	import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 <%@page import="fr.cg44.plugin.socle.SocleUtils"%>
-<%
-Map<Category, Category> listThemeCartel = EspaceEnseignantHandler.getThemeCategory(loggedMember, obj);
-%>
 
 <%
 jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
@@ -64,32 +61,23 @@ jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
 								<div class="col">
 									<div class="ds44-box-heading" role="heading" aria-level="3"><%=glp("jcmsplugin.socle.actuedu.infopratiques.label")%></div>
 									<jalios:if
-										predicate="<%=Util.notEmpty(obj.getTheme(loggedMember))%>">
-										<jalios:if
-											predicate="<%=Util.notEmpty(obj.getTheme(loggedMember))%>">
-											<%
-											for (Map.Entry<Category, Category> entry : listThemeCartel.entrySet()) {
-											%>
-											<p class="ds44-docListElem ds44-mt-std">
-												<i class="icon icon-directory  ds44-docListIco"
-													aria-hidden="true"></i> <strong role="heading"
-													aria-level="4"> <%=entry.getKey().getName()%>
-												</strong>
-											</p>
-											<p class="ds44-docListElem">
-												<%=entry.getValue().getName()%>
-											</p>
-											<%
-											}
-											%>
-										</jalios:if>
-
-										<jalios:if
-											predicate="<%=Util.notEmpty(obj.getParcoursEducationNationale(loggedMember))%>">
-											<p>
+										predicate="<%=Util.notEmpty(obj.getTheme(loggedMember)) || Util.notEmpty(obj.getSoustheme(loggedMember))
+		|| Util.notEmpty(obj.getParcoursEducationNationale(loggedMember))%>">
+										<p class="ds44-docListElem mts">
+											<i class="icon icon-tag ds44-docListIco" aria-hidden="true"></i>
+											<jalios:if
+												predicate="<%=Util.notEmpty(obj.getTheme(loggedMember))%>">
+												<strong role="heading" aria-level="4"> <%=SocleUtils.formatCategories(obj.getTheme(loggedMember), "<br/>")%></strong>
+											</jalios:if>
+											<jalios:if
+												predicate="<%=Util.notEmpty(obj.getParcoursEducationNationale(loggedMember))%>">
+												<jalios:if
+													predicate="<%=Util.notEmpty(obj.getTheme(loggedMember)) || Util.notEmpty(obj.getSoustheme(loggedMember))%>">
+													<br />
+												</jalios:if>
 												<%=SocleUtils.formatCategories(obj.getParcoursEducationNationale(loggedMember))%>
-											</p>
-										</jalios:if>
+											</jalios:if>
+										</p>
 									</jalios:if>
 									<jalios:if
 										predicate="<%=Util.notEmpty(obj.getTypeDePratique(loggedMember))%>">
