@@ -27,8 +27,8 @@
     <field name="motsCles" editor="category" required="false" compactDisplay="false" type="java.util.TreeSet" chooser="keyword" exclusive="false" root="c_5271">
       <label xml:lang="fr">Mots clés</label>
     </field>
-    <field name="ressourcesAssocies" editor="link" required="false" compactDisplay="false" type="generated.FicheSiteExpo[]">
-      <label xml:lang="fr">Ressources associés</label>
+    <field name="ressourcesAssocies" editor="link" required="false" compactDisplay="false" type="generated.Fiche[]">
+      <label xml:lang="fr">Ressources associées</label>
     </field>
     <field name="dateDeDebut" editor="date" required="false" compactDisplay="false" tab="infos_pratiques" type="java.util.Date" future="true" past="true" dateOnly="false" dateFormat="short">
       <label xml:lang="fr">Date de début</label>
