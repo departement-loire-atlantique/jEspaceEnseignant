@@ -25,8 +25,9 @@ jcmsplugin.socle.site.src.logo: plugins/EspaceEnseignantPlugin/images/logo-resso
 
 jcmsplugin.socle.css-urls: https://design.loire-atlantique.fr/css/cd44.css https://design.loire-atlantique.fr/css/icons.css plugins/EspaceEnseignantPlugin/css/plugin.css
 
-descriptive-urls.enabled: false
-fr.jcmsplugin.seo.meta-title: Ressources éducatives
+descriptive-urls.enabled:       false
+descriptive-urls.prefix:        jcms  
+fr.jcmsplugin.seo.meta-title:   Ressources éducatives
 
 ## Surcharge module socle
 # Menu principal
