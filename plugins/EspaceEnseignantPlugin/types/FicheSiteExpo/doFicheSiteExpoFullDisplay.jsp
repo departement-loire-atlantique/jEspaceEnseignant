@@ -157,10 +157,15 @@ FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PU
 		</article>
 
 		<%-- RESSOURCES ASSOCIEES --%>
-		<jalios:if predicate="<%=Util.notEmpty(obj.getRessourcesAssocies())%>">
+		<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id"); %>
+		<jalios:if predicate="<%=Util.notEmpty(obj.getRessourcesAssocies()) || Util.notEmpty(portletId)%>">
 		
-			<% ArrayList<Fiche> tab = new ArrayList<>(Arrays.asList(obj.getRessourcesAssocies()));%>
-        	<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id"); %>
+			<% 
+			List<Fiche> tab = new ArrayList<>();
+			if (Util.notEmpty(obj.getRessourcesAssocies())) {
+			  tab = Arrays.asList(obj.getRessourcesAssocies());
+			}
+            %>
           	<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
 		</jalios:if>
 	</section>

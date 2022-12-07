@@ -1,6 +1,6 @@
 <%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 
- <jalios:if predicate='<%= Util.notEmpty(tab) %>'>
+
  
 <section class="ds44-container-fluid ds44-lightBG ds44-wave-white ds44--xl-padding-tb">
 		<header class="txtcenter ds44--xl-padding-tb">
@@ -9,12 +9,12 @@
 	
     <div class="ds44-container-large">
     <%--  tab.size() < 4 ? tab.size() : --%>
-
         <%-- Barre de recherche --%>
         <jalios:if predicate='<%= Util.notEmpty(portletId) %>'>
             <jalios:include id="<%= portletId %>"/>
         </jalios:if>
-
+        
+        <jalios:if predicate='<%= Util.notEmpty(tab) %>'>       
         <div class="mod--hidden ds44-list swipper-carousel-wrap ds44-posRel" data-nb-visible-slides="<%= tab.size() < 4 ? tab.size() : 4 %>"> 
             <div class="swiper-container">
                 <ul class="swiper-wrapper ds44-list grid-4-small-1 has-gutter-l ds44-carousel-swiper">
@@ -115,9 +115,10 @@
                 <span class="visually-hidden"></span>
             </button>
         </div>
+        </jalios:if>
     </div>
 
 </section>
-</jalios:if>
+
 
 
