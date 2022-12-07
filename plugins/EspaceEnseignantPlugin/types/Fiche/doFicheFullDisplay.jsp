@@ -50,7 +50,7 @@ Fiche obj = (Fiche) request.getAttribute(PortalManager.PORTAL_PUBLICATION);
           <%
           if (Util.notEmpty(obj.getScenarioPedagogique(userLang))) {
           %>
-          <h3 class="h3-ens underline">Scénario pédagogique</h3>
+          <h3 class="h3-ens underline"><%= glp("jcmsplugin.espaceEnseignant.fiche.scenarioPed") %></h3>
           <jalios:wysiwyg data='<%=obj%>' field='scenarioPedagogique'><%=obj.getScenarioPedagogique(userLang)%></jalios:wysiwyg>
           <%
           }
@@ -66,13 +66,13 @@ Fiche obj = (Fiche) request.getAttribute(PortalManager.PORTAL_PUBLICATION);
               <p role="heading" aria-level="1" class="focus-btn ">
                 <button
                   class="ds44-collapser_button ds44-btnStd ds44-btn--invert">
-                  <span class="ds44-btnInnerText">Voir les focus</span> <i
+                  <span class="ds44-btnInnerText"><%= glp("jcmsplugin.espaceEnseignant.fiche.focus") %></span> <i
                     class="icon icon-plus" aria-hidden="true"></i>
                 </button>
               </p>
               <div class="ds44-collapser_content">
                 <div class="ds44-collapser_content--level2">
-                  <h3 class="h3-ens">Observez à la loupe</h3>
+                  <h3 class="h3-ens"><%= glp("jcmsplugin.espaceEnseignant.fiche.observe") %></h3>
                   <%
                   String[] imageFocus = obj.getImageFocus();
                   String[] texteLibre = obj.getTexteLibre();
