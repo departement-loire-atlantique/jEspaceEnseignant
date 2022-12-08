@@ -8,6 +8,7 @@ jcmsplugin.espaceEnseignant.contenu.sites.cat.root: Catégorie des contenus des 
 jcmsplugin.espaceEnseignant.contenu.expositions.cat.root: Catégorie des contenus des expositions
 jcmsplugin.espaceEnseignant.portlet.recherche-site.id: ID de la portlet Recherche Facettes
 jcmsplugin.espaceEnseignant.portlet.recherche-site.id.help: portlet Recherche Facettes pour les ressources associées (préciser le champ "Afficher résultat dans l'annuaire" à non)
+jcmsplugin.espaceEnseignant.portlet.categorieslies.listenoire: Catégories à ne pas afficher dans la recherche par activités
 
 jcmsplugin.espaceEnseignant.fiche.scenarioPed: Scénario pédagogique
 jcmsplugin.espaceEnseignant.fiche.focus: Voir les focus
