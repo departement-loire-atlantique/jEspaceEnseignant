@@ -1,3 +1,4 @@
+<%@page import="generated.FicheActionEducative"%>
 <%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 
 
@@ -19,7 +20,10 @@
             <div class="swiper-container">
                 <ul class="swiper-wrapper ds44-list grid-4-small-1 has-gutter-l ds44-carousel-swiper">
                     
-                    <jalios:foreach collection="<%= tab %>" name="itFiche" type="Fiche">
+                    <jalios:foreach collection="<%= tab %>" name="itContent" type="Content">
+<%-- ACTION --%>                   
+                        <jalios:if predicate="<%= itContent instanceof Fiche %>">
+                        <% Fiche itFiche = (Fiche)itContent; %>
                         <li class="swiper-slide vignette">
                             <section class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext">
 
@@ -43,8 +47,8 @@
                                         </jalios:foreach>
                                     <% } %>
 <%--                                     <a href=# class="ds44-colRight">
- --%>                                    <i class="icon icon-star-empty" aria-hidden="true"></i>
- <%--                                   </a>
+                                    <i class="icon icon-star-empty" aria-hidden="true"></i>
+                                    </a>
  --%>                                </div>
 
                                 <%-- Vignette Body --%>
@@ -103,6 +107,110 @@
                                 </div>
                             </section>
                         </li>
+                        </jalios:if>
+<%-- ACTION FICHE EDUCATIVE --%>                       
+                        <jalios:if predicate="<%= itContent instanceof FicheActionEducative %>">
+                     <%
+                     FicheActionEducative itFicheActionEducative = (FicheActionEducative)itContent;
+                    List<Category> categorySet = Arrays.asList(itFicheActionEducative.getCategories(loggedMember));
+
+                    Category typologie = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.typologie.cat.root"));
+                    Category niveaux = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.niveaux.cat.root"));
+                    Category periode = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.periode.cat.root"));
+                    Category sites = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.sites.cat.root"));
+
+                    List<Category> typologieSet = new ArrayList<>();
+                    List<Category> niveauxSet = new ArrayList<>();
+                    List<Category> periodeSet = new ArrayList<>();
+                    List<Category> sitesSet = new ArrayList<>();
+                          
+                    for(Category itCat : categorySet) {
+                      if (itCat.hasAncestor(typologie)){
+                        typologieSet.add(itCat);
+                      } else if (itCat.hasAncestor(niveaux)) {
+                        niveauxSet.add(itCat);
+                      } else if (itCat.hasAncestor(periode)) {
+                        periodeSet.add(itCat);
+                      } else if (itCat.hasAncestor(sites)) {
+                        sitesSet.add(itCat);
+                      }
+                    }
+                    
+                    %>
+                        <li class="swiper-slide vignette">
+                            <section class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext">
+
+                                <%-- Vignette Image --%>
+                                <jalios:if predicate="<%= Util.notEmpty(itFicheActionEducative.getImagePrincipale()) %>">
+                                    <picture class="ds44-container-imgRatio">
+                                        <img src="<%= itFicheActionEducative.getImagePrincipale() %>" alt="<%= itFicheActionEducative.getLegende() %>" class="ds44-imgRatio"/>
+                                    </picture>
+                                </jalios:if>
+                                
+                                <%-- Vignette Header --%>
+                                <div class="vignette-header ds44-flex-container">
+                                    <% if (Util.notEmpty(typologieSet)) { %>
+                                        <jalios:foreach collection="<%= typologieSet %>" type="Category" name="itCategory" >
+                                        <div class="ds44-colLeft">
+                                            <p class="vignette-header-title ds44-colLeft"> 
+                                                <%= itCategory.getParent().getName() %> 
+                                            </p>
+                                            </div>
+                                        </jalios:foreach>
+                                    <% } %>
+ <%--                               <a href=# class="ds44-colRight">      
+                                     <i class="icon icon-star-empty" aria-hidden="true"></i>
+                                    </a>       
+   --%>                              </div>
+
+                                <%-- Vignette Body --%>
+                                <div class="ds44-card__section vignette-body">
+                                
+                                    <div class="ds44-innerBoxContainer">
+                                        <p role="heading" aria-level="2" class="ds44-card__title">
+                                            <jalios:link data="<%= itFicheActionEducative %>" css="ds44-card__globalLink">
+                                                <%=itFicheActionEducative.getTitle()%>
+                                            </jalios:link>
+                                        </p>
+
+           <div class="vignette-content">
+                <jalios:if predicate="<%= Util.notEmpty(sitesSet) %>">
+                    <jalios:foreach collection="<%= sitesSet %>" type="Category" name="itCategory" >
+                        <p class="ds44-docListElem small-txt"> 
+                        <i class="icon icon-marker ds44-docListIco" aria-hidden="true"></i>
+                        <%= itCategory.getName() %> </p>
+                    </jalios:foreach>
+                </jalios:if>
+                <jalios:if predicate="<%= Util.notEmpty(niveauxSet) %>">
+                    <jalios:foreach collection="<%=niveauxSet %>" type="Category" name="itCategory" >
+                        <p class="ds44-docListElem small-txt"> 
+                        <i class="icon icon-user-group ds44-docListIco" aria-hidden="true"></i>
+                        <%= itCategory.getName() %> </p>
+                    </jalios:foreach>
+                </jalios:if>
+                <jalios:if predicate="<%= Util.notEmpty(periodeSet) %>">
+                    <jalios:foreach collection="<%= periodeSet %>" type="Category" name="itCategory" >
+                        <p class="ds44-docListElem small-txt"> 
+                        <i class="icon icon-tag  ds44-docListIco" aria-hidden="true"></i>
+                        <%= itCategory.getName() %> </p>
+                    </jalios:foreach>
+                </jalios:if>  
+<%--                <jalios:if predicate="<%= Util.notEmpty(itFicheActionEducative.getDateDeVie()) && Util.notEmpty(itFicheActionEducative.getDateDeMort()) %>">
+                    <p class="ds44-docListElem small-txt"> 
+                        <i class="icon icon-date  ds44-docListIco" aria-hidden="true"></i>
+                        Du 
+                        <jalios:date date='<%= itFicheActionEducative.getDateDeVie() %>' format='<%= "long" %>'/> 
+                        au 
+                        <jalios:date date='<%= itFicheActionEducative.getDateDeMort() %>' format='<%= "long" %>'/> 
+                    </p>
+                </jalios:if>
+--%>
+            </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </li>                       
+                        </jalios:if>
                     </jalios:foreach>
                 </ul>
             </div>

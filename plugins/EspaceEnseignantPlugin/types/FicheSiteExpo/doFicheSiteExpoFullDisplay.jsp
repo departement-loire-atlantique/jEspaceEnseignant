@@ -161,7 +161,7 @@ FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PU
 		<jalios:if predicate="<%=Util.notEmpty(obj.getRessourcesAssocies()) || Util.notEmpty(portletId)%>">
 		
 			<% 
-			List<Fiche> tab = new ArrayList<>();
+			List<Content> tab = new ArrayList<>();
 			if (Util.notEmpty(obj.getRessourcesAssocies())) {
 			  tab = Arrays.asList(obj.getRessourcesAssocies());
 			}
