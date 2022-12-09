@@ -3,6 +3,8 @@
 <%@ include file='/jcore/doInitPage.jspf'%>
 <%
 FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PUBLICATION);
+
+Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.expositions.cat.root"));
 %>
 <%@ include file='/front/doFullDisplay.jspf'%>
 <%@ taglib prefix="ds" tagdir="/WEB-INF/tags"%>
@@ -71,10 +73,20 @@ FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PU
 									legend="<%=obj.getLegende(userLang)%>"
 									copyright="<%=obj.getCopyright(userLang)%>"
 									figureCss="ds44-mb-std" />
-							</section>
+							</section>   
 							<section class="ds44-box ds44-theme mbm">
 								<div class="ds44-innerBoxContainer">
 									<p role="heading" aria-level="2" class="ds44-box-heading"><%=glp("jcmsplugin.socle.actuedu.infopratiques.label")%></p>
+	                                <jalios:if predicate='<%= obj.getCategorySet().contains(contenuExpositions) && (Util.notEmpty(obj.getDateDeDebut()) || Util.notEmpty(obj.getDateDeFin())) %>'>
+	                                    <div class="ds44-docListElem mtm"><i class="icon icon-date ds44-docListIco" aria-hidden="true"></i>
+	                                        <jalios:if predicate="<%= Util.notEmpty(obj.getDateDeDebut())%>">
+	                                        Du&nbsp;<jalios:date date="<%= obj.getDateDeDebut() %>" format="long"/>
+	                                        </jalios:if>
+	                                        <jalios:if predicate="<%= Util.notEmpty(obj.getDateDeFin())%>">
+	                                        &nbsp;au&nbsp;<jalios:date date="<%= obj.getDateDeFin() %>" format="long"/>
+	                                        </jalios:if>
+	                                    </div>
+	                                </jalios:if> 
 									<jalios:if predicate="<%=Util.notEmpty(adresse)%>">
 										<p class="ds44-docListElem mtm">
 											<i class="icon icon-marker ds44-docListIco"
