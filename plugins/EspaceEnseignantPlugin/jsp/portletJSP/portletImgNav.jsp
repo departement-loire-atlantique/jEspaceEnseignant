@@ -7,7 +7,7 @@
 <%
 PortletJspCollection obj = (PortletJspCollection) portlet;
 %>
-<section class="ds44-container-large ds44-homepage-container ds44-homepage-container--gp ds44--xxl-padding-b">
+<section class="ds44-container-large ds44-homepage-container ds44-homepage-container--ha ds44--xxl-padding-b">
     <div class="grid-12-small-1">
         <div class="col-8-small-1 col-8-large-7 ds44-mb2 ds44-homepage-noCarrousel">
             <%=getPortlet(bufferMap, "diaporama")%>
@@ -17,3 +17,4 @@ PortletJspCollection obj = (PortletJspCollection) portlet;
         </div>
     </div>
 </section>
+</main>

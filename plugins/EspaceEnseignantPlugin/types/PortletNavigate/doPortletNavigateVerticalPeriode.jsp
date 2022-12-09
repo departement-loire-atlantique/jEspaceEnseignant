@@ -11,16 +11,16 @@ if (!display && box.getHideWhenNoResults()) {
 }
 %>
 
-<section class="ds44-mlr35 ds44-mtb2 ds44-mobile-reduced-mar periodeMenu">
-    <p role="heading" aria-level="2" class="h2-like"><%= box.getDisplayTitle(userLang) %></p>
+<section id="en1clic" class="ds44-mlr35 ds44-mtb2 ds44-mobile-reduced-mar">
+    <h2 class="h2-like" id="titreEn1Clic"><%= box.getDisplayTitle(userLang) %></h2>
     <jalios:foreach name="itCat" type="Category" collection="<%= rootCategory.getChildrenSet() %>">
 	<%
 	String[] paramNames = { "cidsform-element-fde_5280fde_5278[value]", "cidsform-element-fde_5280fde_5278[text]"};
 	String[] paramValues = { itCat.getId(), itCat.getName() };
 	%>
-        <section class="ds44-card ds44-js-card ds44-card--horizontal ds44-darkContext ds44-tiny-reducedFont">
+    <section class="ds44-card ds44-js-card ds44-card--horizontal ds44-darkContext ds44-tiny-reducedFont">
         <div class="ds44-flex-container ds44-flex-valign-center">
-            <div class="ds44-card__section--horizontal--img--dim110">
+            <div class="ds44-card__section--horizontal--img--dim80">
                 <picture class="ds44-container-imgRatio ds44-container-imgRatio--carre">
                     <img src="<%= itCat.getImage() %>" alt="" class="ds44-imgRatio" />
                 </picture>

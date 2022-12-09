@@ -9,7 +9,7 @@ CarouselElement itTuile = obj.getElementDeDiaporama();
 <div class="ds44-titleContainer ds44-titleContainer--home">
     <p role="heading" aria-level="1" class="h1-like ds44-text--colorInvert">
         <span class="ds44-block"><%= obj.getTitreAffiche(userLang) %></span>
-        <span class="ds44-ssTitreH1_home ds44-block ds44-mt1" role="heading" aria-level="2"><%= obj.getSoustitre(userLang) %></span>
+        <span class="dds44-ssTitreH1_home" role="heading" aria-level="2"><%= obj.getSoustitre(userLang) %></span>
     </p>
     <div class="ds44-alphaGradient ds44-alphaGradient--header"></div>
     <ds:figurePicture format="principale"
