@@ -166,7 +166,7 @@
           <label xml:lang="fr">Espace enseignant : gabarit avec filtre</label>
         </template>
     </templates>
-    
+<!--    
     <templates type="AccueilAnnuaireAgenda">
         <template name="accueilAnnuaireAgendaRecherche" file="doAccueilAnnuaireAgendaRechercheFullDisplay.jsp" usage="full">
             <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
@@ -175,6 +175,7 @@
             <label xml:lang="fr">Espace Enseignant : gabarit recherche</label>
         </template>
     </templates>
+    -->
     <templates type="FicheActionEducative">
         <template name="default" file="doFicheActiviteFullDisplay.jsp" usage="full">
             <label xml:lang="fr">Espace Enseignant : gabarit fiche activité</label>

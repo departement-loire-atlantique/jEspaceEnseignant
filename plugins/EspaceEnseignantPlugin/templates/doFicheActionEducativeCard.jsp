@@ -71,9 +71,9 @@ if (portlet instanceof PortletCarousel) {
                     </div>
                 </jalios:foreach>
           </jalios:if>
- <%--           <a href=# class="ds44-colRight">  --%>
+ <%--           <a href=# class="ds44-colRight">  
               <i class="icon icon-star-empty" aria-hidden="true"></i>
-  <%--           </a> --%>
+          </a> --%>
         </div>
         
         <%-- Vignette Body --%>
