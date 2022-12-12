@@ -7,39 +7,14 @@
 <%
 PortletJspCollection obj = (PortletJspCollection) portlet;
 %>
-<section
-    class="ds44-container-large ds44-homepage-container ds44--xxl-padding-b ds44-pageHeaderContainer--deuxCol">
-
-    <div class="ds44-pageHeaderContainer__left">
-<!--         TODO IMG -->
-<%--         <ds:figurePicture imgCss="ds44-headerImg" --%>
-<%--             pictureCss="ds44-pageHeaderContainer__pictureContainer" --%>
-<%--             figureCss="ds44-pageHeaderContainer__pictureContainer" --%>
-<%--             format="carouselFull"  --%>
-<%--             pub="<%=itTuile%>" --%>
-<%--             imageMobile="<%=itTuile.getImageMobile()%>" --%>
-<%--             alt="<%=itTuile.getTitle()%>" --%>
-<%--             copyright="<%=itTuile.getImageCopyright()%>" --%>
-<%--             legend="<%=itTuile.getImageLegend()%>" --%>
-<%--             ariaLabel="<%=itTuile.getTitle()%>" --%>
-<%--             urlHref="<%=urlLien%>" --%>
-<%--             urlTitle="<%=itTuile.getTitle()%>" --%>
-<%--             urlIsExterne="<%=isExterne%>" /> --%>
-        <div class="ds44-titleContainer">
-            <div class="ds44-alphaGradient ds44-alphaGradient--header">
-                <h1 class="h1-like ds44-text--colorInvert">
-                    <jalios:wysiwyg>TODO Title</jalios:wysiwyg>
-                </h1>
-                <p class="ds44-text--colorInvert">
-                    <jalios:wysiwyg>TODO sub Title</jalios:wysiwyg>
-                <p>
-            </div>
+<section class="ds44-container-large ds44-homepage-container ds44-homepage-container--ha ds44--xxl-padding-b">
+    <div class="grid-12-small-1">
+        <div class="col-8-small-1 col-8-large-7 ds44-mb2 ds44-homepage-noCarrousel">
+            <%=getPortlet(bufferMap, "diaporama")%>
+        </div>
+        <div class="col-4-small-1 col-4-large-5 ds44-mb2 ds44-bgGray ds44--m-padding-tb">
+            <%=getPortlet(bufferMap, "nav")%>
         </div>
     </div>
-
-    <div class="ds44-pageHeaderContainer__right">
-        <section class="ds44-box ds44-bgGray">
-            <%=getPortlet(bufferMap, "nav")%>
-        </section>
-    </div>
 </section>
+</main>

@@ -113,6 +113,9 @@
  -->
   <types>
     <type name="Fiche" />
+    <type name="FicheSiteExpo" />
+    <type name="PortletImageHome" />
+    <type name="RedirectionRecherche" />
 
     <templates type="Fiche">
 	    <template name="default" file="doFicheFullDisplay.jsp" usage='full'>
@@ -148,6 +151,22 @@
           <label xml:lang="fr">Espace Enseignant : gabarit navigation par période</label>
         </template>      
     </templates>
+    <templates type="PortletImageHome">
+        <template name="default" file="doPortletImageHomeBoxDisplay.jsp" usage="box">
+            <label xml:lang="fr">Espace collection : gabarit par défaut</label>
+        </template>
+    </templates>
+<!--    <templates type="PortletRechercheFacettes">
+        <template name="Facetterecherche" file="doPortletRechercheFacettesBoxRechercheDisplay.jsp" usage='box'>
+          <label xml:lang="fr">Espace Enseignant : gabarit générique simple</label>
+        </template>        
+    </templates>  -->
+    <templates type="PortletFacetteCategoriesLiees">
+        <template name="categorieFiltre" file="doPortletFacetteCategoriesLieesFiltreBoxDisplay.jsp" usage='box'>
+          <label xml:lang="fr">Espace enseignant : gabarit avec filtre</label>
+        </template>
+    </templates>
+    
     <templates type="AccueilAnnuaireAgenda">
         <template name="accueilAnnuaireAgendaRecherche" file="doAccueilAnnuaireAgendaRechercheFullDisplay.jsp" usage="full">
             <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
@@ -156,16 +175,22 @@
             <label xml:lang="fr">Espace Enseignant : gabarit recherche</label>
         </template>
     </templates>
-    <templates type="PortletRechercheFacettes">
-        <template name="Facetterecherche" file="doPortletRechercheFacettesBoxRechercheDisplay.jsp" usage='box'>
-          <label xml:lang="fr">Espace Enseignant : gabarit générique simple</label>
-        </template>        
-    </templates>   
     <templates type="FicheActionEducative">
-        <template name="ficheActionEducative" file="doFicheActionEducativeFullDisplay.jsp" usage="full">
-            <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
+        <template name="default" file="doFicheActiviteFullDisplay.jsp" usage="full">
+            <label xml:lang="fr">Espace Enseignant : gabarit fiche activité</label>
         </template>
     </templates> 
+    <templates type="FicheSiteExpo">
+        <template name="default" file="doFicheSiteExpoFullDisplay.jsp" usage="full">
+            <label xml:lang="fr">Espace Enseignant : gabarit fiche expo / site</label>
+        </template>
+    </templates> 
+    
+    <templates type="RedirectionRecherche">
+        <template name="default" file="doRedirectionRechercheFullDisplay.jsp" usage='full'>
+          <label xml:lang="fr">Espace Enseignant : RedirectionRecherche FullDisplay</label>
+        </template>
+    </templates>
     
  </types>
   <!-- ============================== Workflows =========================== -->
@@ -492,6 +517,7 @@
     <directory path="js" />
     <directory path="css" />
     <directory path="docs" />
+    <directory path="images" />
     <directory path="jsp" />
     <directory path="templates" />
     <!--    

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<type name="RedirectionRecherche" superclass="generated.PortletPortalRedirect" debatable="false" unitFieldEdition="true" audienced="false" categoryTab="true" readRightTab="true" updateRightTab="true" templateTab="true" workflowTab="true" advancedTab="true" hbm="true" authgroups="||" categories="">
+  <title ml="true">
+    <label xml:lang="en">Title</label>
+    <label xml:lang="fr">Titre</label>
+  </title>
+  <fields>
+    <field name="facetteCategoriesLieesId" editor="textfield" required="true" compactDisplay="false" type="String" searchable="false" size="80" ml="true" html="false" checkHtml="true">
+      <label xml:lang="fr">Facette Catégories liées id</label>
+    </field>
+    <field type="super" />
+  </fields>
+  <label xml:lang="fr">RedirectionRecherche</label>
+</type>
+

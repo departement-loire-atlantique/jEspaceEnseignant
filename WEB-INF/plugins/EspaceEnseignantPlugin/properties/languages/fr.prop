@@ -1,10 +1,37 @@
+jcmsplugin.espaceEnseignant.navigation.cat.root: Catégorie de Navigation
 jcmsplugin.espaceEnseignant.periode.cat.root: Catégorie des Périodes
 jcmsplugin.espaceEnseignant.typologie.cat.root: Catégorie des Types
 jcmsplugin.espaceEnseignant.niveaux.cat.root: Catégorie des niveaux
 jcmsplugin.espaceEnseignant.sites.cat.root: Catégorie des sites patrimoniaux
 jcmsplugin.espaceEnseignant.contact.cat.root: Page de contact
+jcmsplugin.espaceEnseignant.contenu.sites.cat.root: Catégorie des contenus des sites
+jcmsplugin.espaceEnseignant.contenu.expositions.cat.root: Catégorie des contenus des expositions
+jcmsplugin.espaceEnseignant.portlet.recherche-site.id: ID de la portlet Recherche Facettes
+jcmsplugin.espaceEnseignant.portlet.recherche-site.id.help: portlet Recherche Facettes pour les ressources associées (préciser le champ "Afficher résultat dans l'annuaire" à non)
+jcmsplugin.espaceEnseignant.portlet.categorieslies.listenoire: Catégories à ne pas afficher dans la recherche par activités
 
+jcmsplugin.espaceEnseignant.fiche.scenarioPed: Scénario pédagogique
+jcmsplugin.espaceEnseignant.fiche.focus: Voir les focus
+jcmsplugin.espaceEnseignant.fiche.observe: Observez à la loupe
 jcmsplugin.espaceEnseignant.fiche.AjoutSel: Ajouter à ma sélection
+jcmsplugin.espaceEnseignant.fiche.header.maj: Mis à jour le
 jcmsplugin.espaceEnseignant.footer.btn-contact: Poser une question
 
-jcmsplugin.espaceEnseignant.site.decouvrez: Découvrez le site
+jcmsplugin.espaceEnseignant.site.decouvrezsite: Découvrez le site
+jcmsplugin.espaceEnseignant.site.decouvrezexposition: Découvrez l'exposition
+
+jcmsplugin.espaceEnseignant.carrousel.ressources-associees: Ressources associées
+
+jcmsplugin.espaceEnseignant.partage-rs.title: Partagez cette page
+jcmsplugin.espaceEnseignant.partage-rs.facebook: Partager cette page sur Facebook
+jcmsplugin.espaceEnseignant.partage-rs.twitter: Partagez cette page sur Twitter
+jcmsplugin.espaceEnseignant.partage-rs.linkedin: Partagez cette page sur Linkedin
+jcmsplugin.espaceEnseignant.partage-rs.mail: Partagez cette page par email
+
+jcmsplugin.espaceEnseignant.page-utile.title: Cette page vous a-t-elle été utile ?
+jcmsplugin.espaceEnseignant.site.infosPratiques: Infos pratiques
+jcmsplugin.espaceEnseignant.site.ressourcesAssociees: Ressources Associées
+jcmsplugin.espaceEnseignant.site.motsClefs: Mots clefs
+jcmsplugin.espaceEnseignant.site.retrouvezMusee: Retrouvez cet objet au musée
+
+$jcmsplugin.socle.form.contactform.sujet.root: Contact - catégorie des sujets
