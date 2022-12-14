@@ -394,5 +394,5 @@ jcmsContext.addCSSHeader("plugins/EspaceEnseignantPlugin/css/plugin.css");
 
 		<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/sharePage.jspf'%>
 	</section>
-	<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/pageUtile.jspf'%>
+	<%--@ include file='/plugins/EspaceEnseignantPlugin/jsp/pageUtile.jspf'--%>
 </div>

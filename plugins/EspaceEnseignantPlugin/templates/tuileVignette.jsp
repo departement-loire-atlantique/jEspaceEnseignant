@@ -6,10 +6,16 @@ if (data == null) {
   return;
 }
 
+PortalElement portlet = (PortalElement)request.getAttribute(PortalManager.PORTAL_PORTALELEMENT);
+boolean isThemeClair = false;
+if (portlet instanceof PortletCarousel) {
+  isThemeClair = ((PortletCarousel)portlet).getSelectionDuTheme().equals("tuileVerticaleLight");
+}
+
 Fiche obj = (Fiche) data;
 %>
 <div class="col-3 vignette vignette-card">
-<section class="ds44-card ds44-js-card ds44-card--verticalPicture">
+<section class="ds44-card ds44-js-card ds44-card--verticalPicture <%= isThemeClair ? "ds44-darkContext" : "" %>">
     
         <%-- Vignette Image --%>
         <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFiche.jspf' %>
@@ -25,9 +31,10 @@ Fiche obj = (Fiche) data;
                     </div>
                 </jalios:foreach>
           </jalios:if>
-            <a href=# class="ds44-colRight">
+<%--            <a href=# class="ds44-colRight">
               <i class="icon icon-star-empty" aria-hidden="true"></i>
             </a>
+  --%>        
         </div>
         
         <%-- Vignette Body --%>

@@ -140,10 +140,11 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 										<i class="icon icon-long-arrow-right" aria-hidden="true"></i>
 									</a>
 									</jalios:if>
-									<button class="ds44-btnStd">
+									<%--<button class="ds44-btnStd">
 										<i class="icon icon-star-empty" aria-hidden="true"></i> <span
 											class="ds44-btnInnerText"><%=glp("jcmsplugin.espaceEnseignant.fiche.AjoutSel")%></span>
 									</button>
+									 --%>
 								</div>
 							</section>
 						</aside>

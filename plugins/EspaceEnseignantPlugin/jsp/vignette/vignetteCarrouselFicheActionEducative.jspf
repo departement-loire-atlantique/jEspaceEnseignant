@@ -54,8 +54,8 @@
                                         </jalios:foreach>
                                     <% } %>
  <%--                               <a href=# class="ds44-colRight">      
-  --%>                                   <i class="icon icon-star-empty" aria-hidden="true"></i>
-   <%--                                 </a>       
+                                    <i class="icon icon-star-empty" aria-hidden="true"></i>
+                                   </a>       
    --%>                              </div>
 
                                 <%-- Vignette Body --%>
