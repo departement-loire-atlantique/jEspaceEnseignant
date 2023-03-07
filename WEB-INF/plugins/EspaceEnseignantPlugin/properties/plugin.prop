@@ -36,6 +36,8 @@ fr.jcmsplugin.seo.meta-title:   Ressources éducatives
 jcmsplugin.socle.site.menu.cat.root: fde_5806
 jcmsplugin.socle.site.submenu.cat.root: fde_5808
 jcmsplugin.socle.form.contact.portlet-rgpd.id: fde_5858
+jcmsplugin.socle.header.hidesocialnetworks: true
+jcmsplugin.socle.header.hidesiteapplis: true
 
 # type fiche lieu
 $jcmsplugin.socle.form.contactform.sujet.root.chooser-category: fde_5783
