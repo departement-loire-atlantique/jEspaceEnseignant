@@ -4,7 +4,7 @@
 <%
 FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PUBLICATION);
 
-Content[] relatedContents = obj.getRessourcesAssocies();
+Content[] relatedContents = Util.notEmpty(obj.getRessourcesAssocies()) ? obj.getRessourcesAssocies() : null;
 
 Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.expositions.cat.root"));
 %>
@@ -190,8 +190,9 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
               tab =  Util.getArrayList(relatedContents);
             }
             if (Util.isEmpty(relatedContents) || relatedContents.length < pubRelatedMax) {
+              
+              Category catSite = obj.getCategorySet().contains(contenuExpositions) ? channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.expositions.cat.root")) : channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.sites.cat.root"));
 
-              Category catSite = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.sites.cat.root"));
               Category catMain = null;
               
               for(Category itCategory : obj.getCategories(loggedMember)) {
@@ -204,7 +205,9 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
               QueryHandler qh = new QueryHandler();  
               qh.setTypes(new String[] {"generated.Fiche","generated.FicheActionEducative"});  
               qh.setSort("pdate");
-              if (Util.notEmpty(catMain)) { qh.setCids(catMain.getId()); }
+              if (Util.notEmpty(catMain)) {
+                qh.setCids(catMain.getId());
+              }
 
               tab.addAll((SortedSet<Content>)QueryManager.getInstance().getRelatedPublicationSet(obj, qh));
             }
