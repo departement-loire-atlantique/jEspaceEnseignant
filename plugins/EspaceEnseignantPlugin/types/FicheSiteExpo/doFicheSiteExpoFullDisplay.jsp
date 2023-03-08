@@ -172,16 +172,8 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 		</article>
 
 		<%-- RESSOURCES ASSOCIEES --%>
-		<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id"); %>
-		<jalios:if predicate="<%=Util.notEmpty(obj.getRessourcesAssocies()) || Util.notEmpty(portletId)%>">
-		
-			<%-- 
-			List<Content> tab = new ArrayList<>();
-			if (Util.notEmpty(obj.getRessourcesAssocies())) {
-			  tab = Arrays.asList(obj.getRessourcesAssocies());
-			}
-            --%>
-            <%    
+		<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id");
+
             Collection tab = new TreeSet<>();
             Collection pubRelatedCollection = new TreeSet<>();
             int pubRelatedMax = 4;
@@ -211,8 +203,8 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 
               tab.addAll((SortedSet<Content>)QueryManager.getInstance().getRelatedPublicationSet(obj, qh));
             }
-
+            System.out.println("fdsfd " + tab);
             %>
           	<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
-		</jalios:if>
+
 	</section>

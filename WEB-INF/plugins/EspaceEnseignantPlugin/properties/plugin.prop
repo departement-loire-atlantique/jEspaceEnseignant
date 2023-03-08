@@ -74,7 +74,7 @@ media.data-template.carrouselActu.Fiche: /plugins/EspaceEnseignantPlugin/templat
 
 # Recherche générale
 $jcmsplugin.socle.recherche.facettes.portal: fde_5287
-jcmsplugin.espaceEnseignant.portlet.recherche-site.id: 
+jcmsplugin.espaceEnseignant.portlet.recherche-site.id: rec_5881
 # Recherche Activités
 jcmsplugin.espaceEnseignant.portlet.categorieslies.listenoire.chooser-category: c_5155
 
