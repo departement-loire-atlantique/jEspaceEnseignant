@@ -104,6 +104,9 @@ H3.title-overlay {
     object-fit: contain;
 }
 
+.ds44-card.ds44-card--contact {
+    border-color: @main-color;
+}
 .ds44-colLeft,
 .ds44-colRight {
     flex: auto !important;
@@ -126,6 +129,7 @@ BODY .ds44-theme {
 }
 
 .ds44-btn--contextual,
+.ds44-btnSelect.ds44-theme,
 .ds44-btnStd.ds44-theme {
     background-color: @main-color !important;
     border-color: @main-color;
@@ -141,7 +145,7 @@ BODY .ds44-theme {
 //  VIGNETTE                                             
 // -------------------------------------------------------------------
 .vignette {
-    margin-right: 20px;
+    margin-right: 5px;
     margin-bottom: 20px;
     height: 100%;
 
@@ -188,6 +192,10 @@ BODY .ds44-theme {
             height: auto;
         }
     }
+}
+
+.ds44-card.ds44-card--contact .ds44-card__section.vignette {
+    padding: 0;
 }
 
 // ------------------------------------------------------------------- 
