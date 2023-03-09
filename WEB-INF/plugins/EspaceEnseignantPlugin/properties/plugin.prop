@@ -58,7 +58,7 @@ jcmsplugin.espaceEnseignant.periode.cat.root.chooser-category: c_5182
 jcmsplugin.espaceEnseignant.typologie.cat.root.chooser-category: c_5145
 jcmsplugin.espaceEnseignant.niveaux.cat.root.chooser-category: c_5165
 jcmsplugin.espaceEnseignant.sites.cat.root.chooser-category: c_5263
-jcmsplugin.espaceEnseignant.contact.cat.root.chooser-category:
+jcmsplugin.espaceEnseignant.contact.cat.root.chooser-category: c_5010
 jcmsplugin.socle.site.header.cat: fde_5290
 jcmsplugin.espaceEnseignant.contenu.sites.cat.root.chooser-category: c_5007
 jcmsplugin.espaceEnseignant.contenu.expositions.cat.root.chooser-category:c_5008
