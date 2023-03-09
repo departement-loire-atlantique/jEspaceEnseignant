@@ -1,3 +1,4 @@
+<%@page import="com.jalios.jcms.JcmsUtil"%>
 <%@page import="generated.RedirectionRecherche"%>
 <%@page import="generated.PortletPortalRedirect"%>
 <%@page import="com.jalios.jcms.Publication"%>
@@ -14,7 +15,7 @@ ArrayList<Category> listFilAriane = EspaceEnseignantHandler.getFilAriane(loggedM
         <li class="ds44-breadcrumb_item"> 
             <a href="index.jsp">
                 <i class="icon icon-home icon--medium" aria-hidden="true"></i>
-                <span class="visually-hidden">Accueil</span>
+                <span class="visually-hidden"><%= glp("jcmsplugin.socle.title.accueil") %></span>
             </a>
         </li>
         <jalios:foreach collection="<%= listFilAriane %>" type="Category" name="itCategory" counter="itCounter" >
@@ -27,14 +28,17 @@ ArrayList<Category> listFilAriane = EspaceEnseignantHandler.getFilAriane(loggedM
             if(Util.notEmpty(pubPrincipal)){
                 url = pubPrincipal.getDisplayUrl(userLocale);
                 if(pubPrincipal instanceof RedirectionRecherche){
-                    url += "?cid=" + itCategory.getId() + "&lvl=" + itCounter;
+                  RedirectionRecherche redirectionRecherche = (RedirectionRecherche)pubPrincipal;
+                   url = "plugins/EspaceEnseignantPlugin/types/RedirectionRecherche/doRedirectionRechercheFullDisplay.jsp";
+                   url += "?cid=" + itCategory.getId() + "&lvl=" + itCounter;
+                   url += "&facetteCategoriesLieesId=" + redirectionRecherche.getFacetteCategoriesLieesId();
                 }
             }
             %>
             <li class="ds44-breadcrumb_item"> 
                 <jalios:select>
                     <jalios:if predicate='<%= Util.notEmpty(url) %>'>
-                        <a href='<%= url %>'>
+                        <a href='<%= url %>' >
                             <%= itCategory.getName() %>
                         </a>
                     </jalios:if>

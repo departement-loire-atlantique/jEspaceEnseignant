@@ -183,7 +183,7 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
             }
             if (Util.isEmpty(relatedContents) || relatedContents.length < pubRelatedMax) {
               
-              Category catSite = obj.getCategorySet().contains(contenuExpositions) ? channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.expositions.cat.root")) : channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.sites.cat.root"));
+              Category catSite = obj.getCategorySet().contains(contenuExpositions) ? channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.expositions.cat.root")) : channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.sites.cat.root"));
 
               Category catMain = null;
               
