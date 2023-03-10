@@ -100,6 +100,13 @@ H3.title-overlay {
     height: 50px;
 }
 
+.contain {
+    object-fit: contain;
+}
+
+.ds44-card.ds44-card--contact {
+    border-color: @main-color;
+}
 .ds44-colLeft,
 .ds44-colRight {
     flex: auto !important;
@@ -122,6 +129,7 @@ BODY .ds44-theme {
 }
 
 .ds44-btn--contextual,
+.ds44-btnSelect.ds44-theme,
 .ds44-btnStd.ds44-theme {
     background-color: @main-color !important;
     border-color: @main-color;
@@ -133,11 +141,16 @@ BODY .ds44-theme {
     }
 }
 
+.ds44-btnStd .icon {
+    vertical-align: sub;
+    margin-right: 5px;
+}
+
 // ------------------------------------------------------------------- 
 //  VIGNETTE                                             
 // -------------------------------------------------------------------
 .vignette {
-    margin-right: 20px;
+    margin-right: 5px;
     margin-bottom: 20px;
     height: 100%;
 
@@ -184,10 +197,11 @@ BODY .ds44-theme {
             height: auto;
         }
     }
-    
-    
 }
 
+.ds44-card.ds44-card--contact .ds44-card__section.vignette {
+    padding: 0;
+}
 
 // ------------------------------------------------------------------- 
 //  CARTEL                                             
@@ -411,8 +425,70 @@ BODY .ds44-theme {
 // ------------------------------------------------------------------- 
 //  Liste de contenus SITE / EXPO                                            
 // -------------------------------------------------------------------
-.listedecontenus .ds44-lightBG {
-    margin-bottom: 9rem;
+.listedecontenus {
+    .ds44-lightBG {
+        margin-bottom: 9rem;
+    }
+    @media(max-width: 768px) {
+        .ds44-lightBG {
+            margin-bottom: 2rem;
+            
+            .ds44--xl-padding-t {
+                padding: 1rem;
+            }
+        }
+    }
+    
+    .ds44-flex {
+        margin-left: 8%;
+        margin-right: 8%;
+        
+        .coteImage {
+            width: 40%;
+        }
+        
+        .coteTexte {
+            margin-left: 3.5rem;
+            width: 60%;
+            
+            .resume {
+                margin-top: 3rem;
+            }
+        }
+    }
+
+    SECTION.ds44-contenuArticle:nth-child(even) {
+        .coteImage {
+            order: 1;
+            margin-left: 3.5rem;
+        }
+            
+        .coteTexte {
+            margin-left: 0;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .ds44-flex {
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            
+        .coteImage,
+        .coteTexte {
+            margin-bottom: 2rem;
+            margin-left: 0;
+            width: 100%;
+        }
+        }
+
+        SECTION.ds44-contenuArticle:nth-child(even) .coteImage {
+            order: inherit;
+            margin-left: 0;
+        }
+        
+
+    }
 }
 
 #idTitre2 { 
@@ -492,6 +568,18 @@ body .ds44-contenuArticle #titreParagraphe1 {
     font: normal normal bold 34px/43px Muli;
     background: inherit;
     border-bottom: 1px solid @main-color;
+}
+
+@media(max-width: 768px) {
+    .h1-like {
+        font-size: 2.6rem;
+        line-height: 1.5;
+    }
+    
+    .h2-like {
+        font-size: 2.2rem;
+        line-height: 1.5;
+    }
 }
 
 // page cookies

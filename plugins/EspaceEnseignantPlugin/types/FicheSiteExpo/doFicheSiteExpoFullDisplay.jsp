@@ -4,6 +4,8 @@
 <%
 FicheSiteExpo obj = (FicheSiteExpo) request.getAttribute(PortalManager.PORTAL_PUBLICATION);
 
+Content[] relatedContents = Util.notEmpty(obj.getRessourcesAssocies()) ? obj.getRessourcesAssocies() : null;
+
 Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.expositions.cat.root"));
 %>
 <%@ include file='/front/doFullDisplay.jspf'%>
@@ -170,15 +172,39 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 		</article>
 
 		<%-- RESSOURCES ASSOCIEES --%>
-		<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id"); %>
-		<jalios:if predicate="<%=Util.notEmpty(obj.getRessourcesAssocies()) || Util.notEmpty(portletId)%>">
-		
-			<% 
-			List<Content> tab = new ArrayList<>();
-			if (Util.notEmpty(obj.getRessourcesAssocies())) {
-			  tab = Arrays.asList(obj.getRessourcesAssocies());
-			}
+		<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id");
+
+            Collection tab = new TreeSet<>();
+            Collection pubRelatedCollection = new TreeSet<>();
+            int pubRelatedMax = 4;
+            
+            if (Util.notEmpty(relatedContents) && relatedContents.length > pubRelatedMax) {
+              tab =  Util.getArrayList(relatedContents);
+            }
+            if (Util.isEmpty(relatedContents) || relatedContents.length < pubRelatedMax) {
+              
+              Category catSite = obj.getCategorySet().contains(contenuExpositions) ? channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.contenu.expositions.cat.root")) : channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.sites.cat.root"));
+
+              Category catMain = null;
+              
+              for(Category itCategory : obj.getCategories(loggedMember)) {
+                if (itCategory.containsDescendant(catSite)) {
+                  catMain = itCategory;
+                  break;
+                }
+              }
+              
+              QueryHandler qh = new QueryHandler();  
+              qh.setTypes(new String[] {"generated.Fiche","generated.FicheActionEducative"});  
+              qh.setSort("pdate");
+              if (Util.notEmpty(catMain)) {
+                qh.setCids(catMain.getId());
+              }
+
+              tab.addAll((SortedSet<Content>)QueryManager.getInstance().getRelatedPublicationSet(obj, qh));
+            }
+            System.out.println("fdsfd " + tab);
             %>
           	<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
-		</jalios:if>
+
 	</section>

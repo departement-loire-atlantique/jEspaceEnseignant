@@ -6,6 +6,8 @@ if (data == null) {
   return;
 }
 
+Set<String> panierSet = (Set<String>) session.getAttribute("panier"); 
+
 PortalElement portlet = (PortalElement)request.getAttribute(PortalManager.PORTAL_PORTALELEMENT);
 boolean isThemeClair = false;
 if (portlet instanceof PortletCarousel) {
@@ -13,13 +15,21 @@ if (portlet instanceof PortletCarousel) {
 }
 
 Fiche obj = (Fiche) data;
-%>
-<div class="col-3 vignette vignette-card">
-<section class="ds44-card ds44-js-card ds44-card--verticalPicture <%= isThemeClair ? "ds44-darkContext" : "" %>">
-    
-        <%-- Vignette Image --%>
-        <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFiche.jspf' %>
 
+%>
+<section class="ds44-card ds44-js-card ds44-card--contact ds44-bgGray ds44-card--verticalPicture <%= isThemeClair ? "ds44-darkContext" : "" %>">
+    <%-- Vignette Image --%>
+    <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/image/imageFiche.jspf' %>
+    
+    <div class="ds44-card__section vignette">
+    <%-- Favoris --%>
+        <p class="ds44-cardSelect pa0 ma0">
+            <button data-select-button-id='<%= "search-result-" + obj.getId() %>' class='ds44-js-select-button <%= (Util.isEmpty(panierSet) || !panierSet.contains(obj.getId())) ? "" : "is-select" %>' data-url="plugins/SoclePlugin/jsp/panier/select-enabled.jsp?pubId=<%= obj.getId() %>" data-titles='{ "enabled": "Désélectionner <%= obj.getTitle() %>", "disabled": "Sélectionner <%= obj.getTitle() %>"}' data-icons='{ "enabled": "icon-star-full", "disabled": "icon-star-empty"}' type="button" aria-describedby='card_<%= obj.getId()%>'>
+                <i class='icon icon-star-empty' data-icon aria-hidden="true"></i>
+                <span class="visually-hidden" data-entitled><%= glp("jcmsplugin.socle.selectionner") %></span>
+            </button>
+        </p>
+        
         <%-- Vignette Header --%>
         <div class="vignette-header ds44-flex-container">
           <jalios:if predicate="<%= Util.notEmpty(obj.getTypologie(loggedMember)) %>">
@@ -31,10 +41,6 @@ Fiche obj = (Fiche) data;
                     </div>
                 </jalios:foreach>
           </jalios:if>
-<%--            <a href=# class="ds44-colRight">
-              <i class="icon icon-star-empty" aria-hidden="true"></i>
-            </a>
-  --%>        
         </div>
         
         <%-- Vignette Body --%>
@@ -47,7 +53,7 @@ Fiche obj = (Fiche) data;
             </p>
               <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/vignetteContent.jspf' %>
           </div>
-        </div>
-
-    </section>
+        </div> 
+                        
     </div>
+</section>

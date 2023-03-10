@@ -156,26 +156,11 @@
             <label xml:lang="fr">Espace collection : gabarit par défaut</label>
         </template>
     </templates>
-<!--    <templates type="PortletRechercheFacettes">
-        <template name="Facetterecherche" file="doPortletRechercheFacettesBoxRechercheDisplay.jsp" usage='box'>
-          <label xml:lang="fr">Espace Enseignant : gabarit générique simple</label>
-        </template>        
-    </templates>  -->
     <templates type="PortletFacetteCategoriesLiees">
         <template name="categorieFiltre" file="doPortletFacetteCategoriesLieesFiltreBoxDisplay.jsp" usage='box'>
           <label xml:lang="fr">Espace enseignant : gabarit avec filtre</label>
         </template>
     </templates>
-<!--    
-    <templates type="AccueilAnnuaireAgenda">
-        <template name="accueilAnnuaireAgendaRecherche" file="doAccueilAnnuaireAgendaRechercheFullDisplay.jsp" usage="full">
-            <label xml:lang="fr">Espace Enseignant : gabarit par défaut</label>
-        </template>
-        <template name="annuaire" file="doAccueilAnnuaireAgenda_Recherche.jsp" usage="recherche">
-            <label xml:lang="fr">Espace Enseignant : gabarit recherche</label>
-        </template>
-    </templates>
-    -->
     <templates type="FicheActionEducative">
         <template name="default" file="doFicheActiviteFullDisplay.jsp" usage="full">
             <label xml:lang="fr">Espace Enseignant : gabarit fiche activité</label>
@@ -521,9 +506,7 @@
     <directory path="images" />
     <directory path="jsp" />
     <directory path="templates" />
-    <!--    
-    <directory path="images" />
-    -->
+    <directory path="types" />
   </public-files>
 </plugin>
 

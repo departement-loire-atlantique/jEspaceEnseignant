@@ -22,8 +22,10 @@ channel.css.all.200.fo: plugins/EspaceEnseignantPlugin/css/plugin.css
 
 jcmsplugin.espaceEnseignant.site.src.logo-gpla: plugins/EspaceEnseignantPlugin/images/logo-ressources-educatives.svg
 jcmsplugin.socle.site.src.logo: plugins/EspaceEnseignantPlugin/images/logo-ressources-educatives.svg
+jcmsplugin.socle.site.src.logomobile: logo-grand-patrimoine-noir.svg
 
-jcmsplugin.socle.css-urls: https://design.loire-atlantique.fr/css/cd44.css https://design.loire-atlantique.fr/css/icons.css plugins/EspaceEnseignantPlugin/css/plugin.css
+jcmsplugin.socle.css-urls: https://dev-design.loire-atlantique.fr/css/cd44.css https://design.loire-atlantique.fr/css/icons.css plugins/EspaceEnseignantPlugin/css/plugin.css
+jcmsplugin.socle.js-urls:https://dev-design.loire-atlantique.fr/js/cd44.js
 
 descriptive-urls.enabled:       false
 descriptive-urls.prefix:        jcms  
@@ -34,6 +36,8 @@ fr.jcmsplugin.seo.meta-title:   Ressources éducatives
 jcmsplugin.socle.site.menu.cat.root: fde_5806
 jcmsplugin.socle.site.submenu.cat.root: fde_5808
 jcmsplugin.socle.form.contact.portlet-rgpd.id: fde_5858
+jcmsplugin.socle.header.hidesocialnetworks: true
+jcmsplugin.socle.header.hidesiteapplis: true
 
 # type fiche lieu
 $jcmsplugin.socle.form.contactform.sujet.root.chooser-category: fde_5783
@@ -54,7 +58,7 @@ jcmsplugin.espaceEnseignant.periode.cat.root.chooser-category: c_5182
 jcmsplugin.espaceEnseignant.typologie.cat.root.chooser-category: c_5145
 jcmsplugin.espaceEnseignant.niveaux.cat.root.chooser-category: c_5165
 jcmsplugin.espaceEnseignant.sites.cat.root.chooser-category: c_5263
-jcmsplugin.espaceEnseignant.contact.cat.root.chooser-category:
+jcmsplugin.espaceEnseignant.contact.cat.root.chooser-category: c_5010
 jcmsplugin.socle.site.header.cat: fde_5290
 jcmsplugin.espaceEnseignant.contenu.sites.cat.root.chooser-category: c_5007
 jcmsplugin.espaceEnseignant.contenu.expositions.cat.root.chooser-category:c_5008
@@ -70,7 +74,7 @@ media.data-template.carrouselActu.Fiche: /plugins/EspaceEnseignantPlugin/templat
 
 # Recherche générale
 $jcmsplugin.socle.recherche.facettes.portal: fde_5287
-jcmsplugin.espaceEnseignant.portlet.recherche-site.id: 
+jcmsplugin.espaceEnseignant.portlet.recherche-site.id: rec_5881
 # Recherche Activités
 jcmsplugin.espaceEnseignant.portlet.categorieslies.listenoire.chooser-category: c_5155
 
