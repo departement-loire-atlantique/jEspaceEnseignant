@@ -32,6 +32,8 @@ descriptive-urls.prefix:        jcms
 fr.jcmsplugin.seo.meta-title:   Ressources éducatives
 
 ## Surcharge module socle
+vote.enabled.boolean: false
+
 # Menu principal
 jcmsplugin.socle.site.menu.cat.root: fde_5806
 jcmsplugin.socle.site.submenu.cat.root: fde_5808
