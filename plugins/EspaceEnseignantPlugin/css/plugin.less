@@ -142,8 +142,12 @@ BODY .ds44-theme {
 }
 
 .ds44-btnStd .icon {
-    vertical-align: sub;
+    vertical-align: middle;
     margin-right: 5px;
+}
+
+.ds44-cardSelect .ds44-btnStd .icon {
+    vertical-align: sub;
 }
 
 // ------------------------------------------------------------------- 
@@ -235,6 +239,13 @@ BODY .ds44-theme {
 // ------------------------------------------------------------------- 
 //  FICHE                                             
 // -------------------------------------------------------------------
+
+.fullDisplay.Fiche {
+    .ds44-cardSelect {
+        display: inline-block; 
+        margin-left: 1rem;   
+    }
+}
 .fiche-bg {
     background-color: @light-grey;
     padding-bottom: 2rem;
@@ -508,6 +519,18 @@ BODY .ds44-theme {
 }
 
 // ------------------------------------------------------------------- 
+//  Favoris                        
+// -------------------------------------------------------------------
+.favoris {
+    table {
+        TD.image {
+            padding: 0 0 0 1rem;
+            vertical-align: middle;
+        }
+    }
+}
+
+// ------------------------------------------------------------------- 
 //  Surcharge DS System                                   
 // -------------------------------------------------------------------
 main#content main#content {
@@ -580,6 +603,10 @@ body .ds44-contenuArticle #titreParagraphe1 {
         font-size: 2.2rem;
         line-height: 1.5;
     }
+}
+
+.ds44-modal-container {
+  display: flex !important;
 }
 
 // page cookies
