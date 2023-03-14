@@ -20,8 +20,10 @@ public class ExportZip {
 	private List<File> listImage(CarouselElement[] galerieVisuel) {
 		List<File> listFile = new ArrayList<File>();
 		for (CarouselElement element : galerieVisuel) {
-			File newFile = new File("jcms\\" + element.getImage()); // hmm
-			listFile.add(newFile);
+//			File newFile = new File("jcms\\" + element.getImage()); // hmm
+      File newFile = new File(element.getImage()); // hmm
+
+		  listFile.add(newFile);
 		}
 		return listFile;
 	}
@@ -39,10 +41,7 @@ public class ExportZip {
 
 				byte[] buf = new byte[1024];
 				for (int i = 0; i < files.size(); i++) {    
-				  LOGGER.debug(Channel.getChannel().getWebappPath());
-				  LOGGER.debug(files.get(i).getPath());
-				  LOGGER.debug(files.get(i).getName());
-					FileInputStream in = new FileInputStream(Channel.getChannel().getWebappPath()+files.get(i).getPath());
+					FileInputStream in = new FileInputStream(Channel.getChannel().getWebappPath() + files.get(i).getPath());
 					// add ZIP entry to output stream
 					zos.putNextEntry(new ZipEntry(files.get(i).getName()));
 					// transfer bytes from the file to the ZIP file
