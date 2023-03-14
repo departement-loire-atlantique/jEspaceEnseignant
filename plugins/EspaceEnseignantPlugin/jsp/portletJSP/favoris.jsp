@@ -19,7 +19,7 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
                 <article class="col-7 ds44-contenuDossier">
                     <h2 class="h4-like ds44-mb2"><%= glp("jcmsplugin.espaceEnseignant.favoris.find") %></h2>
                         <div class="ds44-txtRight">
-                            <button onclick="allSuppression(this)"><i class="icon icon-cross" aria-hidden="true"></i>
+                            <button><i class="icon icon-cross" aria-hidden="true"></i>
                                     <span class="ds44-btnInnerText"><%= glp("jcmsplugin.espaceEnseignant.favoris.allSuppr") %></span>
                             </button>
                         </div>
@@ -28,9 +28,9 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
 
                             <thead>
                                 <tr>
-                                    <th scope="col">Visuel</th>
-                                    <th scope="col">Titre</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col"><%= glp("jcmsplugin.espaceEnseignant.favoris.visuel") %></th>
+                                    <th scope="col"><%= glp("jcmsplugin.espaceEnseignant.favoris.titre") %></th>
+                                    <th scope="col"><%= glp("jcmsplugin.espaceEnseignant.favoris.action") %></th>
                                 </tr>
                             </thead>
 
@@ -63,7 +63,7 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
                                                  type="button"
                                                  aria-describedby='card_<%= itPub.getId()%>'>
                                             <i class="icon icon-cross" aria-hidden="true"></i>
-                                            <span class="visually-hidden">Retirer de la sélection : [Nom du parent]</span>
+                                            <span class="visually-hidden"><%= glp("jcmsplugin.espaceEnseignant.fiche.SupprSel") %></span>
                                         </button>  
                                 </tr>
                             </jalios:foreach>
@@ -76,11 +76,11 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
                     <aside class="col-4 ds44-hide-tinyToLarge ds44-js-aside-summary ds44-mb35" data-component-aside-summary-uuid="336ea052-d1f2-40d2-9e4b-4ca2ef26a77e">
                         <section class="ds44-box ds44-theme " data-component-aside-summary-uuid="d5683aa7-f8c9-4701-b7da-40649d9d0f82" style="position: static;">
                             <div class="ds44-innerBoxContainer ">
-                                <h2 class="h4-like ds44-mb2">Ma sélection</h2>
+                                <h2 class="h4-like ds44-mb2"><%= glp("jcmsplugin.espaceEnseignant.favoris.maSelection") %></h2>
                                 <ul class="ds44-list">
                                     <li class="ds44-docListElem">
                                         <i class="icon icon-pdf ds44-docListIco" aria-hidden="true"></i>
-                                        <a href="/assmat.pdf?type=detail" data-link-has-select="" target="_blank" title="PDF">Afficher ma sélection en tableau</a>
+                                        <a href="#" onclick="javascript:window.print()" data-link-has-select="" target="_blank" title="PDF"><%= glp("jcmsplugin.espaceEnseignant.favoris.selection") %></a>
                                     </li>
                                 </ul>
                             </div>
@@ -100,9 +100,5 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
 <script>
 function suppression(event) {
     event.closest("TR").remove();
-}
-
-function allSuppression(event) {
-    sessionStorage.removeItem("panier");
 }
 </script>

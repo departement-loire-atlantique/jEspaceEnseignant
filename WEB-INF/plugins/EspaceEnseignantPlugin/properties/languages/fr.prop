@@ -39,6 +39,11 @@ $jcmsplugin.socle.form.contactform.sujet.root: Contact - catégorie des sujets
 
 jcmsplugin.espaceEnseignant.favoris.find: Retrouvez ici la liste de vos favoris
 jcmsplugin.espaceEnseignant.favoris.allSuppr: Tout retirer de ma sélection
+jcmsplugin.espaceEnseignant.favoris.visuel: Visuel
+jcmsplugin.espaceEnseignant.favoris.titre: Titre
+jcmsplugin.espaceEnseignant.favoris.action: Action
+jcmsplugin.espaceEnseignant.favoris.selection: Afficher ma sélection en tableau
+jcmsplugin.espaceEnseignant.favoris.maSelection: Ma sélection
 
 jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation: J’ai lu et j’accepte les Conditions générales d’utilisation du site.
 jcmsplugin.espaceEnseignant.modal.images.hd :Pour toute demande de photographie Haute Définition, cliquez ici
