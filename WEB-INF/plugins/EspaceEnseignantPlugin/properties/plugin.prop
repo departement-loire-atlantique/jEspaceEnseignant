@@ -33,6 +33,7 @@ fr.jcmsplugin.seo.meta-title:   Ressources éducatives
 
 ## Surcharge module socle
 vote.enabled.boolean: false
+$id.jcmsplugin.socle.selection.page.cat: fde_6132
 
 # Menu principal
 jcmsplugin.socle.site.menu.cat.root: fde_5806
