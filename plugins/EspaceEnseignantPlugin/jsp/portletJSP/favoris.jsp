@@ -78,7 +78,7 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
 
                     <div class="col-1 grid-offset ds44-hide-tinyToLarge"></div>
 
-                    <aside class="col-4 ds44-hide-tinyToLarge ds44-js-aside-summary ds44-mb35" data-component-aside-summary-uuid="336ea052-d1f2-40d2-9e4b-4ca2ef26a77e">
+                    <aside class="col-4 ds44-js-aside-summary ds44-mb35" data-component-aside-summary-uuid="336ea052-d1f2-40d2-9e4b-4ca2ef26a77e">
                         <section class="ds44-box ds44-theme " data-component-aside-summary-uuid="d5683aa7-f8c9-4701-b7da-40649d9d0f82" style="position: static;">
                             <div class="ds44-innerBoxContainer ">
                                 <h2 class="h4-like ds44-mb2"><%= glp("jcmsplugin.espaceEnseignant.favoris.maSelection") %></h2>
