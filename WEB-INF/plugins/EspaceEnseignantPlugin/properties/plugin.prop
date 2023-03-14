@@ -33,7 +33,6 @@ fr.jcmsplugin.seo.meta-title:   Ressources éducatives
 
 ## Surcharge module socle
 vote.enabled.boolean: false
-$id.jcmsplugin.socle.selection.page.cat: fde_6132
 
 # Menu principal
 jcmsplugin.socle.site.menu.cat.root: fde_5806
@@ -44,6 +43,7 @@ jcmsplugin.socle.header.hidesiteapplis: true
 
 # type fiche lieu
 $jcmsplugin.socle.form.contactform.sujet.root.chooser-category: fde_5783
+
 # type fiche action éducative
 $jcmsplugin.socle.ficheactioneducative.theme.root.chooser-category: fde_5488
 $jcmsplugin.socle.ficheactioneducative.sousTheme.root.chooser-category: fde_5493
@@ -61,10 +61,13 @@ jcmsplugin.espaceEnseignant.periode.cat.root.chooser-category: c_5182
 jcmsplugin.espaceEnseignant.typologie.cat.root.chooser-category: c_5145
 jcmsplugin.espaceEnseignant.niveaux.cat.root.chooser-category: c_5165
 jcmsplugin.espaceEnseignant.sites.cat.root.chooser-category: c_5263
-jcmsplugin.espaceEnseignant.contact.cat.root.chooser-category: c_5010
+$id.jcmsplugin.espaceEnseignant.contact.cat.root.chooser-category: c_5010
 jcmsplugin.socle.site.header.cat: fde_5290
 jcmsplugin.espaceEnseignant.contenu.sites.cat.root.chooser-category: c_5007
 jcmsplugin.espaceEnseignant.contenu.expositions.cat.root.chooser-category:c_5008
+$id.plugin.socle.page-principale.cat: por_5871
+$id.jcmsplugin.socle.selection.page.cat.chooser-category: fde_6132
+$id.jcmsplugin.espaceEnseignant.conditionsGenerales.chooser-category: c_5406
 
 # désactive le btn par défaut et ajoute un cat custom
 jcmsplugin.socle.site.header.show.rechercher: false
@@ -78,10 +81,8 @@ media.data-template.carrouselActu.Fiche: /plugins/EspaceEnseignantPlugin/templat
 # Recherche générale
 $jcmsplugin.socle.recherche.facettes.portal: fde_5287
 jcmsplugin.espaceEnseignant.portlet.recherche-site.id: rec_5881
+
 # Recherche Activités
 jcmsplugin.espaceEnseignant.portlet.categorieslies.listenoire.chooser-category: c_5155
 
-
 jcmsplugin.socle.portlet.filariane.id: por_5371
-
-$id.plugin.socle.page-principale.cat: por_5871

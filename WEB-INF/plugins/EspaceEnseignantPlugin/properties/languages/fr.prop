@@ -9,6 +9,7 @@ jcmsplugin.espaceEnseignant.contenu.expositions.cat.root: Catégorie des contenu
 jcmsplugin.espaceEnseignant.portlet.recherche-site.id: ID de la portlet Recherche Facettes
 jcmsplugin.espaceEnseignant.portlet.recherche-site.id.help: portlet Recherche Facettes pour les ressources associées (préciser le champ "Afficher résultat dans l'annuaire" à non)
 jcmsplugin.espaceEnseignant.portlet.categorieslies.listenoire: Catégories à ne pas afficher dans la recherche par activités
+$id.jcmsplugin.espaceEnseignant.conditionsGenerales: Catégorie du contenu des conditions générales
 
 jcmsplugin.espaceEnseignant.fiche.scenarioPed: Scénario pédagogique
 jcmsplugin.espaceEnseignant.fiche.focus: Voir les focus
@@ -45,9 +46,13 @@ jcmsplugin.espaceEnseignant.favoris.action: Action
 jcmsplugin.espaceEnseignant.favoris.selection: Afficher ma sélection en tableau
 jcmsplugin.espaceEnseignant.favoris.maSelection: Ma sélection
 
-jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation: J’ai lu et j’accepte les Conditions générales d’utilisation du site.
-jcmsplugin.espaceEnseignant.modal.images.hd :Pour toute demande de photographie Haute Définition, cliquez ici
-jcmsplugin.espaceEnseignant.objet.tuile.telecharger.images: Télécharger les images
-jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation: J’ai lu et j’accepte les Conditions générales d’utilisation du site.
-jcmsplugin.espaceEnseignant.modal.images.telecharger: Télécharger les images
-jcmsplugin.espaceEnseignant.objet.tuile.telecharger.pdf: Télécharger la fiche
+jcmsplugin.espaceEnseignant.modal.images.fermerboitedialogue.label: Fermer la boite de dialogue : {0}
+jcmsplugin.espaceEnseignant.modal.images.telecharger: Télécharger les ressources
+jcmsplugin.espaceEnseignant.modal.images.telecharger.image: Cette image
+jcmsplugin.espaceEnseignant.modal.images.telecharger.toutes-images: Toutes les images
+jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation.lu: J’ai lu et j’accepte les
+jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation.conditions: Conditions générales
+jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation.site: du site.
+jcmsplugin.espaceEnseignant.modal.images.hd.title :Pour toute demande de photographie Haute Définition,
+jcmsplugin.espaceEnseignant.modal.images.hd.click :cliquez ici
+jcmsplugin.espaceEnseignant.objet.tuile.telecharger.images: Télécharger les ressources

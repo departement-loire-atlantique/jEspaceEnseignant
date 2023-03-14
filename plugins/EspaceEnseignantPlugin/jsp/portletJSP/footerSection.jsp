@@ -12,8 +12,7 @@
 	    </div>
 	    <div class="col-10-small-1">	    
 			<% 
-			String catId = channel.getProperty("jcmsplugin.espaceEnseignant.contact.cat.root"); 
-			Category catContact = channel.getCategory(catId); 
+			Category catContact = channel.getCategory("$id.jcmsplugin.espaceEnseignant.contact.cat.root"); 
 			%> 
 			<jalios:if predicate="<%= Util.notEmpty(catContact) %>">
 				<h3> <%= catContact.getName() %> </h3>
