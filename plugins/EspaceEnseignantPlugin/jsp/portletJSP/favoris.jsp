@@ -46,10 +46,15 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
                                 <tr id="MyId<%= itPub.getId() %>">
                                     <td class="image">
                                         <jalios:if predicate="<%= Util.notEmpty(imageId)%>">
-                                        <% CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, imageId); %>
-                                        <picture class="ds44-container-imgRatio">
-                                        <img src="<%= image.getImage() %>" alt="<%= image.getImageLegend() %>" class="ds44-imgRatio contain" />
-                                        </picture>
+	                                        <% CarouselElement image = (CarouselElement)channel.getData(CarouselElement.class, imageId); %>
+	                                        <picture class="ds44-container-imgRatio">
+	                                           <img src="<%= image.getImage() %>" alt="<%= image.getImageLegend() %>" class="ds44-imgRatio contain" />
+	                                        </picture>
+                                        </jalios:if>
+                                        <jalios:if predicate="<%= Util.isEmpty(imageId)%>">
+                                            <picture class="ds44-container-imgRatio">
+                                                <img src="images/jalios/layout/article.png" alt="" class="ds44-imgRatio"/>
+                                            </picture>
                                         </jalios:if>
                                     </td>
                                     <td><%= itPub.getTitle(userLang) %></td>
