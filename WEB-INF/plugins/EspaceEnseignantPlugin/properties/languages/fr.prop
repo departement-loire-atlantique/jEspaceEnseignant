@@ -56,3 +56,6 @@ jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation.site: du site.
 jcmsplugin.espaceEnseignant.modal.images.hd.title :Pour toute demande de photographie Haute Définition,
 jcmsplugin.espaceEnseignant.modal.images.hd.click :cliquez ici
 jcmsplugin.espaceEnseignant.objet.tuile.telecharger.images: Télécharger les ressources
+
+ui.trash.modal.msg.confirm-final-delete: Voulez-vous vraiment effectuer cette action ?
+

@@ -3,13 +3,13 @@
 %><%@ include file='/jcore/portal/doPortletParams.jspf' %><%
 %><%@ taglib prefix="ds" tagdir="/WEB-INF/tags"%><%
 
-PortletJsp          obj         = (PortletJsp)portlet; 
 Set<String>         panier      = (Set<String>) session.getAttribute("panier");
+PortletJsp          obj         = (PortletJsp)portlet; 
 Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Publication.class); 
-
+String              urlAction   = ServletUtil.getResourcePath(request) + "?id=" + portlet.getId();
 %>
 <article class="ds44-container-large favoris">
-    <ds:titleNoImage title="<%= obj.getTitle(userLang) %>" breadcrumb="true" ></ds:titleNoImage>
+   <ds:titleNoImage title="<%= obj.getTitle(userLang) %>" breadcrumb="true" ></ds:titleNoImage>
             
     <div class="ds44-mt3 ds44-mb5 ds44--xl-padding-t" >
         <div class="ds44-inner-container">
@@ -19,9 +19,14 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
                 <article class="col-7 ds44-contenuDossier">
                     <h2 class="h4-like ds44-mb2"><%= glp("jcmsplugin.espaceEnseignant.favoris.find") %></h2>
                         <div class="ds44-txtRight">
-                            <button><i class="icon icon-cross" aria-hidden="true"></i>
+                            <form method="GET" action="plugins/EspaceEnseignantPlugin/jsp/panier/select-enabled.jsp" >
+                                <input type="hidden" name="pubId" value="all" data-technical-field />
+                                <input type='hidden' name='redirect' value='<%= urlAction %>' data-technical-field />
+                                <button type="submit" class="modal confirm" >
+                                    <i class="icon icon-cross" aria-hidden="true"></i>
                                     <span class="ds44-btnInnerText"><%= glp("jcmsplugin.espaceEnseignant.favoris.allSuppr") %></span>
-                            </button>
+                                </button>
+                            </form>
                         </div>
                         <table class="selection ds44-mt2">
                             <caption class="visually-hidden"><%= glp("jcmsplugin.espaceEnseignant.favoris.find") %></caption>
@@ -59,17 +64,15 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
                                     </td>
                                     <td><%= itPub.getTitle(userLang) %></td>
                                     <td>
-                                         <button data-select-button-id='<%= "search-result-" + itPub.getId() %>'
-                                                onclick="suppression(this)"
-                                                 class='ds44-js-select-button <%= (Util.isEmpty(panier) || !panier.contains(itPub.getId())) ? "" : "is-select" %>'
-                                                 data-url="plugins/SoclePlugin/jsp/panier/select-enabled.jsp?pubId=<%= itPub.getId() %>"
-                                                 data-titles='{ "enabled": "Désélectionner <%= itPub.getTitle() %>", "disabled": "Sélectionner <%= itPub.getTitle() %>"}'
-                                                 data-icons='{ "enabled": "icon-cross", "disabled": "icon-star-empty"}'
-                                                 type="button"
-                                                 aria-describedby='card_<%= itPub.getId()%>'>
-                                            <i class="icon icon-cross" aria-hidden="true"></i>
-                                            <span class="visually-hidden"><%= glp("jcmsplugin.espaceEnseignant.fiche.SupprSel") %></span>
-                                        </button>  
+                                        <form method="GET" action="plugins/EspaceEnseignantPlugin/jsp/panier/select-enabled.jsp" >
+                                            <input type="hidden" name="pubId" value="<%= itPub.getId() %>" data-technical-field />
+                                            <input type='hidden' name='redirect' value='<%= urlAction %>' data-technical-field />
+                                            <button type="submit">
+                                                <i class="icon icon-cross" aria-hidden="true"></i>
+                                                <span class="visually-hidden"><%= glp("jcmsplugin.espaceEnseignant.fiche.SupprSel") %></span>
+                                            </button>
+                                        </form>
+
                                 </tr>
                             </jalios:foreach>
                             </tbody>
