@@ -1,4 +1,4 @@
-<%@page import="fr.digiwin.module.EspaceEnseignant.exportZip.exportZip"%>
+<%@page import="fr.digiwin.module.EspaceEnseignant.exportZip.ExportZip"%>
 
 <jalios:if predicate="<%= Util.notEmpty(obj) && (Util.notEmpty(obj.getGalerieDeVisuels()) || Util.notEmpty(obj.getVisuel())) %>">
 <% 
