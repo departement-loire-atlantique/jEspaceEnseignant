@@ -1,0 +1,50 @@
+<%@page import="fr.digiwin.module.EspaceEnseignant.exportZip.ExportZip"%>
+
+<jalios:if predicate="<%= Util.notEmpty(obj) && (Util.notEmpty(obj.getGalerieDeVisuels()) || Util.notEmpty(obj.getVisuel())) %>">
+<% 
+session.setAttribute("idObjet", String.valueOf(obj.getId())); 
+String conditionsGeneralesLink = "#";
+Category conditionsGeneralesCat = channel.getCategory("$id.jcmsplugin.espaceEnseignant.conditionsGenerales");
+conditionsGeneralesLink = conditionsGeneralesCat.getDisplayUrl(userLocale);
+
+String contactLink = "#";
+Category contactCat = channel.getCategory("$id.jcmsplugin.espaceEnseignant.contact.cat.root");
+contactLink = contactCat.getDisplayUrl(userLocale);
+%>
+  <%-- BUTTON --%>
+<a type="button" data-target="#overlay-ressources-all" data-js="ds44-modal" class="ds44-btnStd ds44-btn--invert margin-txt">
+    <span class="ds44-btnInnerText"><%=glp("jcmsplugin.espaceEnseignant.objet.tuile.telecharger.images")%></span>
+    <i class="icon icon-long-arrow-right" aria-hidden="true"></i> 
+</a>
+
+<%-- MODAL --%>
+  <section class="ds44-modal-container" id="overlay-ressources-all" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="overlay-ressources-all-title">
+      <div class="ds44-modal-box">
+          <button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" title="<%= glp("jcmsplugin.espaceEnseignant.modal.images.fermerboitedialogue.label", glp("jcmsplugin.espaceEnseignant.modal.images.telecharger")) %>" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+              
+           <div class="ds44-modal-gab">
+              <h1 id="overlay-ressources-all-title" class="h3-like underline fix-width ds44-mb2"><%=glp("jcmsplugin.espaceEnseignant.modal.images.telecharger")%></h1>
+
+              <p class="ds44-mb2">
+                <input class="checkbox-pos" type="checkbox" onchange="document.getElementById('imagesValider').disabled = !this.checked;">
+                <%=glp("jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation.lu")%>
+               <a href="<%= conditionsGeneralesLink %>" target="_blank">
+                    <%=glp("jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation.conditions")%>
+                 </a>
+                 <%=glp("jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation.site")%>
+              </p>  
+
+              <a href="<%= obj.getDocumentTelechargeable() %>" download="<%= obj.getDocumentTelechargeable() %>">
+              <button type="submit" class="ds44-btnStd ds44-mb1" id="imagesValider" disabled>
+                <span class="ds44-btnInnerText"><%=glp("ui.com.btn.validate")%></span>
+                <i class="icon icon-long-arrow-right" aria-hidden="true"></i>
+              </button>
+              </a>
+
+              <p><%=glp("jcmsplugin.espaceEnseignant.modal.images.hd.title")%>
+              <a href=<%= contactLink %> target="_blank"><%=glp("jcmsplugin.espaceEnseignant.modal.images.hd.click")%></a></p>
+            </div>
+      </div>
+  </section>
+
+</jalios:if>

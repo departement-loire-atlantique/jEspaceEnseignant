@@ -141,9 +141,27 @@ BODY .ds44-theme {
     }
 }
 
+.modal-footer .btn.btn-confirm {
+    background-color: @black;
+    border-color: @black;
+    color: @white;
+}
+    
+.modal-footer .btn.btn-confirm:hover,
+.modal-footer .btn.btn-cancel:hover {
+    background-color: #404040;
+    color: @white;
+    box-shadow: 0px 13px 20px 0px rgba(0, 0, 0, 0.35);
+    border: 1px solid #333;
+}
+
 .ds44-btnStd .icon {
-    vertical-align: sub;
+    vertical-align: middle;
     margin-right: 5px;
+}
+
+.ds44-cardSelect .ds44-btnStd .icon {
+    vertical-align: sub;
 }
 
 // ------------------------------------------------------------------- 
@@ -191,7 +209,7 @@ BODY .ds44-theme {
 .vignette-card {
     .ds44-card {
         margin-bottom: 0;
-        border-bottom: solid 2px @purple;
+        border-bottom: solid 2px @main-color;
         
         .vignette-body {
             height: auto;
@@ -235,6 +253,12 @@ BODY .ds44-theme {
 // ------------------------------------------------------------------- 
 //  FICHE                                             
 // -------------------------------------------------------------------
+.fullDisplay.Fiche {
+    .ds44-cardSelect {
+        display: inline-block; 
+        margin-left: 1rem;   
+    }
+}
 .fiche-bg {
     background-color: @light-grey;
     padding-bottom: 2rem;
@@ -243,8 +267,6 @@ BODY .ds44-theme {
 .fiche-cartel {
     margin: 0 10rem;
 }
-
-
 
 .fiche-mot-clef {
     display: flex;
@@ -305,6 +327,18 @@ BODY .ds44-theme {
     }
 }
 
+#overlay-ressources-all,
+#overlay-fiches-all {
+    input[type="checkbox"] {
+        position: inherit;
+    }
+    
+    #imagesValider {
+        color: @white;
+        background-color: @black;
+    }
+}
+
 // ------------------------------------------------------------------- 
 //  FAQ                                             
 // -------------------------------------------------------------------
@@ -324,7 +358,6 @@ BODY .ds44-theme {
 // ------------------------------------------------------------------- 
 //  RECHERCHE                                             
 // -------------------------------------------------------------------
-
 .pub-action-toggler-fde_5286,
 .pub-action-toggler-fde_5328 {
     #content {
@@ -483,10 +516,11 @@ BODY .ds44-theme {
         }
 
         SECTION.ds44-contenuArticle:nth-child(even) .coteImage {
-            order: inherit;
             margin-left: 0;
         }
-        
+        SECTION.ds44-contenuArticle:nth-child(odd) .coteImage {
+            order: 1;
+        }        
 
     }
 }
@@ -508,6 +542,22 @@ BODY .ds44-theme {
 }
 
 // ------------------------------------------------------------------- 
+//  Favoris                        
+// -------------------------------------------------------------------
+.favoris {
+    table {
+        TD.image {
+            padding: 0 0 0 1rem;
+            vertical-align: middle;
+        }
+    }
+    
+    .ds44-js-aside-summary .lienMaSelection {
+        cursor: pointer;
+    }
+}
+
+// ------------------------------------------------------------------- 
 //  Surcharge DS System                                   
 // -------------------------------------------------------------------
 main#content main#content {
@@ -516,6 +566,14 @@ main#content main#content {
 
 .ds44-homepage-container > div{
     height: inherit;   
+}
+
+.ds44-breadcrumb_item A {
+    text-decoration: none;
+}
+
+A.ds44-btnStd.ds44-btnStd--retourPage {
+    display: none;
 }
 
 // Accueil > image home
@@ -580,6 +638,10 @@ body .ds44-contenuArticle #titreParagraphe1 {
         font-size: 2.2rem;
         line-height: 1.5;
     }
+}
+
+.ds44-modal-container {
+  display: flex !important;
 }
 
 // page cookies

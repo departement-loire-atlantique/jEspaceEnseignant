@@ -10,6 +10,8 @@ if (data == null) {
 
 FicheActionEducative obj = (FicheActionEducative) data;
 
+Set<String> panierSet = (Set<String>) session.getAttribute("panier"); 
+
 List<Category> categorySet = Arrays.asList(obj.getCategories(loggedMember));
 
 Category typologie = channel.getCategory(channel.getProperty("jcmsplugin.espaceEnseignant.typologie.cat.root"));
@@ -40,8 +42,7 @@ for(Category itCat : categorySet) {
     sitesSet.add(itCat);
   }
 }
-%>
-<%
+
 PortalElement portlet = (PortalElement)request.getAttribute(PortalManager.PORTAL_PORTALELEMENT);
 boolean isThemeClair = false;
 if (portlet instanceof PortletCarousel) {
@@ -50,15 +51,27 @@ if (portlet instanceof PortletCarousel) {
 %>
 
 
-<div class="col-3 vignette vignette-card">
-<section class="ds44-card ds44-js-card ds44-card--verticalPicture <%= isThemeClair ? "ds44-darkContext" : "" %>">
-    
+<section class="ds44-card ds44-js-card ds44-card--contact ds44-card--verticalPicture <%= isThemeClair ? "ds44-darkContext" : "" %>">
         <%-- Vignette Image --%>
 		<jalios:if predicate="<%= Util.notEmpty(image) %>">
 		    <picture class="ds44-container-imgRatio">
 		        <img src="<%= image %>" alt="<%= obj.getLegende(userLang) %>" class="ds44-imgRatio"/>
 		    </picture>
 		</jalios:if>
+		<jalios:if predicate="<%= Util.isEmpty(image) %>">
+            <picture class="ds44-container-imgRatio">
+                <img src="images/jalios/layout/article.png" alt="<%= obj.getLegende(userLang) %>" class="ds44-imgRatio"/>
+            </picture>
+		</jalios:if>
+		
+		<div class="ds44-card__section vignette">
+		<%-- Favoris --%>
+		<p class="ds44-cardSelect pa0 ma0">
+            <button data-select-button-id='<%= "search-result-" + obj.getId() %>' class='ds44-js-select-button <%= (Util.isEmpty(panierSet) || !panierSet.contains(obj.getId())) ? "" : "is-select" %>' data-url="plugins/SoclePlugin/jsp/panier/select-enabled.jsp?pubId=<%= obj.getId() %>" data-titles='{ "enabled": "Désélectionner <%= obj.getTitle() %>", "disabled": "Sélectionner <%= obj.getTitle() %>"}' data-icons='{ "enabled": "icon-star-full", "disabled": "icon-star-empty"}' type="button" aria-describedby='card_<%= obj.getId()%>'>
+                <i class='icon icon-star-empty' data-icon aria-hidden="true"></i>
+                <span class="visually-hidden" data-entitled><%= glp("jcmsplugin.socle.selectionner") %></span>
+            </button>
+        </p>
 		
         <%-- Vignette Header --%>
         <div class="vignette-header ds44-flex-container">
@@ -71,9 +84,6 @@ if (portlet instanceof PortletCarousel) {
                     </div>
                 </jalios:foreach>
           </jalios:if>
- <%--           <a href=# class="ds44-colRight">  
-              <i class="icon icon-star-empty" aria-hidden="true"></i>
-          </a> --%>
         </div>
         
         <%-- Vignette Body --%>
@@ -116,6 +126,6 @@ if (portlet instanceof PortletCarousel) {
 			</jalios:if>  
           </div>
         </div>
+        </div>
 
     </section>
-    </div>
