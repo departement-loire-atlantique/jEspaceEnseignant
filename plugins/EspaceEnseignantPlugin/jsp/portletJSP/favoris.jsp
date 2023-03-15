@@ -84,8 +84,7 @@ Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Pub
                                 <h2 class="h4-like ds44-mb2"><%= glp("jcmsplugin.espaceEnseignant.favoris.maSelection") %></h2>
                                 <ul class="ds44-list">
                                     <li class="ds44-docListElem">
-                                        <i class="icon icon-pdf ds44-docListIco" aria-hidden="true"></i>
-                                        <a href="#" onclick="javascript:window.print()" data-link-has-select="" target="_blank" title="PDF"><%= glp("jcmsplugin.espaceEnseignant.favoris.selection") %></a>
+                                        <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/modal/modalToutesLesFiches.jspf'%>
                                     </li>
                                 </ul>
                             </div>

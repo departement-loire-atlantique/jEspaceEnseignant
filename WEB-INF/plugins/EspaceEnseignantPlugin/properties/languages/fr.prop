@@ -43,7 +43,7 @@ jcmsplugin.espaceEnseignant.favoris.allSuppr: Tout retirer de ma sélection
 jcmsplugin.espaceEnseignant.favoris.visuel: Visuel
 jcmsplugin.espaceEnseignant.favoris.titre: Titre
 jcmsplugin.espaceEnseignant.favoris.action: Action
-jcmsplugin.espaceEnseignant.favoris.selection: Afficher ma sélection en tableau
+jcmsplugin.espaceEnseignant.favoris.telechargerFiche: Télécharger toutes les fiches
 jcmsplugin.espaceEnseignant.favoris.maSelection: Ma sélection
 
 jcmsplugin.espaceEnseignant.modal.images.fermerboitedialogue.label: Fermer la boite de dialogue : {0}
