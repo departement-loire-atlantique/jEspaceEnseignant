@@ -58,4 +58,5 @@ jcmsplugin.espaceEnseignant.modal.images.hd.click :cliquez ici
 jcmsplugin.espaceEnseignant.objet.tuile.telecharger.images: Télécharger les ressources
 
 ui.trash.modal.msg.confirm-final-delete: Voulez-vous vraiment effectuer cette action ?
-
+msg.js.confirm: Voulez-vous vraiment effectuer cette action ?
+js.msg.js.confirm: Voulez-vous vraiment effectuer cette action ?
