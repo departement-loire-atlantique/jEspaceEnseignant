@@ -22,7 +22,6 @@ public class ExportZip {
 		for (CarouselElement element : galerieVisuel) {
 //			File newFile = new File("jcms\\" + element.getImage()); // hmm
       File newFile = new File(element.getImage()); // hmm
-
 		  listFile.add(newFile);
 		}
 		return listFile;

@@ -20,7 +20,6 @@
     
     if (Util.notEmpty(carouselElement)) {
         ExportZip zip = new ExportZip();
-        
         CarouselElement[] listeElem = carouselElement.toArray(new CarouselElement[0]);
         zip.exportZip(listeElem, obj.getTitle()).sendToDownloadUrl(request, response);       
     }
