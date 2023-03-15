@@ -4,9 +4,6 @@
 
 String idObjet = (String) session.getAttribute("idObjet");
 
-System.out.println("idObject " + idObjet);
-
-
 Set<String>         panier      = (Set<String>) session.getAttribute("panier");
 Set<Publication>    panierSet   = JcmsUtil.idCollectionToDataTreeSet(panier, Publication.class); 
 

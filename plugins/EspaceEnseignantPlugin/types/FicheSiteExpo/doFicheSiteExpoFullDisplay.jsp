@@ -203,7 +203,7 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 
               tab.addAll((SortedSet<Content>)QueryManager.getInstance().getRelatedPublicationSet(obj, qh));
             }
-            System.out.println("fdsfd " + tab);
+
             %>
           	<%@ include file='/plugins/EspaceEnseignantPlugin/jsp/vignette/carrouselRessourcesAssociees.jspf' %>
 
