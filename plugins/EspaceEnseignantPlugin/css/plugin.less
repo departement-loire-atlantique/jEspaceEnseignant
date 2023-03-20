@@ -576,6 +576,20 @@ A.ds44-btnStd.ds44-btnStd--retourPage {
     display: none;
 }
 
+// swipper carousel
+.swipper-carousel-wrap {
+    @media (max-width: 35.9375em) {
+        BUTTON {
+            &.swiper-button-prev,
+            &.swiper-button-next {
+                top: calc(~"30%");
+                -webkit-transform: translateY(~"-30%");
+                transform: translateY(~"-30%");
+            }
+        }
+    }
+}
+
 // Accueil > image home
 .ds44-titleContainer--home {
     min-height: 643px;
