@@ -22,7 +22,7 @@ channel.less.plugins/EspaceEnseignantPlugin/css/plugin.css:    plugins/EspaceEns
 
 jcmsplugin.espaceEnseignant.site.src.logo-gpla: plugins/EspaceEnseignantPlugin/images/logo-ressources-educatives.svg
 jcmsplugin.socle.site.src.logo: plugins/EspaceEnseignantPlugin/images/logo-ressources-educatives.svg
-jcmsplugin.socle.site.src.logomobile: plugins/EspaceEnseignantPlugin/images/logo-grand-patrimoine-noir.svg
+jcmsplugin.socle.site.src.logomobile: plugins/EspaceEnseignantPlugin/images/logo-ressources-educatives-mobile.png
 
 jcmsplugin.socle.css-urls: https://dev-design.loire-atlantique.fr/css/cd44.css https://design.loire-atlantique.fr/css/icons.css plugins/EspaceEnseignantPlugin/css/plugin.css
 jcmsplugin.socle.js-urls:https://dev-design.loire-atlantique.fr/js/cd44.js
