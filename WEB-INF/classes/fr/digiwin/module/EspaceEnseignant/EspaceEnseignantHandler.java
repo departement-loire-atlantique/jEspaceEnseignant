@@ -102,6 +102,10 @@ public class EspaceEnseignantHandler {
 	        }
             Collections.reverse(listFilAriane);
         }
+        
+        if(Util.notEmpty(listFilAriane) && channel.getProperty("display.navigate-root").equals(catId)) {
+            listFilAriane.remove(0);
+        }
         return listFilAriane;
     }
 

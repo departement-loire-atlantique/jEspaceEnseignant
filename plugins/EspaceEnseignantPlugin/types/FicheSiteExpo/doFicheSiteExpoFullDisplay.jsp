@@ -68,7 +68,7 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 						<%-- BANDEAU INFO PRATIQUES --%>
 						<div class="col-1 grid-offset ds44-hide-tiny-to-medium"></div>
 						<aside class="col-4">
-							<section class="ds44-box ds44-theme mbm">
+							<section class="ds44-box mbm ds44-center">
 								<ds:figurePicture format="principale" pub="<%=obj%>"
 									image="<%=obj.getImagePrincipale()%>"
 									imageMobile="<%=obj.getImageMobile()%>"

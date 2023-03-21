@@ -1,6 +1,8 @@
 <%@page import="generated.FicheActionEducative"%>
 <%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
-
+<%
+Set<String> panierSet = (Set<String>) session.getAttribute("panier"); 
+%>
 
  
 <section class="ds44-container-fluid ds44-lightBG ds44-wave-white ds44--xl-padding-tb">
@@ -25,7 +27,7 @@
                         <jalios:if predicate="<%= itContent instanceof Fiche %>">
                         <% Fiche itFiche = (Fiche)itContent; %>
                         <li class="swiper-slide vignette">
-                            <section class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext">
+                            <section class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext ds44-card--contact">
 
                                 <%-- Vignette Image --%>
                                 <jalios:if predicate="<%= Util.notEmpty(itFiche.getVisuel()) %>">
@@ -34,6 +36,16 @@
                                         <img src="<%= image.getImage() %>" alt="<%= image.getImageLegend() %>" class="ds44-imgRatio"/>
                                     </picture>
                                 </jalios:if>
+                                
+                                <div class="ds44-card__section vignette">
+                                    
+                                <%-- Favoris --%>
+                                <p class="ds44-cardSelect pa0 ma0">
+                                    <button data-select-button-id='<%= "search-result-" + itContent.getId() %>' class='ds44-js-select-button <%= (Util.isEmpty(panierSet) || !panierSet.contains(itContent.getId())) ? "" : "is-select" %>' data-url="plugins/SoclePlugin/jsp/panier/select-enabled.jsp?pubId=<%= itContent.getId() %>" data-titles='{ "enabled": "Désélectionner <%= itContent.getTitle() %>", "disabled": "Sélectionner <%= itContent.getTitle() %>"}' data-icons='{ "enabled": "icon-star-full", "disabled": "icon-star-empty"}' type="button" aria-describedby='card_<%= itContent.getId()%>'>
+                                        <i class='icon icon-star-empty' data-icon aria-hidden="true"></i>
+                                        <span class="visually-hidden" data-entitled><%= glp("jcmsplugin.socle.selectionner") %></span>
+                                    </button>
+                                </p>
                                 
                                 <%-- Vignette Header --%>
                                 <div class="vignette-header ds44-flex-container">
@@ -46,10 +58,7 @@
                                             </div>
                                         </jalios:foreach>
                                     <% } %>
-<%--                                     <a href=# class="ds44-colRight">
-                                    <i class="icon icon-star-empty" aria-hidden="true"></i>
-                                    </a>
- --%>                                </div>
+                                </div>
 
                                 <%-- Vignette Body --%>
                                 <div class="ds44-card__section vignette-body">
@@ -105,6 +114,7 @@
                                         </jalios:if>  
                                     </div>
                                 </div>
+                                </div>
                             </section>
                         </li>
                         </jalios:if>
@@ -138,7 +148,7 @@
                     
                     %>
                         <li class="swiper-slide vignette">
-                            <section class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext">
+                            <section class="ds44-card ds44-js-card ds44-card--verticalPicture ds44-darkContext ds44-card--contact">
 
                                 <%-- Vignette Image --%>
                                 <jalios:if predicate="<%= Util.notEmpty(itFicheActionEducative.getImagePrincipale()) %>">
@@ -146,6 +156,15 @@
                                         <img src="<%= itFicheActionEducative.getImagePrincipale() %>" alt="<%= itFicheActionEducative.getLegende() %>" class="ds44-imgRatio"/>
                                     </picture>
                                 </jalios:if>
+                                
+                                <div class="ds44-card__section vignette">
+                                <%-- Favoris --%>
+                                <p class="ds44-cardSelect pa0 ma0">
+                                    <button data-select-button-id='<%= "search-result-" + itContent.getId() %>' class='ds44-js-select-button <%= (Util.isEmpty(panierSet) || !panierSet.contains(itContent.getId())) ? "" : "is-select" %>' data-url="plugins/SoclePlugin/jsp/panier/select-enabled.jsp?pubId=<%= itContent.getId() %>" data-titles='{ "enabled": "Désélectionner <%= itContent.getTitle() %>", "disabled": "Sélectionner <%= itContent.getTitle() %>"}' data-icons='{ "enabled": "icon-star-full", "disabled": "icon-star-empty"}' type="button" aria-describedby='card_<%= itContent.getId()%>'>
+                                        <i class='icon icon-star-empty' data-icon aria-hidden="true"></i>
+                                        <span class="visually-hidden" data-entitled><%= glp("jcmsplugin.socle.selectionner") %></span>
+                                    </button>
+                                </p>
                                 
                                 <%-- Vignette Header --%>
                                 <div class="vignette-header ds44-flex-container">
@@ -158,10 +177,8 @@
                                             </div>
                                         </jalios:foreach>
                                     <% } %>
- <%--                               <a href=# class="ds44-colRight">      
-                                     <i class="icon icon-star-empty" aria-hidden="true"></i>
-                                    </a>       
-   --%>                              </div>
+                                    
+                                </div>
 
                                 <%-- Vignette Body --%>
                                 <div class="ds44-card__section vignette-body">
@@ -207,6 +224,7 @@
 --%>
             </div>
                                     </div>
+                                </div>
                                 </div>
                             </section>
                         </li>                       

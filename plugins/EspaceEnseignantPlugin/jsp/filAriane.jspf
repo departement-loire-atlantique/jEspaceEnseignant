@@ -9,7 +9,7 @@
 ArrayList<Category> listFilAriane = EspaceEnseignantHandler.getFilAriane(loggedMember, obj);
 %>
 
-<nav role="navigation" aria-label="Votre position" class="ds44-hide-mobile">
+<nav role="navigation" aria-label="Votre position" class="">
     <ul class="ds44-list ds44-breadcrumb">
 
         <li class="ds44-breadcrumb_item"> 
