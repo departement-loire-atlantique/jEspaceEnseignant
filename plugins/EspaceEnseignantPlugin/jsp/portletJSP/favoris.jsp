@@ -19,15 +19,33 @@ String              urlAction   = ServletUtil.getResourcePath(request) + "?id=" 
                 <article class="col-7 ds44-contenuDossier">
                     <h2 class="h4-like ds44-mb2"><%= glp("jcmsplugin.espaceEnseignant.favoris.find") %></h2>
                         <div class="ds44-txtRight">
-                            <form method="GET" action="plugins/EspaceEnseignantPlugin/jsp/panier/select-enabled.jsp" >
-                                <input type="hidden" name="pubId" value="all" data-technical-field />
-                                <input type='hidden' name='redirect' value='<%= urlAction %>' data-technical-field />
-                                <button type="submit" class="modal confirm" >
+                                <button class="" type="button" data-target="#confirmAllSup" data-js="ds44-modal">
                                     <i class="icon icon-cross" aria-hidden="true"></i>
-                                    <span class="ds44-btnInnerText"><%= glp("jcmsplugin.espaceEnseignant.favoris.allSuppr") %></span>
+                                    <span class="ds44-btnInnerText">
+                                        <%= glp("jcmsplugin.espaceEnseignant.favoris.allSuppr") %>
+                                    </span>
                                 </button>
-                            </form>
                         </div>
+                        <section class="ds44-modal-container" id="confirmAllSup" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="overlay-test-title">
+                            <div class="ds44-modal-box">
+                                <button class="ds44-btnOverlay--modale ds44-btnOverlay--closeOverlay" type="button" title="Fermer la boîte de dialogue : <%= glp("jcmsplugin.espaceEnseignant.favoris.allSuppr") %>" data-js="ds44-modal-action-close"><i class="icon icon-cross icon--xlarge" aria-hidden="true"></i><span class="ds44-btnInnerText--bottom">Fermer</span></button>
+                                <h1 id="overlay-confirmAllSup-title" class="h2-like"><%= glp("jcmsplugin.espaceEnseignant.favoris.allSuppr") %></h1>
+                                <div class="ds44-modal-gab">
+                                    <form method="GET" action="plugins/EspaceEnseignantPlugin/jsp/panier/select-enabled.jsp" >
+                                        <input type="hidden" name="pubId" value="all" data-technical-field />
+                                        <input type='hidden' name='redirect' value='<%= urlAction %>' data-technical-field />
+                                        <button type="submit" class="ds44-btnStd ds44-btn--invert" >
+                                            <span class="ds44-btnInnerText">Confirmer</span>
+                                        </button>
+                                        <button class="ds44-btnStd ds44-btnOverlay--closeOverlay" type="button" 
+                                            data-js="ds44-modal-action-close">
+                                            <span class="ds44-btnInnerText">Annuler</span>
+                                        </button>
+                                    </form>
+                                </div>
+                                
+                            </div>
+                        </section>
                         <table class="selection ds44-mt2">
                             <caption class="visually-hidden"><%= glp("jcmsplugin.espaceEnseignant.favoris.find") %></caption>
 
@@ -62,7 +80,11 @@ String              urlAction   = ServletUtil.getResourcePath(request) + "?id=" 
                                             </picture>
                                         </jalios:if>
                                     </td>
-                                    <td><%= itPub.getTitle(userLang) %></td>
+                                    <td>
+                                        <jalios:link data="<%= itPub %>">
+                                            <%= itPub.getTitle(userLang) %>
+                                        </jalios:link>
+                                    </td>
                                     <td>
                                         <form method="GET" action="plugins/EspaceEnseignantPlugin/jsp/panier/select-enabled.jsp" >
                                             <input type="hidden" name="pubId" value="<%= itPub.getId() %>" data-technical-field />
