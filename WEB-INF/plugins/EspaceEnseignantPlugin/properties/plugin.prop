@@ -18,11 +18,11 @@
 # channel.less.plugins/{Name}/css/plugin.css:    plugins/{Name}/css/plugin.less
 channel.less.plugins/EspaceEnseignantPlugin/css/plugin.css:    plugins/EspaceEnseignantPlugin/css/plugin.less
 
-channel.css.all.200.fo: plugins/EspaceEnseignantPlugin/css/plugin.css
+#channel.css.all.200.fo: plugins/EspaceEnseignantPlugin/css/plugin.css
 
 jcmsplugin.espaceEnseignant.site.src.logo-gpla: plugins/EspaceEnseignantPlugin/images/logo-ressources-educatives.svg
 jcmsplugin.socle.site.src.logo: plugins/EspaceEnseignantPlugin/images/logo-ressources-educatives.svg
-jcmsplugin.socle.site.src.logomobile: plugins/EspaceEnseignantPlugin/images/logo-grand-patrimoine-noir.svg
+jcmsplugin.socle.site.src.logomobile: plugins/EspaceEnseignantPlugin/images/logo-ressources-educatives-mobile.png
 
 jcmsplugin.socle.css-urls: https://dev-design.loire-atlantique.fr/css/cd44.css https://design.loire-atlantique.fr/css/icons.css plugins/EspaceEnseignantPlugin/css/plugin.css
 jcmsplugin.socle.js-urls:https://dev-design.loire-atlantique.fr/js/cd44.js
@@ -80,7 +80,7 @@ media.data-template.carrouselActu.Fiche: /plugins/EspaceEnseignantPlugin/templat
 
 # Recherche générale
 $jcmsplugin.socle.recherche.facettes.portal: fde_5287
-jcmsplugin.espaceEnseignant.portlet.recherche-site.id: rec_5881
+jcmsplugin.espaceEnseignant.portlet.recherche-site.id: fde_5280
 
 # Recherche Activités
 jcmsplugin.espaceEnseignant.portlet.categorieslies.listenoire.chooser-category: c_5155

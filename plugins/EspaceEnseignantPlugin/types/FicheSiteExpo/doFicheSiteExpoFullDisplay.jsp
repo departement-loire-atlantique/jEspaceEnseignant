@@ -68,7 +68,7 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 						<%-- BANDEAU INFO PRATIQUES --%>
 						<div class="col-1 grid-offset ds44-hide-tiny-to-medium"></div>
 						<aside class="col-4">
-							<section class="ds44-box ds44-theme mbm">
+							<section class="ds44-box mbm ds44-center">
 								<ds:figurePicture format="principale" pub="<%=obj%>"
 									image="<%=obj.getImagePrincipale()%>"
 									imageMobile="<%=obj.getImageMobile()%>"
@@ -173,6 +173,25 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 
 		<%-- RESSOURCES ASSOCIEES --%>
 		<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id");
+
+            request.setAttribute("isSmallSearch", true);
+            
+            Category catSiteorExpo = Util.getFirst(obj.getSiteOuExpo(loggedMember));
+            
+            if(Util.notEmpty(catSiteorExpo)){
+
+                String idFiltreCat = "NULL";
+                Set<PortletFacetteCategorie> portletRecherchFacetteCatSet = catSiteorExpo.getParent().getPublicationSet(PortletFacetteCategorie.class);
+                for (PortletFacetteCategorie itPortlet : portletRecherchFacetteCatSet) {
+                    if (itPortlet.getTitle().startsWith("Recherche générale")) {
+                        idFiltreCat = itPortlet.getId();
+                        break;
+                    }
+                }
+                
+                request.setAttribute("rechercheFilter", "cidsform-element-"+ portletId + idFiltreCat);
+                request.setAttribute("rechercheFilterCatVal", catSiteorExpo);
+            }
 
             Collection tab = new TreeSet<>();
             Collection pubRelatedCollection = new TreeSet<>();
