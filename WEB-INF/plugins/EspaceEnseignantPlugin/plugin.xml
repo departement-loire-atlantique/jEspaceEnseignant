@@ -178,6 +178,12 @@
         </template>
     </templates>
     
+    <templates type="PortletRechercheFacettes">
+        <template name="rechercheCustom" file="doPortletRechercheFacettesBoxCustomRechercheDisplay.jsp" usage='box'>
+          <label xml:lang="fr">Espace Enseignant : gabarit générique Custom</label>
+        </template>        
+    </templates>    
+    
  </types>
   <!-- ============================== Workflows =========================== -->
   <!--                                                                      -->

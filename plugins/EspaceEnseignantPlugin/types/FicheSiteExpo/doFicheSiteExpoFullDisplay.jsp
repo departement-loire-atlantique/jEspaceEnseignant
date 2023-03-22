@@ -174,6 +174,25 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 		<%-- RESSOURCES ASSOCIEES --%>
 		<% String portletId = channel.getProperty("jcmsplugin.espaceEnseignant.portlet.recherche-site.id");
 
+            request.setAttribute("isSmallSearch", true);
+            
+            Category catSiteorExpo = Util.getFirst(obj.getSiteOuExpo(loggedMember));
+            
+            if(Util.notEmpty(catSiteorExpo)){
+
+                String idFiltreCat = "NULL";
+                Set<PortletFacetteCategorie> portletRecherchFacetteCatSet = catSiteorExpo.getParent().getPublicationSet(PortletFacetteCategorie.class);
+                for (PortletFacetteCategorie itPortlet : portletRecherchFacetteCatSet) {
+                    if (itPortlet.getTitle().startsWith("Recherche générale")) {
+                        idFiltreCat = itPortlet.getId();
+                        break;
+                    }
+                }
+                
+                request.setAttribute("rechercheFilter", "cidsform-element-"+ portletId + idFiltreCat);
+                request.setAttribute("rechercheFilterCatVal", catSiteorExpo);
+            }
+
             Collection tab = new TreeSet<>();
             Collection pubRelatedCollection = new TreeSet<>();
             int pubRelatedMax = 4;
