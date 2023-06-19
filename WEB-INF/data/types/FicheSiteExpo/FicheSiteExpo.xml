@@ -5,7 +5,10 @@
     <label xml:lang="fr">Titre</label>
   </title>
   <fields>
-    <field name="description" editor="wysiwyg" required="true" type="String" searchable="true" abstract="true" wysiwygConfigurationId="default" ml="true">
+    <field name="resume" editor="wysiwyg" required="false" compactDisplay="false" type="String" searchable="true" rows="16" cols="100" ml="true" checkHtml="true" inline="true" descriptionType="tooltip" html="false" abstract="true" truncate="400" wysiwygConfigurationId="default">
+      <label xml:lang="fr">Résumé</label>
+    </field>
+    <field name="description" editor="wysiwyg" required="true" type="String" searchable="true" wysiwygConfigurationId="default" ml="true">
       <label xml:lang="en">Description</label>
       <label xml:lang="fr">Description</label>
     </field>
