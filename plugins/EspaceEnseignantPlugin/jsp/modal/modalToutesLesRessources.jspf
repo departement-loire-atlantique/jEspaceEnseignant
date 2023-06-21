@@ -1,6 +1,11 @@
+<%@page import="com.jalios.util.Util"%>
+<%@page import="generated.Fiche"%>
 <%@page import="fr.digiwin.module.EspaceEnseignant.exportZip.ExportZip"%>
+<%
+// Fiche obj = null;
+%>
 
-<jalios:if predicate="<%= Util.notEmpty(obj) && (Util.notEmpty(obj.getGalerieDeVisuels()) || Util.notEmpty(obj.getVisuel())) %>">
+<jalios:if predicate="<%= Util.notEmpty(obj) && (Util.notEmpty(obj.getDocumentTelechargeableFile()) || Util.notEmpty(obj.getDocumentTelechargeable())) %>">
 <% 
 session.setAttribute("idObjet", String.valueOf(obj.getId())); 
 String conditionsGeneralesLink = "#";
@@ -10,6 +15,18 @@ conditionsGeneralesLink = conditionsGeneralesCat.getDisplayUrl(userLocale);
 String contactLink = "#";
 Category contactCat = channel.getCategory("$id.jcmsplugin.espaceEnseignant.contact.cat.root");
 contactLink = contactCat.getDisplayUrl(userLocale);
+
+// DocumentTelechargeable
+String urlDoc = "";
+String nameDoc = "";
+
+if (Util.notEmpty(obj.getDocumentTelechargeableFile())) {
+    urlDoc = obj.getDocumentTelechargeableFile().getFilename();
+    nameDoc = obj.getDocumentTelechargeableFile().getOriginalFilename();
+} else {
+    urlDoc = obj.getDocumentTelechargeable();
+    nameDoc = obj.getTitle(userLang);
+}
 %>
   <%-- BUTTON --%>
 <a type="button" data-target="#overlay-ressources-all" data-js="ds44-modal" class="ds44-btnStd ds44-btn--invert margin-txt">
@@ -34,7 +51,7 @@ contactLink = contactCat.getDisplayUrl(userLocale);
                  <%=glp("jcmsplugin.espaceEnseignant.modal.images.conditions-utilisation.site")%>
               </p>  
 
-              <a href="<%= obj.getDocumentTelechargeable() %>" download="<%= obj.getDocumentTelechargeable() %>">
+              <a href="<%= urlDoc %>" download="<%= nameDoc %>">
               <button type="submit" class="ds44-btnStd ds44-mb1" id="imagesValider" disabled>
                 <span class="ds44-btnInnerText"><%=glp("ui.com.btn.validate")%></span>
                 <i class="icon icon-long-arrow-right" aria-hidden="true"></i>

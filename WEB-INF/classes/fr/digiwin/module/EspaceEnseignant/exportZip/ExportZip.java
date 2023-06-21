@@ -1,15 +1,20 @@
 package fr.digiwin.module.EspaceEnseignant.exportZip;
 
 import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.log4j.Logger;
 
 import com.jalios.jcms.Channel;
+import com.jalios.jcms.FileDocument;
+import com.jalios.jcms.JcmsUtil;
 import com.jalios.jcms.Publication;
 import com.jalios.jcms.servlet.BinaryFileServlet.DownloadTicket;
 import com.jalios.util.Util;
@@ -99,11 +104,28 @@ public class ExportZip {
 	          
   	          try {
   	            // On récupère le fichier à ajouter
-  	            String ressourcePath = (String) itPub.getFieldValue("documentTelechargeable");
-  	            File itFile = new File(rootPath + ressourcePath);
+  	            File itFile = null;
+  	            
+  	            FileDocument ressourceFileDocument = (FileDocument) itPub.getFieldValue("documentTelechargeableFile");
 
-  	            // Pas d'image à ajouter
-  	            if (Util.isEmpty(ressourcePath) || !itFile.exists()) continue;
+                if (Util.notEmpty(ressourceFileDocument)) {
+                    itFile = new File(rootPath + ressourceFileDocument.getFilename());
+                } else {
+                    String ressourcePath = (String) itPub.getFieldValue("documentTelechargeable");
+                    
+                    if (Util.isValidUrl(ressourcePath)) {
+
+                        URL url = new URL(ressourcePath);
+                        
+                        itFile = File.createTempFile(FilenameUtils.getBaseName(ressourcePath), "." + FilenameUtils.getExtension(ressourcePath));
+                        
+                        FileUtils.copyURLToFile(url, itFile);
+                    }
+  	            }
+
+                if (Util.isEmpty(itFile) || !itFile.exists()) {
+                    continue;
+                }
   	            
   	            // On va ajouter les données du fichier au ZIP
   	            FileInputStream fis = new FileInputStream(itFile);
