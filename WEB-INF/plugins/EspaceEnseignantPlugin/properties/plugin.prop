@@ -86,3 +86,7 @@ jcmsplugin.espaceEnseignant.portlet.recherche-site.id: fde_5280
 jcmsplugin.espaceEnseignant.portlet.categorieslies.listenoire.chooser-category: c_5155
 
 jcmsplugin.socle.portlet.filariane.id: por_5371
+
+# Wysiwyg
+pubchooser.use-jplatform10-pubchooser: false
+
