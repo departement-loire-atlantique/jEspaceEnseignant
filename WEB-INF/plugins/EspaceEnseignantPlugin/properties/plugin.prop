@@ -17,6 +17,7 @@
 # LESS
 # channel.less.plugins/{Name}/css/plugin.css:    plugins/{Name}/css/plugin.less
 channel.less.plugins/EspaceEnseignantPlugin/css/plugin.css:    plugins/EspaceEnseignantPlugin/css/plugin.less
+channel.less.plugins/EspaceEnseignantPlugin/css/404.css:    plugins/EspaceEnseignantPlugin/css/404.less
 
 #channel.css.all.200.fo: plugins/EspaceEnseignantPlugin/css/plugin.css
 
@@ -90,3 +91,6 @@ jcmsplugin.socle.portlet.filariane.id: por_5371
 # Wysiwyg
 pubchooser.use-jplatform10-pubchooser: false
 
+# Error
+error.404.jsp: /plugins/SEOPlugin/maintenance/404.jsp
+error.404.page-css: plugins/EspaceEnseignantPlugin/css/404.css
