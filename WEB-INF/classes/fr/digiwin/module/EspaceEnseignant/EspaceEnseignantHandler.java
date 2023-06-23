@@ -3,6 +3,7 @@ package fr.digiwin.module.EspaceEnseignant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.TreeSet;
 
@@ -19,8 +20,8 @@ public class EspaceEnseignantHandler {
     
     private static final Channel channel = Channel.getChannel();
 
-    public static ArrayList<Category> getPeriodeParentCategory(Member loggedMember, Fiche fiche) {
-        ArrayList<Category> listPeriode = new ArrayList<Category>();
+    public static HashSet<Category> getPeriodeParentCategory(Member loggedMember, Fiche fiche) {
+        HashSet<Category> listPeriode = new HashSet<Category>();
         if (Util.notEmpty(fiche.getPeriode(loggedMember))) {  
             String catId = channel.getProperty("jcmsplugin.espaceEnseignant.periode.cat.root");
             if(Util.notEmpty(catId)) {

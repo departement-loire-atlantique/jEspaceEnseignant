@@ -1,3 +1,4 @@
+<%@page import="com.jalios.jcms.JcmsUtil"%>
 <%@ page
 	import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 <%
@@ -53,6 +54,11 @@ Set<String> panierSet = (Set<String>) session.getAttribute("panier");
 						<strong role="heading" aria-level="4"> <%=entry.getKey().getName()%>
 						</strong>
 					</p>
+                    <jalios:if predicate="<%= !JcmsUtil.isSameId(entry.getValue().getParent(), entry.getKey()) %>">
+                        <p class="ds44-docListElem">
+                            <%=entry.getValue().getParent().getName()%>
+                        </p>
+                    </jalios:if>
 					<p class="ds44-docListElem">
 						<%=entry.getValue().getName()%>
 					</p>
@@ -152,7 +158,7 @@ Set<String> panierSet = (Set<String>) session.getAttribute("panier");
 		</div>
         <div class="ds44-grid12-offset-1">
             <%-- Bouton télécharger les fiches --%>
-            <jalios:if predicate="<%= Util.notEmpty(obj.getDocumentTelechargeable()) %>">
+            <jalios:if predicate="<%= Util.notEmpty(obj.getDocumentTelechargeable()) || Util.notEmpty(obj.getDocumentTelechargeableFile()) %>">
                 <%@ include file='/plugins/EspaceEnseignantPlugin/jsp/modal/modalToutesLesRessources.jspf'%>
             </jalios:if>
             

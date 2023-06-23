@@ -62,6 +62,11 @@ Category contenuExpositions = channel.getCategory(channel.getProperty("jcmsplugi
 					<div class="grid-12-small-1">
 						<%-- CONTENU --%>
 						<div class="col-7">
+                            <jalios:if predicate="<%= Util.notEmpty(obj.getResume(userLang)) %>">
+                                <div class="resume">
+                                    <jalios:wysiwyg><%=obj.getResume(userLang)%></jalios:wysiwyg>
+                                </div>
+                            </jalios:if>
 							<jalios:wysiwyg><%=obj.getDescription(userLang)%></jalios:wysiwyg>
 						</div>
 

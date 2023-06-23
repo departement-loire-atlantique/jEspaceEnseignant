@@ -87,8 +87,12 @@
     <field name="iconeSite" editor="image" required="false" compactDisplay="false" type="String[]" searchable="false" size="80" ml="true" descriptionType="tooltip" tabGroup="iconeSite" html="false" checkHtml="true" resize="false" resizeWidth="100" resizeHeight="75" tab="contenu">
       <label xml:lang="fr">Icone site</label>
     </field>
-    <field name="documentTelechargeable" editor="url" required="false" compactDisplay="false" type="String" searchable="true" size="80" ml="true" openWindow="false">
+    <field name="documentTelechargeableFile" editor="link" required="false" compactDisplay="false" type="com.jalios.jcms.FileDocument" ml="true" parent="false" descriptionType="text" searchable="false" html="false" checkHtml="true">
       <label xml:lang="fr">Document téléchargeable</label>
+      <description xml:lang="fr">&lt;div class="wysiwyg"&gt;&lt;p&gt;Ce champ est prioritaire sur le champ URL&lt;/p&gt;&lt;/div&gt;</description>
+    </field>
+    <field name="documentTelechargeable" editor="url" required="false" compactDisplay="false" type="String" searchable="true" size="80" ml="true" openWindow="false" descriptionType="tooltip" html="false" checkHtml="true">
+      <label xml:lang="fr">Document téléchargeable URL</label>
     </field>
   </fields>
   <tabs>

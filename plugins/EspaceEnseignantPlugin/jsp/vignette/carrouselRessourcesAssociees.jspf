@@ -71,7 +71,7 @@ Set<String> panierSet = (Set<String>) session.getAttribute("panier");
                                         </p>
 
                                         <% 
-                                        ArrayList<Category> listPeriode = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, itFiche);
+                                        HashSet<Category> listPeriode = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, itFiche);
                                         %>
                                         <div class="vignette-content">
                                             <jalios:if predicate="<%= Util.notEmpty(itFiche.getSite(loggedMember)) %>">

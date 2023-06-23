@@ -1,6 +1,8 @@
+<%@page import="com.jalios.jcms.Category"%>
+<%@page import="java.util.HashSet"%>
 <%@ page import="fr.digiwin.module.EspaceEnseignant.EspaceEnseignantHandler"%>
 <% 
-ArrayList<Category> listPeriode = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, obj);
+HashSet<Category> listPeriode = EspaceEnseignantHandler.getPeriodeParentCategory(loggedMember, obj);
 %>
 <div class="vignette-content">
     <jalios:if predicate="<%= Util.notEmpty(obj.getSite(loggedMember)) %>">

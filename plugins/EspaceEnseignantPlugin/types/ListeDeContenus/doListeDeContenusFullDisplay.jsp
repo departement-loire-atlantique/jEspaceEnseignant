@@ -74,8 +74,11 @@ if (Util.isEmpty(title)) {
 		                            <jalios:wysiwyg><%= fiche.getComplementTransport(userLang)%></jalios:wysiwyg>
 		                            </div>
 		                        </jalios:if>
+                                <%
+                                String resume = fiche.getAbstract(userLang);
+                                %>
 		                        <jalios:wysiwyg css="resume" truncateLength="500" truncateSuffix="...">
-		                            <%=fiche.getDescription(userLang)%>
+		                            <%= Util.notEmpty(resume) ? resume : fiche.getDescription(userLang) %>
 		                        </jalios:wysiwyg>
                     </div>               
                    </div>
